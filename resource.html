@@ -1160,7 +1160,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pl-20 pr-20" id="Datacenter01_monitor">
+                    <div class="pl-20 pr-20" id="Datacenter01_monitor" style="display: none;">
                         <div class="fr">
                             <select class="w-80" id="storageStyle">
                                 <option value="存储器">存储器</option>
@@ -1171,13 +1171,37 @@
                             </select>
                         </div>
                         <div class="clearfloat"></div>
-                        <div>
-                            <div class="row">
-                                <div class="col-sm-2"></div>
-                                <div class="col-sm-3"></div>
-                                <div class="col-sm-3"></div>
-                                <div class="col-sm-3"></div>
-                                <div class="col-sm-1"></div>
+                        <div id="storageChart">
+                            <div class="row mt-10" style="overflow: hidden">
+                                <div class="fl pl-20 mt-90 fw">空间(GB)</div>
+                                <div class="fl w-200 ml-20">
+                                    <div class="h-200" id="datastore01"></div>
+                                </div>
+                                <div class="fl w-200 ml-30">
+                                    <div class="h-200" id="datastore01_1"></div>
+                                </div>
+                                <div class="fl w-200 ml-30">
+                                    <div class="h-200" id="data1"></div>
+                                </div>
+                            </div>
+                            <div class="row" style="border-top:1px dashed #666">
+                                <div class="col-sm-8" style="position:relative;">
+                                    <div class="h-300" id="usedRoomTop10"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>datastore01</span>
+                                        </li>
+                                        <li>
+                                            <span style="background-color:#ffcb82"></span>
+                                            <span>datastore01</span>
+                                        </li>
+                                        <li>
+                                            <span style="background-color:#6ab9ca"></span>
+                                            <span>datastore01</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2044,6 +2068,7 @@
             $("#Datacenter01").hide();
             $("#cluster01").hide();
             $("#testvm").hide();
+            $("#controlChild").hide();
             $("#IP192").show();
             $("#quickset").addClass("pb-140");
         }else if(treeNode.name=="testvm"){
@@ -2054,6 +2079,7 @@
             $("#structure").hide();
             $("#Datacenter01").hide();
             $("#cluster01").hide();
+            $("#controlChild").hide();
             $("#testvm").show();
             $("#IP192").hide();
             $("#quickset").addClass("pb-140");
@@ -2071,6 +2097,7 @@
             $("#vcenter").hide();
             $("#structure").hide();
             $("#Datacenter01").hide();
+            $("#controlChild").hide();
             $("#cluster01").show();
             $("#testvm").hide();
             $("#IP192").hide();
@@ -2089,6 +2116,7 @@
                 $("#structure").hide();
                 $("#Datacenter01").show();
                 $("#cluster01").hide();
+                $("#controlChild").hide();
                 $("#testvm").hide();
                 $("#IP192").hide();
                 $("#quickset").addClass("pb-140");
@@ -2107,6 +2135,7 @@
                 $("#cluster01").hide();
                 $("#testvm").hide();
                 $("#IP192").hide();
+                $("#controlChild").hide();
                 $("#quickset").addClass("pb-140");
 			};
 			if(treeNode.name=="OpenStack"){
@@ -2119,6 +2148,7 @@
                 $("#cluster01").hide();
                 $("#testvm").hide();
                 $("#IP192").hide();
+                $("#controlChild").hide();
                 $("#quickset").addClass("pb-140");
 			};
    	}else if(level==1){
@@ -2134,6 +2164,7 @@
                 $("#cluster01").hide();
                 $("#testvm").hide();
                 $("#IP192").hide();
+                $("#controlChild").hide();
                 $("#quickset").removeClass("pb-140");
 			}
    	}else{
@@ -2147,12 +2178,14 @@
         $("#cluster01").hide();
         $("#testvm").hide();
         $("#IP192").hide();
+        $("#controlChild").hide();
    		$("#quickset").removeClass("pb-140");
    	}
    	$("#contentTitle").children("span:first-child").html(parentname);
 	}
 </script>
 <script type="text/javascript">
+    //vCenter01
     function initMonitorChart() {
         var myChartmeter = echarts.init(document.getElementById('myChartmeter'));
         var myChartmeter1 = echarts.init(document.getElementById('myChartmeter1'));
@@ -3750,6 +3783,397 @@
             }
         }, 2000);
     };
+    //Datacenter01
+    function initStorageChart() {
+        var datastore01 = echarts.init(document.getElementById('datastore01'));
+        var datastore01_1 = echarts.init(document.getElementById('datastore01_1'));
+        var data1 = echarts.init(document.getElementById('data1'));
+        var usedRoomTop10 = echarts.init(document.getElementById('usedRoomTop10'));
+        var option = {
+            title: {
+                text: 'datastore01(92.50GB)',
+                //left:'10%',
+                padding: 20,
+                textStyle: {
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'lighter'
+                }
+            },
+            grid: {
+                left: '4%',
+                right: '4%',
+                bottom: '14%',
+                containLabel: true,
+            },
+            tooltip: {
+                trigger: 'axis',
+            },
+            barWidth:'65%',
+
+            calculable : true,
+            xAxis: {
+                type: 'category',
+                boundaryGap: true,
+                data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                splitLine : {
+                    show:false,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    },
+                axisLabel:{
+                    interval:'2',
+                },
+                nameLocation:'end',
+                },
+            },
+            yAxis: {
+                type: 'value',
+                min:0,
+                max:100,
+                interval: 50,
+                splitLine : {
+                    show:true,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    }
+                },
+            },
+            series: [
+                {
+                    name:'空间',
+                    type:'line',
+                    stack: '总量',
+                    data:[20, 32, 10, 34, 90, 23, 21],
+                    markLine:{
+                        smooth:true,
+                    },
+                    symbolSize:1,
+                    itemStyle:{
+                        normal:{
+                            color:'#6bbacb',
+                            lineStyle:{
+                                color:'#6bbacb',
+                                width:'1'
+                            }
+                        }
+                    },
+                }
+
+            ]
+        };
+        var option_1 = {
+            title: {
+                text: 'datastore01(1)(92.50GB)',
+                //left:'10%',
+                padding: 20,
+                textStyle: {
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'lighter'
+                }
+            },
+            grid: {
+                left: '4%',
+                right: '4%',
+                bottom: '14%',
+                containLabel: true,
+            },
+            tooltip: {
+                trigger: 'axis',
+            },
+            barWidth:'65%',
+
+            calculable : true,
+            xAxis: {
+                type: 'category',
+                boundaryGap: true,
+                data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                splitLine : {
+                    show:false,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    },
+                    axisLabel:{
+                        interval:'2',
+                    },
+                    nameLocation:'end',
+                },
+            },
+            yAxis: {
+                type: 'value',
+                min:0,
+                max:100,
+                interval: 50,
+                splitLine : {
+                    show:true,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    }
+                },
+            },
+            series: [
+                {
+                    name:'空间',
+                    type:'line',
+                    stack: '总量',
+                    data:[20, 32, 10, 34, 90, 23, 21],
+                    markLine:{
+                        smooth:true,
+                    },
+                    symbolSize:1,
+                    itemStyle:{
+                        normal:{
+                            color:'#6bbacb',
+                            lineStyle:{
+                                color:'#6bbacb',
+                                width:'1'
+                            }
+                        }
+                    },
+                }
+
+            ]
+        };
+        var option_2 = {
+            title: {
+                text: 'data1(499.76GB)',
+                //left:'10%',
+                padding: 20,
+                textStyle: {
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'lighter'
+                }
+            },
+            grid: {
+                left: '4%',
+                right: '4%',
+                bottom: '14%',
+                containLabel: true,
+            },
+            tooltip: {
+                trigger: 'axis',
+            },
+            barWidth:'65%',
+
+            calculable : true,
+            xAxis: {
+                type: 'category',
+                boundaryGap: true,
+                data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                splitLine : {
+                    show:false,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    },
+                    axisLabel:{
+                        interval:'2',
+                    },
+                    nameLocation:'end',
+                },
+            },
+            yAxis: {
+                type: 'value',
+                min:0,
+                max:100,
+                interval: 50,
+                splitLine : {
+                    show:true,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    }
+                },
+            },
+            series: [
+                {
+                    name:'空间',
+                    type:'line',
+                    stack: '总量',
+                    data:[20, 32, 10, 34, 90, 23, 21],
+                    markLine:{
+                        smooth:true,
+                    },
+                    symbolSize:1,
+                    itemStyle:{
+                        normal:{
+                            color:'#6bbacb',
+                            lineStyle:{
+                                color:'#6bbacb',
+                                width:'1'
+                            }
+                        }
+                    },
+                }
+
+            ]
+        };
+        var option_3 = {
+            title: {
+                text: '已使用空间(GB) TOP10',
+                textStyle:{
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'bold'
+                },
+                padding:20
+            },
+            tooltip : {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            grid: {
+                left: '6%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap: false,
+                    data : ['17-6-11','17-6-11','17-6-11','17-6-12','17-6-12','17-6-12','17-6-11','17-6-13'],
+                    splitLine : {
+                        show:true,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 0
+                        },
+                        axisLabel:{
+                            interval:'auto',
+                        },
+                        nameLocation:'start',
+                    },
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    min:0,
+                    max:35,
+                    interval:5
+                }
+            ],
+            series : [
+                {
+                    name:'datastore01',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[1, 1, 1, 1, 1, 1, 1,1],
+                    symbol:'none',
+                    itemStyle:{
+                        normal:{
+                            color:'#7694c6',
+                            lineStyle:{
+                                color:'#7694c6',
+                                width:'0'
+                            }
+                        }
+                    },
+                },
+                {
+                    name:'datastore01(1)',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[2, 2, 2, 2, 2, 2, 2,2],
+                    symbol:'none',
+                    itemStyle:{
+                        normal:{
+                            color:'#ffcb82',
+                            lineStyle:{
+                                color:'#ffcb82',
+                                width:'0'
+                            }
+                        }
+                    },
+                },
+                {
+                    name:'data1',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[30, 30, 30, 30, 30, 30, 30,30],
+                    symbol:'none',
+                    itemStyle:{
+                        normal:{
+                            color:'#6ab9ca',
+                            lineStyle:{
+                                color:'#6ab9ca',
+                                width:'0'
+                            }
+                        }
+                    },
+                },
+
+            ]
+        };
+        function newline(option, number, axis){
+            option[axis]['axisLabel']={
+                interval: 'auto',
+                formatter: function(params){
+                    var newParamsName = "";
+                    var paramsNameNumber = params.length;
+                    var provideNumber = number;
+                    var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                    if (paramsNameNumber > provideNumber) {
+                        for (var p = 0; p < rowNumber; p++) {
+                            var tempStr = "";
+                            var start = p * provideNumber;
+                            var end = start + provideNumber;
+                            if (p == rowNumber - 1) {
+                                tempStr = params.substring(start, paramsNameNumber);
+                            } else {
+                                tempStr = params.substring(start, end) + "\n"+ "\n";
+                            }
+                            newParamsName += tempStr;
+                        }
+                    } else {
+                        newParamsName = params;
+                    }
+                    return newParamsName
+                }
+            }
+            return option;
+        }
+        var optionx=newline(option,7,'xAxis');
+        var optiony=newline(option_1,7,'xAxis');
+        var optionz=newline(option_2,7,'xAxis');
+        var optionh=newline(option_3,4,'xAxis');
+        datastore01.setOption(optionx, true);
+        datastore01_1.setOption(optiony, true);
+        data1.setOption(optionz, true);
+        usedRoomTop10.setOption(optionh, true);
+        setInterval(function(){//把option.series[0].data[0].value的值使用random()方法获取一个随机数
+            option.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
+            window.onresize = function () {
+                datastore01.resize();
+                datastore01_1.resize();
+                data1.resize();
+                usedRoomTop10.resize();
+            }
+        }, 2000);
+    };
+
 </script>
 <script src="js/myjs.js"></script>
 </body>

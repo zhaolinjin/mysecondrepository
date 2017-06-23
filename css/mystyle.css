@@ -553,3 +553,12 @@ input[type='checkbox']{
 	padding-top:5px!important;
 	padding-bottom:5px!important;
 }
+.usedRoomLenged li{display: inline-block}
+.usedRoomLenged li span:first-child{
+	display:inline-block;
+	width:10px;
+	height:10px;
+}
+.usedRoomLenged li span:last-child{
+	font-size:12px;
+}

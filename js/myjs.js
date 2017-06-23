@@ -43,6 +43,7 @@ $(function(){
         }else if(idName=="Datacenter01"&&liHtml=="监控"){
             $("#Datacenter01_overview").hide();
             $("#Datacenter01_monitor").show();
+            initStorageChart();
         }else if(idName=="Datacenter01"&&liHtml=="概览"){
             $("#Datacenter01_overview").show();
             $("#Datacenter01_monitor").hide();
