@@ -1,0 +1,294 @@
+/* mainnow.base 样式模块 */
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0; font-family:微软雅黑}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;font-size: 12px!important}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
+body{background:#fff;font-family:Arial,'Microsoft YaHei'; }
+a,a:hover{color:#333;}
+
+.pointer{cursor: pointer;}
+.fl{
+    float:left;
+}
+.fr{
+    float:right
+}
+.fnone{float: none!important;}
+.inline{
+  display: inline;
+}
+.va-t{
+  vertical-align: top;
+}
+.absolute-top5{top:5px;}
+.over-auto{overflow: auto!important}
+.over-hidden{overflow: hidden!important}
+.relative{position: relative;}
+.absolute{position:absolute;}
+.middle{vertical-align: middle;}
+.v-bottom{vertical-align: bottom;}
+.border-none{
+  border-radius: 0!important;
+}
+.border-leftnone{
+  border-left: none!important;
+}
+.border-rightnone{
+  border-right: none!important;
+}
+.clearfloat{clear: both} 
+.casfont{ color:#fff; background:#F93; width:100px; margin-top:10px; text-align:center}
+/* 定义keyframe动画，命名为blink */
+@keyframes blink{
+  0%{opacity: 1;}
+  50%{opacity: 1;}
+  50.01%{opacity: 0.5;} /* 注意这里定义50.01%立刻透明度为０，可以设置闪烁效果 */
+  100%{opacity: 0.5;} 
+}
+/* 定义blink类*/
+.blink{
+    animation: blink .75s linear infinite;  
+    /* 其它浏览器兼容性前缀 */
+    -webkit-animation: blink .75s linear infinite;
+    -moz-animation: blink .75s linear infinite;
+    -ms-animation: blink .75s linear infinite;
+    -o-animation: blink .75s linear infinite;
+}
+.r-10{right:10px;}
+
+.txt-center{ text-align:center!important;}
+.txt-left{ text-align:left;}
+.txt-right{ text-align:right;}
+.f0{ font-size:0!important}
+.f12{ font-size:12px!important}
+.f14{ font-size:14px!important}
+.f16{ font-size:16px!important}
+.f18{ font-size:18px!important}
+.f20{ font-size:20px!important}
+.flight{font-weight: lighter!important;}
+.fw{font-weight: bold}
+
+.ml-5{margin-left: 5px;}
+.ml-10{ margin-left:10px}
+.ml-15{ margin-left:15px}
+.ml-20{ margin-left:20px}
+.ml-30{ margin-left:30px}
+.ml-200{ margin-left:200px}
+.ml-205{ margin-left:205px}
+.mt-1{ margin-top:-4px!important}
+.mt-3{ margin-top:3px!important}
+.mt-5{ margin-top:5px!important}
+.mt-8{ margin-top:8px!important}
+.mtre-40{ margin-top:-40px!important}
+.mtre-10{ margin-top:-10px!important}
+.mt-10{ margin-top:10px!important}
+.mt-12{ margin-top:12px!important}
+.mt-15{ margin-top:15px!important}
+.mt-20{ margin-top:20px}
+.mt-30{ margin-top:30px}
+.mt-35{ margin-top:35px}
+.mt-40{ margin-top:40px}
+.mt-90{ margin-top:90px}
+.mb-0{ margin-bottom:0!important}
+.mb-10{ margin-bottom:10px!important}
+.mb-20{ margin-bottom:20px}
+.mb-30{ margin-bottom:30px}
+.mr-5{ margin-right:5px}
+.mr-10{ margin-right:10px}
+.mr-15{ margin-right:15px}
+.mr-20{ margin-right:20px}
+.mr-30{ margin-right:30px}
+.ma-10{ margin:10px}
+.ma-20{ margin:20px}
+.ma-30{ margin:30px}
+.mb-0{margin-bottom:0!important;}
+
+.pl-0{padding-left:0;}
+.pl-5{padding-left:5px!important;}
+.pl-10{ padding-left:10px!important;}
+.pl-20{ padding-left:20px!important;}
+.pl-30{ padding-left:30px!important;}
+.pl-73{ padding-left:73px!important;}
+.pl-100{ padding-left:100px}
+.pl-240{ padding-left:240px}
+
+.pt-0{padding-top: 0!important}
+.pt-5{padding-top: 7px!important}
+.pt-10{ padding-top:10px!important}
+.pt-15{ padding-top:12px!important}
+.pt-20{ padding-top:20px}
+.pt-30{ padding-top:30px}
+.pt-40{ padding-top:40px}
+.pt-60{ padding-top:60px}
+.pt-80{ padding-top:80px}
+.pb-0{ padding-bottom:0!important}
+.pb-5{ padding-bottom:5px!important}
+.pb-8{ padding-bottom:8px!important}
+.pb-10{ padding-bottom:10px!important}
+.pb-20{ padding-bottom:20px!important}
+.pb-25{ padding-bottom:25px!important}
+.pb-30{ padding-bottom:30px!important}
+.pb-32{ padding-bottom:32px!important}
+.pb-34{ padding-bottom:34px!important}
+.pb-45{ padding-bottom:45px!important}
+.pb-54{ padding-bottom:53px!important}
+.pb-55{ padding-bottom:55px!important}
+.pb-57{ padding-bottom:57px!important}
+.pb-65{ padding-bottom:65px!important}
+.pb-60{ padding-bottom:60px!important}
+.pb-70{ padding-bottom:72px!important}
+.pb-80{ padding-bottom:80px!important}
+.pb-125{ padding-bottom:125px!important}
+.pb-48{ padding-bottom:48px!important}
+.pb-28{ padding-bottom:28px!important}
+.pb-118{ padding-bottom:118px!important}
+.pb-140{ padding-bottom:140px!important}
+.pb-177{ padding-bottom:177px!important}
+.pb-187{ padding-bottom:187px!important}
+.pb-210{ padding-bottom:212px!important}
+.pb-224{ padding-bottom:224px!important}
+.pb-260{ padding-bottom:260px!important}
+.pr-0{ padding-right:0px!important;}
+.pr-5{ padding-right:5px!important;}
+.pr-10{ padding-right:10px!important;}
+.pr-20{ padding-right:20px}
+.pr-30{ padding-right:30px!important;}
+.pr-40{ padding-right:40px!important;}
+.pr-60{ padding-right:60px!important;}
+.pr-100{ padding-right:100px!important;}
+.pa-10{ padding:10px}
+.pa-20{ padding:20px}
+.pa-30{ padding:30px}
+.pb-9999{padding-bottom: 9999px}
+.pad-20{padding:20px}
+
+.w-55{width: 55px;}
+.w-65{width: 65px;}
+.w-80{width: 85px;}
+.w-130{width: 130px}
+.w-170{width: 170px!important}
+.w-200{width: 200px}
+.w-210{width: 210px}
+.w-220{width: 220px}
+.w-265{width: 265px!important}
+.w-360{width: 360px!important}
+.w-600{width: 600px!important}
+.w-800{width: 800px!important}
+.h-22{height: 22px!important;}
+.h-25{height: 25px!important;}
+.h-29{height: 29px!important;}
+.h-55{height: 55px;}
+.h-130{height: 130px;}
+.h-200{height: 200px;}
+.h-235{height: 235px;}
+.h-250{height: 250px;}
+.h-285{height: 285px;}
+.h-300{height: 300px;}
+.h-350{height: 350px;}
+.h-500{height: 500px!important;}
+.c-118{
+  color:#118ff5!important;
+}
+.blue-border{
+  border:1px solid #118ff5;
+}
+.gray-border{border: 1px solid #ccc}
+.c-gray{
+  color:#333;
+}
+.c-666{
+  color:#666!important;
+}
+.c-999{
+  color:#999;
+}
+.c-80c{
+  color:#80c26a;
+}
+.c-f39{
+  color:#f39d0a;
+}
+.c-00b{
+  color:#00b7ed;
+}
+.c-1c9{
+  color:#1c9ce5;
+}
+.c-red{
+  color:red;
+}
+.c-6ba{
+  color: #6bafd6;
+}
+.c-339{
+  color:#3398cc!important;
+}
+.c-333{
+  color:#333!important;
+}
+.c-6ea{
+  color:#6eafd7!important;
+}
+.c-009{
+  color:#0091e4!important;
+}
+.c-f89{
+  color:#f89a52!important;
+}
+.c-green{
+  color:green;
+}
+.c-5ac{
+  color:#5ac575;
+}
+.c-44a{
+  color: #44a7f8;
+}
+.c-00b{
+  color: #00b8ee;
+}
+.white-bg{
+  background-color: #fff;
+}
+.c-white{
+  color:#fff!important;
+}
+.c-orange{
+  color:#f8a73c;
+}
+.border-bottom{
+  border-bottom:1px solid #ccc;
+}
+.bg-blue{background-color: #178ef4!important}
+.bg-orange{background-color: #ffaf37!important}
+.bg-33c{
+  background-color: #33cbcc!important;
+  border:0!important;
+  line-height: 22px!important;
+}
+.bg-339{
+  background-color:#3398cc!important;
+}
+.bg-47a{
+  background-color:#47a7fb!important;
+}
+.bg-b7e{
+  background-color:#b7e1f9!important;
+}
+.bg-red{background-color:red;}
+.bg-gray{background-color: #666;}

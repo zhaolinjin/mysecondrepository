@@ -1,0 +1,742 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>资源</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/jquery.marquee.min.css">
+	<link rel="stylesheet" href="css/zTreeStyle.css">
+	<link rel="stylesheet" href="css/sweetalert.css">
+	<link rel="stylesheet" href="css/mystyle.css">
+	<link href="css/iCheck/custom.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+<div class="header">
+	<div class="logoname fl">
+		<span class="f20 fw">TCRC</span>
+		<span class="f14">&nbsp;Operation Center</span>
+	</div>
+	<div class="infoshow fr pr-20">
+		<div class="email fl ml-30 relative">
+			<i class="iconfont icon-iconfontcolor06 c-white"></i>
+			<span class="badge bg-blue">12</span>
+		</div>
+		<div class="ring fl ml-30 relative">
+			<i class="iconfont icon-xiaoxi c-white"></i>
+			<span class="badge bg-orange">5</span>
+		</div>		
+		<div class="user fl ml-30 dropdown pointer relative">
+			<span class="c-white dropdown-toggle" data-toggle="dropdown">用户名 <i class="glyphicon glyphicon-triangle-bottom c-white middle f12"></i></span>
+			<ul class="dropdown-menu">
+        <li data-toggle="modal" data-target="#changeInfor"><a href="##"><span class="glyphicon glyphicon-edit"></span>&nbsp;修改信息</a></li>
+        <li data-toggle="modal" data-target="#changePassword"><a href="##"><span class="icon-key"></span>&nbsp;修改密码</a></li>
+       </li>
+      </ul>
+		</div>
+		<div class="exit fl ml-20">
+			<i class="iconfont icon-signout c-white"></i>
+			<span class="c-white">&nbsp;退出</span>
+		</div>
+	</div>
+</div>
+<div class="nav-bar">
+	<ul class="fl navwidth">
+		<li>
+			<a href="##">
+				<i class="iconfont icon-gailan"></i>
+				<span class="f16">&nbsp;首页</span>
+			</a>
+		</li>
+		<li>
+			<a class="border-leftnone active" href="##">
+				<i class="iconfont icon-ziyuan"></i>
+				<span class="f16">&nbsp;资源</span>
+			</a>
+		</li>
+		<li>
+			<a class="border-leftnone" href="##">
+				<i class="iconfont icon-ziyuanguanli"></i>
+				<span class="f16">&nbsp;设备</span>
+			</a>
+		</li>
+		<li>
+			<a class="border-leftnone" href="##">
+				<i class="iconfont icon-yewufuwuguanli"></i>
+				<span class="f16">&nbsp;业务</span>
+			</a>
+		</li>
+		<li>
+			<a class="border-leftnone" href="##">
+				<i class="iconfont icon-tongjibaobiao"></i>
+				<span class="f16">&nbsp;报表</span>
+			</a>
+		</li>
+		<li>
+			<a class="border-leftnone" href="##">
+				<i class="iconfont icon-xitongguanli"></i>
+				<span class="f16">&nbsp;系统</span>
+			</a>
+		</li>
+	</ul>
+	<div class="search-bar fr pr-20">
+		<div class="input-group mt-12">
+		  <input type="text" class="form-control" placeholder="搜索">
+		  <span class="input-group-addon pointer"><i class="iconfont icon-fangdajing c-white"></i></span>
+		</div>
+	</div>
+</div>
+<div class="contentwrap">
+	<div class="g-bd6">
+	    <div class="g-sd61">
+	       <div class="notice pl-10" style="height: 707px;overflow-x: auto">
+	       		<div id="treeDemo" class="ztree rightClick"></div>
+	       		<div id="rMenu" class="treeRightMenu">
+	            <ul>
+	                <li>添加基础架构</li>
+	                <li>创建虚拟机</li>
+	            </ul>
+						</div>
+						<div id="rMenu1" class="treeRightMenu">
+	            <ul>
+	                <li>重命名</li>
+	                <li>编辑</li>
+	                <li>删除</li>
+	                <li>创建虚拟机</li>
+	            </ul>
+						</div>
+						<div id="rMenu2" class="treeRightMenu">
+	            <ul>
+	                <li>创建虚拟机</li>
+	            </ul>
+						</div>
+	       </div> 
+	    </div>
+	    <div class="g-mn6">
+	        <div class="g-mn6c">
+	            <p class="f14" id="contentTitle">	
+	            	<span>资源管理</span>
+	            	<span>&gt;概览</span>
+	            </p>
+	            <div class="notice" id="resourceMana">
+		            <div class="tabs-list">
+		            	<ul>
+		            		<li class="tabs-active">概览</li>
+		            		<li>监控</li>
+		            		<li>告警</li>
+		            	</ul>
+		            </div>
+		            <div class="pl-20 pr-20">
+			            <div class="row notice2 mt-20 pt-30">
+				            	<div class="col-sm-2 pl-30 txt-center"><img src="images/pic_testvm.png" alt=""></div>
+				            	<div class="col-sm-6 pl-30">
+				            		<div class="ipTitle fw f14">rrrrr(lshfosdfo-sdkfjs-899-sdfsjlf)</div>
+				            		<table class="table table-condensed ipInfor f12">
+				            			<tbody>
+				            				<tr>
+				            					<td>客户机操作系统:</td>
+				            					<td>Other(32-bit)</td>
+				            				</tr>
+				            				<tr>
+				            					<td>兼容性:</td>
+				            					<td>ESXi 5.5及更高版本(虚拟机版本 10)</td>
+				            				</tr>
+				            				<tr>
+				            					<td>托管主体:</td>
+				            					<td>
+				            						<div>OpenStack</div>
+				            						<div class="c-118">详细信息</div>
+				            					</td>
+				            				</tr>
+				            				<tr>
+				            					<td>VMware Tools:</td>
+				            					<td>未运行，未安装</td>
+				            				</tr>
+				            				<tr>
+				            					<td>虚拟机:</td>
+				            					<td>7</td>
+				            				</tr>
+				            				<tr>
+				            					<td>DSN名称:</td>
+				            					<td>已连接</td>
+				            				</tr>
+				            				<tr>
+				            					<td>IP地址:</td>
+				            					<td>2天</td>
+				            				</tr>
+				            				<tr>
+				            					<td>主机:</td>
+				            					<td class="c-118">192.168.100.52</td>
+				            				</tr>
+				            			</tbody>
+				            		</table>
+				            	</div>
+				            	<div class="col-sm-4 pr-30 pl-73">
+				            		<ul class="cluster">
+													<li>
+														<div class="fl"><img src="images/pic_cpu.png" alt=""></div>
+														<div class="fl ml-10">
+															<div>CPU 使用情况</div>
+															<div>0.00HZ</div>
+														</div>													
+													</li>	
+													<li class="mt-30">
+														<div class="fl"><img src="images/pic_ram.png" alt=""></div>
+														<div class="fl ml-10">
+															<div>内存 使用情况</div>
+															<div>0.00HZ</div>
+														</div>
+													</li>
+													<li class="mt-30">
+														<div class="fl"><img src="images/pic_storage.png" alt=""></div>
+														<div class="fl ml-10">
+															<div>存储 使用情况</div>
+															<div>0.00HZ</div>
+														</div>
+													</li>										
+												</ul>
+				            	</div>
+			            </div> 
+			            <div class="notice mt-20 relative pb-25" id="quickset">
+										<div class="notice-title">
+											虚机管理
+										</div>
+										<div class="notice-content">
+											<ul class="quickset fl w-220">
+												<li>
+													<a href="##">
+														<div class="fl">
+															<img src="images/icon_boot.png" alt="">
+														</div>
+														<div class="pitname mt-5 c-80c">开机</div>
+													</a>
+												</li>
+												<li>
+													<a href="##">
+														<div class="fl">
+															<img src="images/icon_Shut_down.png" alt="">
+														</div>
+														<div class="pitname mt-5 c-80c">关机</div>
+													</a>
+												</li>
+												<li>
+													<a href="##">
+														<div class="fl">
+															<img src="images/icon_Reboot.png" alt="">
+														</div>
+														<div class="pitname mt-5 c-80c">重启</div>
+													</a>
+												</li>
+											</ul>
+											<ul class="quickset fl w-220">
+												<li>
+													<a href="##">
+														<div class="fl">
+															<img src="images/icon_open_the_console.png" alt="">
+														</div>
+														<div class="pitname mt-5 c-80c">打开控制台</div>
+													</a>
+												</li>
+												<li>
+													<a href="##">
+														<div class="fl">
+															<img src="images/icon_migrate.png" alt="">
+														</div>
+														<div class="pitname mt-5 c-80c">迁移</div>
+													</a>
+												</li>
+												<li>
+													<a href="##">
+														<div class="fl">
+															<img src="images/icon_hang.png" alt="">
+														</div>
+														<div class="pitname mt-5 c-80c">挂起</div>
+													</a>
+												</li>
+											</ul>
+										</div>
+					        </div>          
+			          </div>  
+	            </div>
+	        </div>
+	    </div>
+	    <div class="g-sd62">
+   			  <div class="notice mt-30 relative pb-70" id="quickset">
+						<div class="notice-title">
+							快速启动
+							<i class="iconfont icon-iconfontshezhi absolute r-10 absolute-top5"></i>
+						</div>
+						<div class="notice-content">
+							<ul class="quickset">
+								<li data-toggle="modal" data-target="#addStack">
+									<a href="##">
+										<div class="fl">
+											<img src="images/icon_Infrastructure.png" alt="">
+										</div>
+										<div class="pitname mt-5 c-80c">添加基础架构</div>
+										<div class="clearfloat"></div>
+									</a>
+								</li>
+								<li data-toggle="modal" data-target="">
+									<a href="##">
+										<div class="fl">
+											<img src="images/icon_virtual_machine1.png" alt="">
+										</div>
+										<div class="pitname mt-5 c-80c">创建虚拟机</div>
+										<div class="clearfloat"></div>
+									</a>
+								</li>
+							</ul>
+						</div>
+	        </div>
+	        <div class="notice mt-20 pb-0">
+						<div class="notice-title relative">
+							任务
+							<i class="iconfont icon-gengduo absolute r-10 absolute-top5"></i>
+						</div>
+						<div class="notice-content pl-20 pr-20">
+							<ul class="taskSystem">
+								<li>
+									<div class="progessInfor">
+										<span class="">crmtest01虚拟机迁移</span>
+										<div class="fr progressNumber c-009">100%</div>
+									</div>
+								  <div class="progress">
+									  <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+									    <span class="sr-only">100% Complete</span>
+									  </div>
+									</div>
+								</li>
+								<li>
+									<div class="progessInfor">
+										<span class="">虚拟机克隆</span>
+										<div class="fr progressNumber c-009">100%</div>
+									</div>
+								  <div class="progress">
+									  <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+									    <span class="sr-only">100% Complete</span>
+									  </div>
+									</div>
+								</li>
+								<li>
+									<div class="progessInfor">
+										<span class="">生成性能分析报告</span>
+										<div class="fr progressNumber c-009">30%</div>
+									</div>
+								  <div class="progress">
+									  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+									    <span class="sr-only">30% Complete</span>
+									  </div>
+									</div>
+								</li>
+							</ul>
+						</div>
+	        </div>
+	        <div class="notice mt-20 pb-0">
+						<div class="notice-title relative">
+							告警
+							<i class="iconfont icon-gengduo absolute r-10 absolute-top5"></i>
+						</div>
+						<div class="notice-content pl-20">
+							<ol class="task pl-20">
+								<li>
+								  创建虚拟机失败
+								</li>
+								<li>
+								  TDS集群ODS读写错误
+								</li>
+								<li>
+								  CiscoN读写错误
+								</li>
+								<li>
+								  LTM1K6端口流量异常
+								</li>
+							</ul>
+						</div>
+	        </div>
+	    </div>
+	</div>
+	<div class="clearfloat"></div>
+</div>
+</div>
+<footer class="bottom">
+		<div class="copy">CopyRight 2017 Trendy Technology Ltd.</div>
+</footer>
+</div>
+<div class="container-fluid">
+    <!-- 模态框（Modal1） -->  
+  <div class="modal fade" id="changeInfor">
+      <div class="modal-dialog">  
+          <div class="modal-content">  
+              <div class="modal-header">  
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">  
+								        ×  
+								  </button>  
+					        <h4 class="modal-title txt-left f16 c-666 fw" id="myModalLabel">  
+					        修改信息  
+					    		</h4>  
+              </div>  
+              <div class="modal-body">  
+                  <form class="form-horizontal pl-20 pr-20">
+									  <div class="form-group">
+									    <label class="col-sm-2 control-label">姓名</label>
+									    <div class="col-sm-10">
+									      <input type="text" class="form-control" placeholder="username">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label class="col-sm-2 control-label">手机</label>
+									    <div class="col-sm-10">
+									      <input type="text" class="form-control" placeholder="123456789">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label class="col-sm-2 control-label">email</label>
+									    <div class="col-sm-10">
+									      <input type="email" class="form-control" placeholder="email">
+									    </div>
+									  </div>
+									</form> 
+              </div> 
+              <div class="modal-footer">  
+                  <button type="button" class="btn btn-primary">确认  
+  								</button>  
+                  <button type="button" class="btn btn-default" data-dismiss="modal">  
+     									取消  
+ 									 </button>  
+              </div>  
+          </div>  
+          <!-- /.modal-content -->  
+      </div>  
+      <!-- /.modal --> 
+  </div>
+  <!-- 模态框（Modal2） -->
+  <div class="modal fade" id="changePassword">
+      <div class="modal-dialog">  
+          <div class="modal-content">  
+              <div class="modal-header">  
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">  
+								        ×  
+								  </button>  
+					        <h4 class="modal-title txt-left f16 c-666 fw" id="myModalLabel">  
+					        修改密码  
+					    		</h4>  
+              </div>  
+              <div class="modal-body">  
+                  <form class="form-horizontal pl-20 pr-20">
+									  <div class="form-group">
+									    <label class="col-sm-3 control-label">原始密码</label>
+									    <div class="col-sm-9">
+									      <input type="password" class="form-control" placeholder="12345">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label class="col-sm-3 control-label">新密码</label>
+									    <div class="col-sm-9">
+									      <input type="password" class="form-control" placeholder="12345">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label class="col-sm-3 control-label">确认密码</label>
+									    <div class="col-sm-9">
+									      <input type="password" class="form-control" placeholder="12345">
+									    </div>
+									  </div>
+									</form> 
+              </div> 
+              <div class="modal-footer">  
+                  <button type="button" class="btn btn-primary">确认  
+  								</button>  
+                  <button type="button" class="btn btn-default" data-dismiss="modal">  
+     									取消  
+ 									 </button>  
+              </div>  
+          </div>  
+          <!-- /.modal-content -->  
+      </div>  
+      <!-- /.modal --> 
+  </div>
+  <!-- 模态框（Modal3） -->
+  <div class="modal fade" id="addStack">
+      <div class="modal-dialog">  
+          <div class="modal-content">  
+              <div class="modal-header">  
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">  
+								        ×  
+								  </button>  
+					        <h4 class="modal-title txt-left f16 c-666 fw" id="myModalLabel">  
+					        基础架构  
+					    		</h4>  
+              </div>  
+              <div class="modal-body">  
+                  <form class="form-horizontal pl-20 pr-20">
+									  <div class="form-group">
+									    <label class="col-sm-4 control-label">名称</label>
+									    <div class="col-sm-8">
+									      <input type="text" class="form-control" placeholder="">
+									    </div>
+									  </div>
+									  <div class="form-group">
+									    <label class="col-sm-4 control-label">类型</label>
+									    <div class="col-sm-8">
+									      <select class="form-control" id="inforchoice">
+									      	<option>Vmware vcenter</option>
+									      	<option>OpenStack</option>
+									      	<option>Citrix Xen</option>
+									      	<option>Fusion Cloud</option>
+									      	<option>H3Cloud</option>
+									      </select>
+									    </div>
+									  </div>
+									  <div class="form-group" id="apibefore">
+									    <label class="col-sm-4 control-label">区</label>
+									    <div class="col-sm-8">
+									      <input type="text" class="form-control" placeholder="">
+									    </div>
+									  </div>								  
+									</form> 
+									<div class="inforShow">
+										<form class="form-horizontal pl-20 pr-20">
+										  <div class="form-group" id="formGroup1">
+										    <label class="col-sm-4 control-label">主机名(IPv4/IPv6地址)</label>
+										    <div class="col-sm-8">
+										      <input type="text" class="form-control" placeholder="" name="inforshow">
+										    </div>
+										  </div>
+										  <div class="form-group">
+										    <label class="col-sm-4 control-label">用户名</label>
+										    <div class="col-sm-8">
+										      <input type="text" class="form-control" placeholder="" name="inforshow">
+										    </div>
+										  </div>
+										  <div class="form-group">
+										    <label class="col-sm-4 control-label">密码</label>
+										    <div class="col-sm-8">
+										      <input type="password" class="form-control" placeholder="" name="inforshow">
+										    </div>
+										  </div>
+										  <div class="form-group">
+										    <label class="col-sm-4 control-label">确认密码</label>
+										    <div class="col-sm-8">
+										      <input type="password" class="form-control" placeholder="" name="inforshow">
+										    </div>
+										  </div>								  
+										</form>
+									</div>
+									<button class="btn btn-primary ml-205">验证</button>
+              </div> 
+              <div class="modal-footer">  
+                  <button type="button" class="btn btn-primary">添加  
+  								</button>  
+                  <button type="button" class="btn btn-default" data-dismiss="modal">  
+     									取消  
+ 									 </button>  
+              </div>  
+          </div>  
+          <!-- /.modal-content -->  
+      </div>  
+      <!-- /.modal --> 
+  </div>
+  <!-- 模态框（Modal4） -->
+  <div class="modal fade" id="rename">
+      <div class="modal-dialog">  
+          <div class="modal-content">  
+              <div class="modal-header">  
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">  
+								        ×  
+								  </button>  
+					        <h4 class="modal-title txt-left f16 c-666 fw" id="myModalLabel">  
+					        重命名  
+					    		</h4>  
+              </div>  
+              <div class="modal-body">  
+                  <form class="form-horizontal pr-20">
+									  <div class="form-group mt-20">
+									    <label class="col-sm-2 control-label">名字</label>
+									    <div class="col-sm-10">
+									      <input type="text" class="form-control" placeholder="" id="nameText">
+									    </div>
+									  </div>
+									</form> 
+              </div> 
+              <div class="modal-footer" id="postname">  
+                  <button type="button" class="btn btn-primary">确定</button>  
+                  <button type="button" class="btn btn-default" data-dismiss="modal">  
+     									取消  
+ 									 </button>  
+              </div>  
+          </div>  
+          <!-- /.modal-content -->  
+      </div>  
+      <!-- /.modal --> 
+  </div>
+</div>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.ztree.core.min.js"></script>
+<script src="js/icheck.min.js"></script>
+<script src="js/sweetalert.min.js"></script>
+<script src="js/jquery.ztree.excheck.min.js"></script>
+<script src="js/myjs.js"></script>
+<script type="text/javascript">
+	$('input[type=checkbox]').iCheck({
+             checkboxClass: 'icheckbox_square-green'
+         });
+        $('input[type=radio]').iCheck({
+             radioClass: 'iradio_square-green'
+     });
+  $('#headTable input[type=checkbox]').on('ifChecked', function(event){
+	   $('input').iCheck('check');
+	});
+   $('#headTable input[type=checkbox]').on('ifUnchecked', function(event){
+		$('input').iCheck('uncheck');
+	});
+     var zTreeObj;
+   // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+   var setting = {    
+            check:{
+                enable:true
+            },
+            data:    {
+                simpleData:{
+                    enable:true
+                }
+            },
+            callback:{
+                onClick:onCheck,
+                onRightClick:zTreeOnRightClick
+            }           
+    };
+   // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+   var zNodes = [
+    {name:"资源管理",open:true, children:[
+      {name:"基础架构",open:true,children:[
+      	{name:"TrandyStack",open:true,children:[
+	      	{name:"Region01"}]},
+      	{name:"OpenStack",open:false,children:[
+	      	{name:"Region01"},{name:"Region02"}]},
+      	{name:"vCenter01",open:true,children:[
+	      	{name:"Datacenter01",open:true,children:[{name:"cluster01",open:true,children:[
+	      		{name:"192.168.0.1"},{name:"testvm"},{name:"socweb01"}]}
+      		]},{name:"NOC-VC"},{name:"TESTvCenter"}
+    		]}, 
+      	{name:"xencenter",open:false,children:[
+	      	{name:"NOC-VC1"},{name:"TESTvCENTER1"}]},
+    	]}, 
+      {name:"存储",open:false,children:[
+      	{name:"服务器"},{name:"宿主机"}]},
+    	{name:"网络",open:false,children:[
+      	{name:"服务器"},{name:"宿主机"}]},
+    	{name:"容器",open:false,children:[
+      	{name:"服务器"},{name:"宿主机"}]},
+  	]}, 
+   ];
+   $(document).ready(function(){
+      zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+   });
+   var nodeName;
+   function zTreeOnRightClick(event, treeId, treeNode) {
+    //alert(treeNode ? treeNode.tId + ", " + treeNode.name : "");
+	    var xdist=event.pageX;
+	    var ydist=event.pageY;
+	    if(treeNode&&treeNode.level==1){
+	    	$("#rMenu").show();
+	    	$("#rMenu").css({"top":ydist-130,"left":xdist-20});
+	    	$("#rMenu1").hide();
+    		$("#rMenu2").hide();
+    			nodeName=treeNode.name;
+	    }else if(treeNode&&treeNode.level==2){
+	    	$("#rMenu1").show();
+    		$("#rMenu1").css({"top":ydist-130,"left":xdist-20});
+    		$("#rMenu").hide();
+    		$("#rMenu2").hide();
+    			nodeName=treeNode.name;
+	    }else if(treeNode&&treeNode.level==3){
+	    	$("#rMenu2").show();
+    		$("#rMenu2").css({"top":ydist-130,"left":xdist-20});
+    		$("#rMenu").hide();
+    		$("#rMenu1").hide();
+    			nodeName=treeNode.name;
+	    }
+		};
+		$("#postname button").click(function(){			
+      var html=$(this).html();
+      if(html=="确定"){
+        var nameValue=$("#nameText").val();
+        $('#rename').modal('hide');       	
+      	updateNodes(nodeName,nameValue);
+      }
+    });   
+		function updateNodes(value,newname)
+    {
+      var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+      //获取节点
+      var nodes = treeObj.getNodesByParam("name",value,null);
+      console.log(nodes)
+      if (nodes.length>0)
+      {
+        for(var i=0;i<nodes.length;i++)
+        {
+          // 更新根节点中第i个节点的名称
+          nodes[i].name = newname;
+          treeObj.updateNode(nodes[i]);
+        }
+      }
+    }
+   function onCheck(e,treeId,treeNode){
+   	var level=treeNode.level;
+   	console.log(level)
+   	if(level==3){
+			var parentNode1=treeNode.getParentNode();
+			var parentNode2=parentNode1.getParentNode();
+			var parentNode3=parentNode2.getParentNode();
+			var parentname=parentNode3.name+"&gt"+parentNode2.name+"&gt"+parentNode1.name+"&gt"+treeNode.name;
+   	}else if(level==2){
+ 			var parentNode1=treeNode.getParentNode();
+			var parentNode2=parentNode1.getParentNode();
+			var parentname=parentNode2.name+"&gt"+parentNode1.name+"&gt"+treeNode.name;
+			if(treeNode.name=="vCenter01"||treeNode.name=="TrandyStack"){
+				$("#resourceMana").hide();
+	   		$("#infrastructure").hide();
+	   		$("#vcenter").show();
+	   		$("#structure").hide();
+	   		$("#quickset").addClass("pb-140");
+			}
+   	}else if(level==1){
+   		var parentNode1=treeNode.getParentNode();
+			var parentname=parentNode1.name+"&gt"+treeNode.name;
+			if(treeNode.name=="基础架构"){
+				$("#resourceMana").hide();
+	   		$("#infrastructure").show();
+	   		$("#vcenter").hide();
+			}
+   	}else if(level==0){
+   		var parentname=treeNode.name;
+   		$("#resourceMana").show();
+   		$("#infrastructure").hide();
+   		$("#vcenter").hide();
+   		$("#structure").show();
+   		$("#quickset").removeClass("pb-140");
+   	}else if(level==4){
+   		var parentNode1=treeNode.getParentNode();
+			var parentNode2=parentNode1.getParentNode();
+			var parentNode3=parentNode2.getParentNode();
+			var parentNode4=parentNode3.getParentNode();
+			var parentname=parentNode4.name+"&gt"+parentNode3.name+"&gt"+parentNode2.name+"&gt"+parentNode1.name+"&gt"+treeNode.name;
+   	}else if(level==5){
+   		var parentNode1=treeNode.getParentNode();
+			var parentNode2=parentNode1.getParentNode();
+			var parentNode3=parentNode2.getParentNode();
+			var parentNode4=parentNode3.getParentNode();
+			var parentNode5=parentNode4.getParentNode();
+			var parentname=parentNode5.name+"&gt"+parentNode4.name+"&gt"+parentNode3.name+"&gt"+parentNode2.name+"&gt"+parentNode1.name+"&gt"+treeNode.name;
+   	}
+   	$("#contentTitle").children("span:first-child").html(parentname);
+	}
+</script>
+</body>
+</html>
