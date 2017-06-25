@@ -47,6 +47,27 @@ $(function(){
         }else if(idName=="Datacenter01"&&liHtml=="概览"){
             $("#Datacenter01_overview").show();
             $("#Datacenter01_monitor").hide();
+        }else if(idName=="cluster01"&&liHtml=="概览"){
+            $("#cluster01_overview").show();
+            $("#cluster01_monitor").hide();
+        }else if(idName=="cluster01"&&liHtml=="监控"){
+            $("#cluster01_overview").hide();
+            $("#cluster01_monitor").show();
+            initClusterChart();
+        }else if(idName=="IP192"&&liHtml=="概览"){
+            $("#IP_overview").show();
+            $("#IP_monitor").hide();
+        }else if(idName=="IP192"&&liHtml=="监控"){
+            $("#IP_overview").hide();
+            $("#IP_monitor").show();
+             initIPChart()
+        }else if(idName=="testvm"&&liHtml=="概览"){
+            $("#testvm_overview").show();
+            $("#testvm_monitor").hide();
+        }else if(idName=="testvm"&&liHtml=="监控"){
+            $("#testvm_overview").hide();
+            $("#testvm_monitor").show();
+            initTestvmChart();
         }
 	})
 	var middleheight=$("#middle-height").outerHeight();
@@ -454,6 +475,19 @@ $(function(){
         }else{
             $("#DELL").hide();
             $("#IBM").show();
+        }
+    });
+    //Datacenter集群和存储器
+    $(".storageStyle").change(function () {
+        var selectVal=$(this).val();
+        if(selectVal=="存储器"){
+            $("#storageChart").show();
+            $("#colony").hide();
+            //initStorageChart();
+        }else{
+            $("#storageChart").hide();
+            $("#colony").show();
+            initColonyChart();
         }
     });
 })

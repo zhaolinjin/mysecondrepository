@@ -137,7 +137,7 @@
                             <li>告警</li>
                         </ul>
                     </div>
-                    <div class="pl-20 pr-20">
+                    <div class="pl-20 pr-20" id="testvm_overview">
                         <div class="row notice2 mt-20 pt-30">
                             <div class="col-sm-2 pl-30 txt-center"><img src="images/pic_testvm.png" alt=""></div>
                             <div class="col-sm-6 pl-30">
@@ -268,6 +268,113 @@
                             </div>
                         </div>
                     </div>
+                    <div class="pl-20 pr-20" id="testvm_monitor" style="display: none">
+                        <div class="echartWrap">
+                            <div class="fr">
+                                <select class="w-80 storageStyle">
+                                    <option value="存储器">主页</option>
+                                </select>
+                                <select class="w-65" id="dataTime">
+                                    <option value="一天">一天</option>
+                                </select>
+                            </div>
+                            <div class="clearfloat"></div>
+                            <div>
+                                <img src="images/testvm.jpg" alt="">
+                                <span>192.168.100.52</span>
+                                <span>(1个正在运行的虚拟机)</span>
+                            </div>
+                            <div class="row mt-10" style="border:1px solid #ccc">
+                                <div class="col-sm-3">
+                                    <div class="h-200" id="testvm_cpu"></div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="h-200" id="testvm_storageMB"></div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="h-200" id="testvm_storageMBps"></div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="h-200" id="testvm_disk"></div>
+                                </div>
+                            </div>
+                            <div class="row mt-20 pt-10" style="border-top:1px dashed #ccc">
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="testvm_cpuPercent"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>使用情况</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="testvm_storagePercent"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>虚拟增长</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="testvm_storageMBpsRate"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>换出速率</span>
+                                        </li>
+                                        <li>
+                                            <span style="background-color:#feb859"></span>
+                                            <span>换入速率</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="testvm_cpuUsed"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>使用情况(MHz)</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="testvm_storagePercentRate"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>使用情况</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="testvm_diskUsed"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>使用情况</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="testvm_website"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>使用情况</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="notice" id="IP192" style="display: none">
                     <div class="tabs-list">
@@ -277,7 +384,7 @@
                             <li>告警</li>
                         </ul>
                     </div>
-                    <div class="pl-20 pr-20">
+                    <div class="pl-20 pr-20" id="IP_overview">
                         <div class="row notice2 mt-20 pt-30">
                             <div class="col-sm-2 pl-30 txt-center"><img src="images/pic_192.168.png" alt=""></div>
                             <div class="col-sm-6">
@@ -399,6 +506,114 @@
                                         </a>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pl-20 pr-20" id="IP_monitor" style="display: none">
+                        <div class="echartWrap">
+                            <div class="fr">
+                                <select class="w-80 storageStyle">
+                                    <option value="存储器">主页</option>
+                                </select>
+                                <select class="w-65" id="dataTime">
+                                    <option value="一天">一天</option>
+                                </select>
+                            </div>
+                            <div class="clearfloat"></div>
+                            <div class="row">
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="cpuPercent"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>使用情况</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="storagePercent"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>虚拟增长</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-6" style="position:relative;">
+                                <div class="h-300" id="storageRate"></div>
+                                <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                    <li>
+                                        <span style="background-color:#7694c6"></span>
+                                        <span>换出速率</span>
+                                    </li>
+                                    <li>
+                                        <span style="background-color:#ffb856"></span>
+                                        <span>换入速率</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6" style="position:relative;">
+                                <div class="h-300" id="disk_msec"></div>
+                                <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                    <li>
+                                        <span style="background-color:#7694c6"></span>
+                                        <span>最长滞后时间</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="disk_num"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>磁盘使用情况</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="cpu_MHz"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>使用情况</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="storage_num"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>使用情况</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="disk_KBps"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>使用情况</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="website_Mbps"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>使用情况</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1162,7 +1377,7 @@
                     </div>
                     <div class="pl-20 pr-20" id="Datacenter01_monitor" style="display: none;">
                         <div class="fr">
-                            <select class="w-80" id="storageStyle">
+                            <select class="w-80 storageStyle">
                                 <option value="存储器">存储器</option>
                                 <option value="集群">集群</option>
                             </select>
@@ -1171,7 +1386,7 @@
                             </select>
                         </div>
                         <div class="clearfloat"></div>
-                        <div id="storageChart">
+                        <div  class=" pb-60" id="storageChart">
                             <div class="row mt-10" style="overflow: hidden">
                                 <div class="fl pl-20 mt-90 fw">空间(GB)</div>
                                 <div class="fl w-200 ml-20">
@@ -1204,6 +1419,68 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="colony" style="display: none">
+                            <div class="row">
+                                <div class="col-sm-6"  style="padding-left:0;padding-right:0">
+                                    <div class="virtualTitle mt-20">
+                                        <img src="images/virtual.jpg" alt="">
+                                        <span>cluster01</span>
+                                        <span>(一个正在运行的虚拟机)</span>
+                                    </div>
+                                    <div class="chartBorder h-200 mt-10">
+                                        <div class="col-sm-6">
+                                            <div class="h-200" id="cluster_cpu"></div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="h-200" id="cluster_storage"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6" style="padding-left:20px;padding-right:0">
+                                    <div class="virtualTitle mt-20">
+                                        <img src="images/virtual.jpg" alt="">
+                                        <span>cluster01</span>
+                                        <span>(一个正在运行的虚拟机)</span>
+                                    </div>
+                                    <div class="chartBorder h-200 mt-10">
+                                        <div class="col-sm-6">
+                                            <div class="h-200" id="cluster_cpu1"></div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="h-200" id="cluster_storage1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-20"  style="border-top:1px dashed #666">
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="cpuTop10"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>datastore01</span>
+                                        </li>
+                                        <li>
+                                            <span style="background-color:#ffcb82"></span>
+                                            <span>datastore01</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6" style="position:relative;">
+                                    <div class="h-300" id="storageTop10"></div>
+                                    <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>datastore01</span>
+                                        </li>
+                                        <li>
+                                            <span style="background-color:#ffcb82"></span>
+                                            <span>datastore01</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="notice" id="cluster01" style="display: none">
@@ -1214,7 +1491,7 @@
                             <li>告警</li>
                         </ul>
                     </div>
-                    <div class="pl-20 pr-20 pb-187">
+                    <div class="pl-20 pr-20 pb-187" id="cluster01_overview">
                         <div class="row notice2 mt-20 pt-30">
                             <div class="col-sm-4 pl-30 pt-60"><span class="fw">1.主机</span></div>
                             <div class="col-sm-4 pr-100 pt-20">
@@ -1325,6 +1602,45 @@
                                             <span class="">已用：195.00MHz</span>
                                             <div class="fr progressNumber">容量：9.58GHz</div>
                                         </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pl-20 pr-20 pb-270" id="cluster01_monitor" style="display: none">
+                        <div class="fr">
+                            <select class="w-80 storageStyle">
+                                <option value="存储器">主页</option>
+                            </select>
+                            <select class="w-65" id="dataTime">
+                                <option value="一天">一天</option>
+                            </select>
+                        </div>
+                        <div class="clearfloat"></div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="h-300" id="cpuUsed"></div>
+                                <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                        <li>
+                                            <span style="background-color:#7694c6"></span>
+                                            <span>datastore01</span>
+                                        </li>
+                                        <li>
+                                            <span style="background-color:#ffcb82"></span>
+                                            <span>datastore01</span>
+                                        </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="h-300" id="storageUsed"></div>
+                                <ul class="usedRoomLenged" style="position: absolute;top:30px;right:10%">
+                                    <li>
+                                        <span style="background-color:#7694c6"></span>
+                                        <span>datastore01</span>
+                                    </li>
+                                    <li>
+                                        <span style="background-color:#ffcb82"></span>
+                                        <span>datastore01</span>
                                     </li>
                                 </ul>
                             </div>
@@ -4040,30 +4356,28 @@
                 }
             },
             grid: {
-                left: '6%',
-                right: '4%',
+                left: '5%',
+                right: '6%',
                 bottom: '3%',
                 containLabel: true
             },
-            xAxis : [
-                {
-                    type : 'category',
-                    boundaryGap: false,
-                    data : ['17-6-11','17-6-11','17-6-11','17-6-12','17-6-12','17-6-12','17-6-11','17-6-13'],
-                    splitLine : {
-                        show:true,
-                        lineStyle: {
-                            color: '#ccc',
-                            type: 'solid',
-                            width: 0
-                        },
-                        axisLabel:{
-                            interval:'auto',
-                        },
-                        nameLocation:'start',
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                splitLine : {
+                    show:false,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
                     },
-                }
-            ],
+                    axisLabel:{
+                        interval:'auto',
+                    },
+                    nameLocation:'end',
+                },
+            },
             yAxis : [
                 {
                     type : 'value',
@@ -4158,7 +4472,7 @@
         var optionx=newline(option,7,'xAxis');
         var optiony=newline(option_1,7,'xAxis');
         var optionz=newline(option_2,7,'xAxis');
-        var optionh=newline(option_3,4,'xAxis');
+        var optionh=newline(option_3,7,'xAxis');
         datastore01.setOption(optionx, true);
         datastore01_1.setOption(optiony, true);
         data1.setOption(optionz, true);
@@ -4173,7 +4487,1365 @@
             }
         }, 2000);
     };
+    function initColonyChart() {
+        var date = [];
+        var data = [Math.random() ];
+        var data1 = [Math.random() * 200];
+        for (var i = 1; i < 20000; i++) {
+            var now = new Date();
+            date.push([now.getFullYear(), now.getMonth() + 1,now.getDate(),now.toLocaleTimeString()].join('-'));
+            data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
 
+        }
+        var cluster_cpu = echarts.init(document.getElementById('cluster_cpu'));
+        var cluster_storage = echarts.init(document.getElementById('cluster_storage'));
+        var cluster_cpu1 = echarts.init(document.getElementById('cluster_cpu1'));
+        var cluster_storage1 = echarts.init(document.getElementById('cluster_storage1'));
+        var cpuTop10 = echarts.init(document.getElementById('cpuTop10'));
+        var storageTop10 = echarts.init(document.getElementById('storageTop10'));
+        var option = {
+            title: {
+                text: 'CPU MHz',
+                left:'30%',
+                padding: 20,
+                textStyle: {
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'lighter'
+                }
+            },
+            grid: {
+                left: '4%',
+                right: '4%',
+                bottom: '14%',
+                containLabel: true,
+            },
+            tooltip: {
+                trigger: 'axis',
+            },
+            barWidth:'65%',
+
+            calculable : true,
+            xAxis: {
+                type: 'category',
+                boundaryGap: true,
+                data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                splitLine : {
+                    show:false,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    },
+                    axisLabel:{
+                        interval:'2',
+                    },
+                    nameLocation:'end',
+                },
+            },
+            yAxis: {
+                type: 'value',
+                min:0,
+                max:5000,
+                interval: 2500,
+                splitLine : {
+                    show:true,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    }
+                },
+            },
+            series: [
+                {
+                    name:'空间',
+                    type:'line',
+                    stack: '总量',
+                    data:[2000, 3200, 1000, 3400, 2900, 2300, 2100],
+                    markLine:{
+                        smooth:true,
+                    },
+                    symbolSize:1,
+                    itemStyle:{
+                        normal:{
+                            color:'#6bbacb',
+                            lineStyle:{
+                                color:'#6bbacb',
+                                width:'1'
+                            }
+                        }
+                    },
+                }
+
+            ]
+        };
+        var option_1 = {
+            title: {
+                text: '内存 MB',
+                left:'30%',
+                padding: 20,
+                textStyle: {
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'lighter'
+                }
+            },
+            grid: {
+                left: '4%',
+                right: '4%',
+                bottom: '14%',
+                containLabel: true,
+            },
+            tooltip: {
+                trigger: 'axis',
+            },
+            barWidth:'65%',
+
+            calculable : true,
+            xAxis: {
+                type: 'category',
+                boundaryGap: true,
+                data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                splitLine : {
+                    show:false,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    },
+                    axisLabel:{
+                        interval:'2',
+                    },
+                    nameLocation:'end',
+                },
+            },
+            yAxis: {
+                type: 'value',
+                min:0,
+                max:5000,
+                interval: 2500,
+                splitLine : {
+                    show:true,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    }
+                },
+            },
+            series: [
+                {
+                    name:'空间',
+                    type:'line',
+                    stack: '总量',
+                    data:[1200, 3200, 1000, 3400, 2900, 2300, 2100],
+                    markLine:{
+                        smooth:true,
+                    },
+                    symbolSize:1,
+                    itemStyle:{
+                        normal:{
+                            color:'#6bbacb',
+                            lineStyle:{
+                                color:'#6bbacb',
+                                width:'1'
+                            }
+                        }
+                    },
+                }
+
+            ]
+        };
+        var option_2 = {
+            title: {
+                text: 'CPU(MHz) TOP10',
+                textStyle:{
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'bold'
+                },
+                padding:20
+            },
+            tooltip : {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            grid: {
+                left: '5%',
+                right: '8%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: date
+            },
+            yAxis: {
+                type: 'value',
+                boundaryGap: [0, '100%']
+            },
+
+            series: [
+                {
+                    name:'模拟数据',
+                    type:'line',
+                    smooth:true,
+                    symbol: 'none',
+                    sampling: 'average',
+                    itemStyle: {
+                        normal: {
+                            color: 'green'
+                        }
+                    },
+                    areaStyle: {
+                        normal: {
+                            color:'green'
+                        }
+                    },
+                    data: data
+                },
+                {
+                    name:'模拟数据',
+                    type:'line',
+                    smooth:true,
+                    symbol: 'none',
+                    sampling: 'average',
+                    itemStyle: {
+                        normal: {
+                            color: 'red'
+                        }
+                    },
+                    areaStyle: {
+                        normal: {
+                            color:'red'
+                        }
+                    },
+                    data: data1
+                },
+            ]
+        };
+        var option_3 = {
+            title: {
+                text: '内存(MB) TOP10',
+                textStyle:{
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'bold'
+                },
+                padding:20
+            },
+            tooltip : {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            grid: {
+                left: '5%',
+                right: '6%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                splitLine : {
+                    show:false,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    },
+                    axisLabel:{
+                        interval:'auto',
+                    },
+                    nameLocation:'end',
+                },
+            },
+            yAxis : [
+                {
+                    type : 'value',
+                    min:0,
+                    max:35,
+                    interval:5
+                }
+            ],
+            series : [
+                {
+                    name:'datastore01',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[1, 1, 1, 1, 1, 1, 1,1],
+                    symbol:'none',
+                    itemStyle:{
+                        normal:{
+                            color:'#7694c6',
+                            lineStyle:{
+                                color:'#7694c6',
+                                width:'0'
+                            }
+                        }
+                    },
+                },
+                {
+                    name:'data1',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[30, 30, 30, 30, 30, 30, 30,30],
+                    symbol:'none',
+                    itemStyle:{
+                        normal:{
+                            color:'#ffcb82',
+                            lineStyle:{
+                                color:'#ffcb82',
+                                width:'0'
+                            }
+                        }
+                    },
+                },
+
+            ]
+        };
+        function newline(option, number, axis){
+            option[axis]['axisLabel']={
+                interval: 'auto',
+                formatter: function(params){
+                    var newParamsName = "";
+                    var paramsNameNumber = params.length;
+                    var provideNumber = number;
+                    var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                    if (paramsNameNumber > provideNumber) {
+                        for (var p = 0; p < rowNumber; p++) {
+                            var tempStr = "";
+                            var start = p * provideNumber;
+                            var end = start + provideNumber;
+                            if (p == rowNumber - 1) {
+                                tempStr = params.substring(start, paramsNameNumber);
+                            } else {
+                                tempStr = params.substring(start, end) + "\n"+ "\n";
+                            }
+                            newParamsName += tempStr;
+                        }
+                    } else {
+                        newParamsName = params;
+                    }
+                    return newParamsName
+                }
+            }
+            return option;
+        }
+        var optionx=newline(option,7,'xAxis');
+        var optiony=newline(option_1,7,'xAxis');
+        var optionz=newline(option_2,9,'xAxis');
+        var optionh=newline(option_3,7,'xAxis');
+        cluster_cpu.setOption(optionx, true);
+        cluster_storage.setOption(optiony, true);
+        cluster_cpu1.setOption(optionx, true);
+        cluster_storage1.setOption(optiony, true);
+        cpuTop10.setOption(optionz, true);
+        storageTop10.setOption(optionh, true);
+        setInterval(function(){//把option.series[0].data[0].value的值使用random()方法获取一个随机数
+            option.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
+            window.onresize = function () {
+                cluster_cpu.resize();
+                cluster_cpu1.resize();
+                cluster_storage.resize();
+                cluster_storage1.resize();
+            }
+        }, 2000);
+    };
+    //cluster01
+    function initClusterChart() {
+        var cpuUsed = echarts.init(document.getElementById('cpuUsed'));
+        var storageUsed = echarts.init(document.getElementById('storageUsed'));
+        var option = {
+            title: {
+                text: 'CPU(MHz)',
+                //left:'10%',
+                padding: 20,
+                textStyle: {
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'bold'
+                }
+            },
+            grid: {
+                left: '4%',
+                right: '8%',
+                bottom: '14%',
+                containLabel: true,
+            },
+            tooltip: {
+                trigger: 'axis',
+            },
+            barWidth:'65%',
+            calculable : true,
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                splitLine : {
+                    show:false,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    },
+                    axisLabel:{
+                        interval:'2',
+                    },
+                    nameLocation:'end',
+                },
+            },
+            yAxis: {
+                type: 'value',
+                min:0,
+                max:8000,
+                interval: 1000,
+                splitLine : {
+                    show:true,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    }
+                },
+            },
+            series: [
+                {
+                    name: '空间',
+                    type: 'line',
+                    stack: '总量',
+                    data: [2000, 2000, 2000, 2000, 2000, 2000, 2000],
+                    markLine: {
+                        smooth: true,
+                    },
+                    symbolSize: 1,
+                    itemStyle: {
+                        normal: {
+                            color: '#6bbacb',
+                            lineStyle: {
+                                color: '#6bbacb',
+                                width: '1'
+                            }
+                        }
+                    }
+                },
+                {
+                    name:'空间',
+                    type:'line',
+                    stack: '总量',
+                    data:[4000, 4000, 4000, 4000, 4000, 4000, 4000],
+                    markLine:{
+                        smooth:true,
+                    },
+                    symbolSize:1,
+                    itemStyle:{
+                        normal:{
+                            color:'#ffca84',
+                            lineStyle:{
+                                color:'#ffca84',
+                                width:'1'
+                            }
+                        }
+                    },
+                }
+
+            ]
+        };
+        var option_1 = {
+            title: {
+                text: '内存(MB)',
+                //left:'10%',
+                padding: 20,
+                textStyle: {
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'bold'
+                }
+            },
+            grid: {
+                left: '4%',
+                right: '8%',
+                bottom: '14%',
+                containLabel: true,
+            },
+            tooltip: {
+                trigger: 'axis',
+            },
+            barWidth:'65%',
+            calculable : true,
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                splitLine : {
+                    show:false,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    },
+                    axisLabel:{
+                        interval:'2',
+                    },
+                    nameLocation:'end',
+                },
+            },
+            yAxis: {
+                type: 'value',
+                min:1500,
+                max:5500,
+                interval: 500,
+                splitLine : {
+                    show:true,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    }
+                },
+            },
+            series: [
+                {
+                    name:'已消耗',
+                    type:'line',
+                    stack: '总量',
+                    data:[1750, 1750, 1750, 1750, 1750, 1750, 1750],
+                    markLine:{
+                        smooth:true,
+                    },
+                    symbolSize:1,
+                    itemStyle:{
+                        normal:{
+                            color:'#ffca84',
+                            lineStyle:{
+                                color:'#ffca84',
+                                width:'1'
+                            }
+                        }
+                    },
+                },
+                {
+                    name:'总计',
+                    type:'line',
+                    stack: '总量',
+                    data:[2000, 2000, 2000, 2000, 2000, 2000, 2000],
+                    markLine:{
+                        smooth:true,
+                    },
+                    symbolSize:1,
+                    itemStyle:{
+                        normal:{
+                            color:'#6bbacb',
+                            lineStyle:{
+                                color:'#6bbacb',
+                                width:'1'
+                            }
+                        }
+                    },
+                }
+
+            ]
+        };
+        function newline(option, number, axis){
+            option[axis]['axisLabel']={
+                interval: 'auto',
+                formatter: function(params){
+                    var newParamsName = "";
+                    var paramsNameNumber = params.length;
+                    var provideNumber = number;
+                    var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                    if (paramsNameNumber > provideNumber) {
+                        for (var p = 0; p < rowNumber; p++) {
+                            var tempStr = "";
+                            var start = p * provideNumber;
+                            var end = start + provideNumber;
+                            if (p == rowNumber - 1) {
+                                tempStr = params.substring(start, paramsNameNumber);
+                            } else {
+                                tempStr = params.substring(start, end) + "\n"+ "\n";
+                            }
+                            newParamsName += tempStr;
+                        }
+                    } else {
+                        newParamsName = params;
+                    }
+                    return newParamsName
+                }
+            }
+            return option;
+        }
+        var optionx=newline(option,7,'xAxis');
+        var optiony=newline(option_1,7,'xAxis');
+        cpuUsed.setOption(optionx, true);
+        storageUsed.setOption(optiony, true);
+        setInterval(function(){//把option.series[0].data[0].value的值使用random()方法获取一个随机数
+            option.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
+            window.onresize = function () {
+                cpuUsed.resize();
+                storageUsed.resize();
+            }
+        }, 2000);
+    };
+    //cluster01Child
+    function initIPChart(){
+        var cpuPercent = echarts.init(document.getElementById('cpuPercent'));
+        var storagePercent = echarts.init(document.getElementById('storagePercent'));
+        var storageRate = echarts.init(document.getElementById('storageRate'));
+        var disk_msec = echarts.init(document.getElementById('disk_msec'));
+        var disk_num = echarts.init(document.getElementById('disk_num'));
+        var cpu_MHz = echarts.init(document.getElementById('cpu_MHz'));
+        var storage_num = echarts.init(document.getElementById('storage_num'));
+        var disk_KBps = echarts.init(document.getElementById('disk_KBps'));
+        var website_Mbps = echarts.init(document.getElementById('website_Mbps'));
+        $.getJSON('../json/cpu', function (data) {
+            var base = -data.reduce(function (min, val) {
+                return Math.floor(Math.min(min, val.l));
+            }, Infinity);
+        function newline(option, number, axis){
+                option[axis]['axisLabel']={
+                    interval: 'auto',
+                    formatter: function(params){
+                        var newParamsName = "";
+                        var paramsNameNumber = params.length;
+                        var provideNumber = number;
+                        var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                        if (paramsNameNumber > provideNumber) {
+                            for (var p = 0; p < rowNumber; p++) {
+                                var tempStr = "";
+                                var start = p * provideNumber;
+                                var end = start + provideNumber;
+                                if (p == rowNumber - 1) {
+                                    tempStr = params.substring(start, paramsNameNumber);
+                                } else {
+                                    tempStr = params.substring(start, end) + "\n"+ "\n";
+                                }
+                                newParamsName += tempStr;
+                            }
+                        } else {
+                            newParamsName = params;
+                        }
+                        return newParamsName
+                    }
+                }
+                return option;
+            }
+        var option = {
+                title: {
+                    text: 'CPU(%)',
+                    textStyle:{
+                        fontSize:'14'
+                    },
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        animation: false,
+                        label: {
+                            backgroundColor: '#ccc',
+                            borderColor: '#aaa',
+                            borderWidth: 1,
+                            shadowBlur: 0,
+                            shadowOffsetX: 0,
+                            shadowOffsetY: 0,
+                            textStyle: {
+                                color: '#222'
+                            }
+                        }
+                    },
+                    formatter: function (params) {
+                        return params[2].name + '<br />' + params[2].value;
+                    }
+                },
+            grid: {
+                left: '4%',
+                right: '8%',
+                bottom: '14%',
+                containLabel: true,
+            },
+                xAxis: {
+                    type: 'category',
+                    data: data.map(function (item) {
+                        return item.date;
+                    }),
+                    axisLabel: {
+                        formatter: function (value, idx) {
+                            var date = new Date(value);
+                            return idx === 0 ? value : [date.getMonth() + 1, date.getDate()].join('-');
+                        }
+                    },
+                    splitLine: {
+                        show: false
+                    },
+                    boundaryGap: false
+                },
+            yAxis: {
+                type: 'value',
+                min:0,
+                max:17.5,
+                interval: 2.5,
+                splitLine : {
+                    show:true,
+                    lineStyle: {
+                        color: '#ccc',
+                        type: 'solid',
+                        width: 1
+                    }
+                },
+            },
+                series: [{
+                    name: 'L',
+                    type: 'line',
+                    data: data.map(function (item) {
+                        return item.l + base;
+                    }),
+                    lineStyle: {
+                        normal: {
+                            opacity: 0
+                        }
+                    },
+                    stack: 'confidence-band',
+                    symbol: 'none'
+                }, {
+                    name: 'U',
+                    type: 'line',
+                    data: data.map(function (item) {
+                        return item.u - item.l;
+                    }),
+                    lineStyle: {
+                        normal: {
+                            opacity: 0
+                        }
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: 'transparent'
+                        }
+                    },
+                    stack: 'confidence-band',
+                    symbol: 'none'
+                }, {
+                    type: 'line',
+                    data: data.map(function (item) {
+                        return item.value + base;
+                    }),
+                    hoverAnimation: false,
+                    symbolSize: 6,
+                    itemStyle: {
+                        normal: {
+                            color: '#4970b5'
+                        }
+                    },
+                    showSymbol: false
+                }]
+            };
+        var option_1 = {
+                title: {
+                    text: '内存(MB)',
+                    textStyle:{
+                        fontSize:'14'
+                    },
+                    left: 'center'
+                },
+            grid: {
+                left: '4%',
+                right: '8%',
+                bottom: '14%',
+                containLabel: true,
+            },
+                tooltip: {
+                    trigger: 'axis',
+                },
+                barWidth:'65%',
+                calculable : true,
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                    splitLine : {
+                        show:false,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        },
+                        axisLabel:{
+                            interval:'2',
+                        },
+                        nameLocation:'end',
+                    },
+                },
+                yAxis: {
+                    type: 'value',
+                    min:0,
+                    max:5,
+                    interval: 0.5,
+                    splitLine : {
+                        show:true,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        }
+                    },
+                },
+                series: [
+                    {
+                        name: '空间',
+                        type: 'line',
+                        stack: '总量',
+                        data: [1, 1, 1, 1, 1, 1, 1],
+                        markLine: {
+                            smooth: true,
+                        },
+                        symbolSize: 1,
+                        itemStyle: {
+                            normal: {
+                                color: '#6bbacb',
+                                lineStyle: {
+                                    color: '#6bbacb',
+                                    width: '1'
+                                }
+                            }
+                        }
+                    },
+                ]
+            };
+        var option_2 = {
+                title: {
+                    text: '内存(MBps)',
+                    textStyle:{
+                        fontSize:'14'
+                    },
+                    left: 'center'
+                },
+                grid: {
+                    left: '4%',
+                    right: '8%',
+                    bottom: '14%',
+                    containLabel: true,
+                },
+                tooltip: {
+                    trigger: 'axis',
+                },
+                barWidth:'65%',
+                calculable : true,
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                    splitLine : {
+                        show:false,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        },
+                        axisLabel:{
+                            interval:'2',
+                        },
+                        nameLocation:'end',
+                    },
+                },
+                yAxis: {
+                    type: 'value',
+                    min:0,
+                    max:5,
+                    interval: 0.5,
+                    splitLine : {
+                        show:true,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        }
+                    },
+                },
+                series: [
+                    {
+                        name:'已消耗',
+                        type:'line',
+                        stack: '总量',
+                        data:[1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5],
+                        markLine:{
+                            smooth:true,
+                        },
+                        symbolSize:1,
+                        itemStyle:{
+                            normal:{
+                                color:'#ffca84',
+                                lineStyle:{
+                                    color:'#ffca84',
+                                    width:'1'
+                                }
+                            }
+                        },
+                    },
+                    {
+                        name:'总计',
+                        type:'line',
+                        stack: '总量',
+                        data:[0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
+                        markLine:{
+                            smooth:true,
+                        },
+                        symbolSize:1,
+                        itemStyle:{
+                            normal:{
+                                color:'#6bbacb',
+                                lineStyle:{
+                                    color:'#6bbacb',
+                                    width:'1'
+                                }
+                            }
+                        },
+                    }
+
+                ]
+            };
+        var optionx=newline(option,7,'xAxis');
+        var optiony=newline(option_1,7,'xAxis');
+        var optionz=newline(option_2,7,'xAxis');
+        cpuPercent.setOption(optionx);
+        storagePercent.setOption(optiony);
+        storageRate.setOption(optionz);
+        disk_msec.setOption(optionx);
+        disk_num.setOption(optiony);
+        cpu_MHz.setOption(optionx);
+        storage_num.setOption(optiony);
+        disk_KBps.setOption(optionx);
+        website_Mbps.setOption(optionx);
+        });
+    }
+    function initTestvmChart(){
+        var testvm_cpu = echarts.init(document.getElementById('testvm_cpu'));
+        var testvm_storageMB = echarts.init(document.getElementById('testvm_storageMB'));
+        var testvm_storageMBps = echarts.init(document.getElementById('testvm_storageMBps'));
+        var testvm_disk = echarts.init(document.getElementById('testvm_disk'));
+        var testvm_cpuPercent = echarts.init(document.getElementById('testvm_cpuPercent'));
+        var testvm_storagePercent = echarts.init(document.getElementById('testvm_storagePercent'));
+        var testvm_storageMBpsRate = echarts.init(document.getElementById('testvm_storageMBpsRate'));
+        var testvm_cpuUsed = echarts.init(document.getElementById('testvm_cpuUsed'));
+        var testvm_storagePercentRate = echarts.init(document.getElementById('testvm_storagePercentRate'));
+        var testvm_diskUsed = echarts.init(document.getElementById('testvm_diskUsed'));
+        var testvm_website = echarts.init(document.getElementById('testvm_website'));
+        $.getJSON('../json/cpu', function (data) {
+            var base = -data.reduce(function (min, val) {
+                return Math.floor(Math.min(min, val.l));
+            }, Infinity);
+            function newline(option, number, axis){
+                option[axis]['axisLabel']={
+                    interval: 'auto',
+                    formatter: function(params){
+                        var newParamsName = "";
+                        var paramsNameNumber = params.length;
+                        var provideNumber = number;
+                        var rowNumber = Math.ceil(paramsNameNumber / provideNumber);
+                        if (paramsNameNumber > provideNumber) {
+                            for (var p = 0; p < rowNumber; p++) {
+                                var tempStr = "";
+                                var start = p * provideNumber;
+                                var end = start + provideNumber;
+                                if (p == rowNumber - 1) {
+                                    tempStr = params.substring(start, paramsNameNumber);
+                                } else {
+                                    tempStr = params.substring(start, end) + "\n"+ "\n";
+                                }
+                                newParamsName += tempStr;
+                            }
+                        } else {
+                            newParamsName = params;
+                        }
+                        return newParamsName
+                    }
+                }
+                return option;
+            }
+            var option = {
+                title: {
+                    text: 'CPU(%)',
+                    textStyle:{
+                        fontSize:'14'
+                    },
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        animation: false,
+                        label: {
+                            backgroundColor: '#ccc',
+                            borderColor: '#aaa',
+                            borderWidth: 1,
+                            shadowBlur: 0,
+                            shadowOffsetX: 0,
+                            shadowOffsetY: 0,
+                            textStyle: {
+                                color: '#222'
+                            }
+                        }
+                    },
+                    formatter: function (params) {
+                        return params[2].name + '<br />' + params[2].value;
+                    }
+                },
+                grid: {
+                    left: '4%',
+                    right: '8%',
+                    bottom: '14%',
+                    containLabel: true,
+                },
+                xAxis: {
+                    type: 'category',
+                    data: data.map(function (item) {
+                        return item.date;
+                    }),
+                    axisLabel: {
+                        formatter: function (value, idx) {
+                            var date = new Date(value);
+                            return idx === 0 ? value : [date.getMonth() + 1, date.getDate()].join('-');
+                        }
+                    },
+                    splitLine: {
+                        show: false
+                    },
+                    boundaryGap: false
+                },
+                yAxis: {
+                    type: 'value',
+                    min:0,
+                    max:17.5,
+                    interval: 2.5,
+                    splitLine : {
+                        show:true,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        }
+                    },
+                },
+                series: [{
+                    name: 'L',
+                    type: 'line',
+                    data: data.map(function (item) {
+                        return item.l + base;
+                    }),
+                    lineStyle: {
+                        normal: {
+                            opacity: 0
+                        }
+                    },
+                    stack: 'confidence-band',
+                    symbol: 'none'
+                }, {
+                    name: 'U',
+                    type: 'line',
+                    data: data.map(function (item) {
+                        return item.u - item.l;
+                    }),
+                    lineStyle: {
+                        normal: {
+                            opacity: 0
+                        }
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: 'transparent'
+                        }
+                    },
+                    stack: 'confidence-band',
+                    symbol: 'none'
+                }, {
+                    type: 'line',
+                    data: data.map(function (item) {
+                        return item.value + base;
+                    }),
+                    hoverAnimation: false,
+                    symbolSize: 6,
+                    itemStyle: {
+                        normal: {
+                            color: '#4970b5'
+                        }
+                    },
+                    showSymbol: false
+                }]
+            };
+            var option_1 = {
+                title: {
+                    text: '内存(MB)',
+                    textStyle:{
+                        fontSize:'14'
+                    },
+                    left: 'center'
+                },
+                grid: {
+                    left: '4%',
+                    right: '8%',
+                    bottom: '14%',
+                    containLabel: true,
+                },
+                tooltip: {
+                    trigger: 'axis',
+                },
+                barWidth:'65%',
+                calculable : true,
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                    splitLine : {
+                        show:false,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        },
+                        axisLabel:{
+                            interval:'2',
+                        },
+                        nameLocation:'end',
+                    },
+                },
+                yAxis: {
+                    type: 'value',
+                    min:0,
+                    max:5,
+                    interval: 0.5,
+                    splitLine : {
+                        show:true,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        }
+                    },
+                },
+                series: [
+                    {
+                        name: '空间',
+                        type: 'line',
+                        stack: '总量',
+                        data: [1, 1, 1, 1, 1, 1, 1],
+                        markLine: {
+                            smooth: true,
+                        },
+                        symbolSize: 1,
+                        itemStyle: {
+                            normal: {
+                                color: '#6bbacb',
+                                lineStyle: {
+                                    color: '#6bbacb',
+                                    width: '1'
+                                }
+                            }
+                        }
+                    },
+                ]
+            };
+            var option_2 = {
+                title: {
+                    text: '内存(MBps)',
+                    textStyle:{
+                        fontSize:'14'
+                    },
+                    left: 'center'
+                },
+                grid: {
+                    left: '4%',
+                    right: '8%',
+                    bottom: '14%',
+                    containLabel: true,
+                },
+                tooltip: {
+                    trigger: 'axis',
+                },
+                barWidth:'65%',
+                calculable : true,
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                    splitLine : {
+                        show:false,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        },
+                        axisLabel:{
+                            interval:'2',
+                        },
+                        nameLocation:'end',
+                    },
+                },
+                yAxis: {
+                    type: 'value',
+                    min:0,
+                    max:5,
+                    interval: 0.5,
+                    splitLine : {
+                        show:true,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        }
+                    },
+                },
+                series: [
+                    {
+                        name:'已消耗',
+                        type:'line',
+                        stack: '总量',
+                        data:[1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5],
+                        markLine:{
+                            smooth:true,
+                        },
+                        symbolSize:1,
+                        itemStyle:{
+                            normal:{
+                                color:'#ffca84',
+                                lineStyle:{
+                                    color:'#ffca84',
+                                    width:'1'
+                                }
+                            }
+                        },
+                    },
+                    {
+                        name:'总计',
+                        type:'line',
+                        stack: '总量',
+                        data:[0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
+                        markLine:{
+                            smooth:true,
+                        },
+                        symbolSize:1,
+                        itemStyle:{
+                            normal:{
+                                color:'#6bbacb',
+                                lineStyle:{
+                                    color:'#6bbacb',
+                                    width:'1'
+                                }
+                            }
+                        },
+                    }
+
+                ]
+            };
+            var option_3 = {
+                title: {
+                    text: 'CPU(%)',
+                    //left:'10%',
+                    padding: 20,
+                    textStyle: {
+                        fontSize: 14,
+                        color: '#333',
+                        fontWeight:'lighter'
+                    }
+                },
+                grid: {
+                    left: '4%',
+                    right: '6%',
+                    bottom: '14%',
+                    containLabel: true,
+                },
+                tooltip: {
+                    trigger: 'axis',
+                },
+                barWidth:'65%',
+
+                calculable : true,
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: ['17-6-11下午2:40','17-5-11下午2:40','17-6-11上午2:40','17-5-11下午2:40','17-6-12下午2:40'],
+                    splitLine : {
+                        show:false,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        },
+                        axisLabel:{
+                            interval:'2',
+                        },
+                        nameLocation:'end',
+                    },
+                },
+                yAxis: {
+                    type: 'value',
+                    min:0,
+                    max:100,
+                    interval: 50,
+                    splitLine : {
+                        show:true,
+                        lineStyle: {
+                            color: '#ccc',
+                            type: 'solid',
+                            width: 1
+                        }
+                    },
+                },
+                series: [
+                    {
+                        name:'空间',
+                        type:'line',
+                        stack: '总量',
+                        data:[20, 32, 10, 34, 90, 23, 21],
+                        markLine:{
+                            smooth:true,
+                        },
+                        symbolSize:1,
+                        itemStyle:{
+                            normal:{
+                                color:'#6bbacb',
+                                lineStyle:{
+                                    color:'#6bbacb',
+                                    width:'1'
+                                }
+                            }
+                        },
+                    }
+
+                ]
+            };
+            var optionx=newline(option,7,'xAxis');
+            var optiony=newline(option_1,7,'xAxis');
+            var optionz=newline(option_2,7,'xAxis');
+            var optionh=newline(option_3,7,'xAxis');
+            testvm_cpu.setOption(optionh);
+            testvm_storageMB.setOption(optionh);
+            testvm_storageMBps.setOption(optionh);
+            testvm_disk.setOption(optionh);
+            testvm_cpuPercent.setOption(optionx);
+            testvm_storagePercent.setOption(optiony);
+            testvm_storageMBpsRate.setOption(optionz);
+            testvm_cpuUsed.setOption(optionx);
+            testvm_storagePercentRate.setOption(optionx);
+            testvm_diskUsed.setOption(optionx);
+            testvm_website.setOption(optionx);
+        });
+    }
 </script>
 <script src="js/myjs.js"></script>
 </body>
