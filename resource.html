@@ -2387,6 +2387,10 @@
             $("#controlChild").hide();
             $("#IP192").show();
             $("#quickset").addClass("pb-140");
+            $("#IP_overview").show();
+            $("#IP_overview").siblings(".tabs-list").children().children("li").removeClass("tabs-active");
+            $("#IP_overview").siblings(".tabs-list").children().children("li:first-child").addClass("tabs-active");
+            $("#IP_monitor").hide();
         }else if(treeNode.name=="testvm"){
             $("#resourceMana").hide();
             $("#Openstack").hide();
@@ -2399,6 +2403,10 @@
             $("#testvm").show();
             $("#IP192").hide();
             $("#quickset").addClass("pb-140");
+            $("#testvm_overview").show();
+            $("#testvm_overview").siblings(".tabs-list").children().children("li").removeClass("tabs-active");
+            $("#testvm_overview").siblings(".tabs-list").children().children("li:first-child").addClass("tabs-active");
+            $("#testvm_monitor").hide();
         }
     }else if(level==4){
         var parentNode1=treeNode.getParentNode();
@@ -2418,6 +2426,10 @@
             $("#testvm").hide();
             $("#IP192").hide();
             $("#quickset").addClass("pb-140");
+            $("#cluster01_overview").show();
+            $("#cluster01_overview").siblings(".tabs-list").children().children("li").removeClass("tabs-active");
+            $("#cluster01_overview").siblings(".tabs-list").children().children("li:first-child").addClass("tabs-active");
+            $("#cluster01_monitor").hide();
         }
     } else if(level==3){
 			var parentNode1=treeNode.getParentNode();
@@ -2436,6 +2448,10 @@
                 $("#testvm").hide();
                 $("#IP192").hide();
                 $("#quickset").addClass("pb-140");
+                $("#Datacenter01_overview").show();
+                $("#Datacenter01_overview").siblings(".tabs-list").children().children("li").removeClass("tabs-active");
+                $("#Datacenter01_overview").siblings(".tabs-list").children().children("li:first-child").addClass("tabs-active");
+                $("#Datacenter01_monitor").hide();
             }
    	}else if(level==2){
  			var parentNode1=treeNode.getParentNode();
@@ -2453,6 +2469,10 @@
                 $("#IP192").hide();
                 $("#controlChild").hide();
                 $("#quickset").addClass("pb-140");
+                $("#gailan").show();
+                $("#gailan").siblings(".tabs-list").children().children("li").removeClass("tabs-active");
+                $("#gailan").siblings(".tabs-list").children().children("li:first-child").addClass("tabs-active");
+                $("#jiankong").hide();
 			};
 			if(treeNode.name=="OpenStack"){
                 $("#resourceMana").hide();
@@ -2500,6 +2520,7 @@
    	$("#contentTitle").children("span:first-child").html(parentname);
 	}
 </script>
+<script type="text/javascript" src="json/cpu"></script>
 <script type="text/javascript">
     //vCenter01
     function initMonitorChart() {
@@ -3267,13 +3288,6 @@
             };
             myChart1.setOption(option1,true);
             myChart2.setOption(option2,true);
-            setInterval(function(){//把option.series[0].data[0].value的值使用random()方法获取一个随机数
-                 option.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
-                 window.onresize = function () {
-                 myChart1.resize();
-                 myChart2.resize();
-                 }
-             }, 2000);
     };
     function initVirtualTop10Chart() {
         var virtualCpu = echarts.init(document.getElementById('virtualCpu'));
@@ -4701,12 +4715,12 @@
                     sampling: 'average',
                     itemStyle: {
                         normal: {
-                            color: 'green'
+                            color: '#4870b6'
                         }
                     },
                     areaStyle: {
                         normal: {
-                            color:'green'
+                            color:'#4870b6'
                         }
                     },
                     data: data
@@ -5112,10 +5126,7 @@
         var storage_num = echarts.init(document.getElementById('storage_num'));
         var disk_KBps = echarts.init(document.getElementById('disk_KBps'));
         var website_Mbps = echarts.init(document.getElementById('website_Mbps'));
-        $.getJSON('../json/cpu', function (data) {
-            var base = -data.reduce(function (min, val) {
-                return Math.floor(Math.min(min, val.l));
-            }, Infinity);
+        var base =1;
         function newline(option, number, axis){
                 option[axis]['axisLabel']={
                     interval: 'auto',
@@ -5213,7 +5224,7 @@
                     name: 'L',
                     type: 'line',
                     data: data.map(function (item) {
-                        return item.l + base;
+                        return item.l;
                     }),
                     lineStyle: {
                         normal: {
@@ -5431,7 +5442,7 @@
         storage_num.setOption(optiony);
         disk_KBps.setOption(optionx);
         website_Mbps.setOption(optionx);
-        });
+
     }
     function initTestvmChart(){
         var testvm_cpu = echarts.init(document.getElementById('testvm_cpu'));
@@ -5445,10 +5456,7 @@
         var testvm_storagePercentRate = echarts.init(document.getElementById('testvm_storagePercentRate'));
         var testvm_diskUsed = echarts.init(document.getElementById('testvm_diskUsed'));
         var testvm_website = echarts.init(document.getElementById('testvm_website'));
-        $.getJSON('../json/cpu', function (data) {
-            var base = -data.reduce(function (min, val) {
-                return Math.floor(Math.min(min, val.l));
-            }, Infinity);
+            var base =1;
             function newline(option, number, axis){
                 option[axis]['axisLabel']={
                     interval: 'auto',
@@ -5844,7 +5852,7 @@
             testvm_storagePercentRate.setOption(optionx);
             testvm_diskUsed.setOption(optionx);
             testvm_website.setOption(optionx);
-        });
+
     }
 </script>
 <script src="js/myjs.js"></script>
