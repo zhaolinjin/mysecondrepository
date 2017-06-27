@@ -43,19 +43,19 @@
 <div class="nav-bar">
 	<ul class="fl navwidth">
 		<li>
-			<a class="active" href="#">
+			<a class="active" href="index.html">
 				<i class="iconfont icon-gailan"></i>
 				<span class="f14">&nbsp;首页</span>
 			</a>
 		</li>
 		<li>
-			<a class="border-leftnone" href="#">
+			<a class="border-leftnone" href="resource.html">
 				<i class="iconfont icon-ziyuan"></i>
 				<span class="f14">&nbsp;资源</span>
 			</a>
 		</li>
 		<li>
-			<a class="border-leftnone" href="##">
+			<a class="border-leftnone" href="equip.html">
 				<i class="iconfont icon-ziyuanguanli"></i>
 				<span class="f14">&nbsp;设备</span>
 			</a>
@@ -73,7 +73,7 @@
 			</a>
 		</li>
 		<li>
-			<a class="border-leftnone" href="##">
+			<a class="border-leftnone" href="admin.html">
 				<i class="iconfont icon-xitongguanli"></i>
 				<span class="f14">&nbsp;系统</span>
 			</a>
@@ -332,165 +332,213 @@
   <div class="container-fluid">
 		 <!-- 模态框（Modal1） -->  
     <div class="modal fade" id="myModalPool" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog w-800 ">  
+        <div class="modal-dialog w-700 ">
             <div class="modal-content">  
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">  
 									        ×  
 									  </button>  
-						        <h4 class="modal-title txt-left" id="myModalLabel">添加服务器</h4>
+						        <h4 class="modal-title txt-left">添加服务器</h4>
                 </div>  
-                <div class="modal-body">  
+                <div class="modal-body" style="height:600px;overflow-y: auto">
                   	<div class="row border-bottom">
-                  		<div class="col-sm-3">
-                  			<span class="f14 c-6ba">配置信息</span>
+                  		<div class="col-sm-2" style="padding:0;padding-top:110px;">
+							<img src="images/icon_configuration.png">
+                  			<span class="f14 c-6ba" style="vertical-align: middle">&nbsp;配置信息</span>
                   		</div>
-                  		<div class="col-sm-6">
-                  			<ul class="infor-mana fl">
-                  				<li>
-                  					<div class="ipt-name fl">管理IP</div>
-                  					<input class="h-22" type="text">
-                  					<span class="c-red">(必填)</span>
-                  				</li>
-                  				<li>
-                  					<div class="ipt-name fl">用户名</div>
-                  					<input class="h-22" type="text">
-                  					<span class="c-red">(必填)</span>
-                  				</li>
-                  				<li>
-                  					<div class="ipt-name fl">密码</div>
-                  					<input class="h-22" type="password">
-                  					<span class="c-red">(必填)</span>
-                  				</li>
-                  			</ul>                  			
-                  			<div class="clearfloat"></div>
-                  			<ul class="infor-set mt-10">
-                  				<li>
-                  					<div class="ipt-name fl">管理IP</div>
-                  					<select class="w-80 h-22">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-                  					<select class="w-80 h-22">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-                  					<button class="btn btn-success h-22 w-80 ">扫描添加</button>
-                  				</li>
-                  				<li>
-                  					<div class="ipt-name fl">管理IP</div>
-                  					<input class="w-80 h-22" type="text">
-                  					<input class="w-80 h-22" type="text">
-                  					<input class="w-80 h-22" type="text">
-                  				</li>
-                  			</ul>
-                  		</div>
-                  	</div>
-                  	<div class="row border-bottom mt-10">
-                  		<div class="col-sm-3">
-                  			<span class="f14 c-6ba">位置信息</span>
-                  		</div>
-                  		<div class="col-sm-6">
-												<ul class="infor-position">
-													<li>
-														<div class="pb-45 w-65 fl">
-															<div class="ipt-name fl">位置</div>
-														</div>
-														<select class="w-130 h-22" name="" id="">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-														<select class="w-130 h-22" name="" id="">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-														<select class="w-130 h-22" name="" id="">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-														<select class="w-130 h-22" name="" id="">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-														<select class="w-130 h-22" name="" id="">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-														<select class="w-130 h-22" name="" id="">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-                  					<div class="clearfloat"></div>
-													</li>
-													<li>
-														<div class="ipt-name fl">设备名称</div>
-														<input class="w-265 h-22" type="text">
-													</li>
-													<li>
-														<div class="ipt-name fl">序列号</div>
-														<input class="w-265 h-22" type="text">
-													</li>
-													<li>
-                  					<div class="ipt-name fl">维保到期</div>
-                  					<select class="w-65 h-22" id="select_year" rel="2017"></select>年 
-													  <select class="w-65 h-22" id="select_month" rel="5"></select>月 
-													  <select class="w-65 h-22" id="select_day" rel="30"></select>日 
-                  				</li>
-                  				<li>
-														<div class="ipt-name fl">资产编号</div>
-														<input class="w-265 h-22" type="text">
-													</li>
-												</ul>
+                  		<div class="col-sm-10">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">管理IP<span class="c-red">*</span></label>
+									<div class="col-sm-10" style="padding-left:0">
+										<input type="text" class="form-control" placeholder="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">用户名<span class="c-red">*</span></label>
+									<div class="col-sm-10" style="padding-left:0">
+										<input type="text" class="form-control" placeholder="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">密码<span class="c-red">*</span></label>
+									<div class="col-sm-10" style="padding-left:0">
+										<input type="text" class="form-control" placeholder="">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">品牌型号</label>
+									<div class="col-sm-3" style="padding-left:0">
+										<select class="form-control">
+											<option value="DELL">DELL</option>
+										</select>
+									</div>
+									<div class="col-sm-5" style="padding-left:0">
+										<select class="form-control">
+											<option value="R730XD">R730XD</option>
+										</select>
+									</div>
+									<div class="col-sm-2" style="padding-left:0">
+										<button class="btn btn-success form-control">扫描验证</button>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">配置</label>
+									<div class="col-sm-3" style="padding-left:0">
+										<input type="text" value="16 Core" class="form-control" placeholder="">
+									</div>
+									<div class="col-sm-3" style="padding-left:0">
+										<input type="text" value="16 Gb" class="form-control" placeholder="">
+									</div>
+									<div class="col-sm-3" style="padding-left:0">
+										<input type="text" value="600 GB" class="form-control" placeholder="">
+									</div>
+								</div>
+							</form>
                   		</div>
                   	</div>
                   	<div class="row border-bottom mt-10">
-                  		<div class="col-sm-3">
-                  			<span class="f14 c-6ba">业务信息</span>
+                  		<div class="col-sm-2" style="padding:0;padding-top:50px;">
+							<img src="images/icon_position.png" alt="">
+                  			<span class="f14 c-6ba" style="vertical-align: middle;">&nbsp;位置信息</span>
                   		</div>
-                  		<div class="col-sm-6">
-												<ul class="infor-position">
-													<li>
-														<div class="pb-45 w-65 fl">
-															<div class="ipt-name fl">用户名</div>
-														</div>													
-														<select class="w-130 h-22" name="" id="">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-														<select class="w-130 h-22" name="" id="">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-														<select class="w-130 h-22" name="" id="">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-														<select class="w-130 h-22" name="" id="">
-                  						<option value="DELL">DELL</option>
-                  						<option value="ADD">ADD</option>
-                  					</select>
-                  					<div class="clearfloat"></div>
-													</li>												
-												</ul>
+						<div class="col-sm-10">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">位置</label>
+									<div class="col-sm-5" style="padding-left:0">
+										<select class="form-control">
+											<option value="DELL">南京江东路DC</option>
+										</select>
+									</div>
+									<div class="col-sm-5" style="padding-left:0">
+										<select class="form-control">
+											<option value="6F机房">6F机房</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label"></label>
+									<div class="col-sm-5" style="padding-left:0">
+										<select class="form-control">
+											<option value="DELL">03列</option>
+										</select>
+									</div>
+									<div class="col-sm-5" style="padding-left:0">
+										<select class="form-control">
+											<option value="6F机房">05柜</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label"></label>
+									<div class="col-sm-5" style="padding-left:0">
+										<select class="form-control">
+											<option value="DELL">12U</option>
+										</select>
+									</div>
+									<div class="col-sm-5" style="padding-left:0">
+										<select class="form-control">
+											<option value="6F机房">14U</option>
+										</select>
+									</div>
+								</div>
+							</form>
+						</div>
+                  	</div>
+                  	<div class="row border-bottom mt-10">
+                  		<div class="col-sm-2"  style="padding:0;padding-top:120px;">
+							<img src="images/icon_assets.png" alt="">
+                  			<span class="f14 c-6ba" style="vertical-align: middle">&nbsp;资产信息</span>
                   		</div>
+						<div class="col-sm-10">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">设备名称</label>
+									<div class="col-sm-10" style="padding-left:0">
+										<input type="text" class="form-control" value="DellR730xd-0009">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">序列号</label>
+									<div class="col-sm-10" style="padding-left:0">
+										<input type="text" class="form-control" value="JNX990432">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">维保日期</label>
+									<div class="col-sm-3" style="padding-left:0">
+										<select class="form-control" id="select_year" rel="2017">
+										</select>
+									</div>
+									<div class="col-sm-3" style="padding-left:0">
+										<select class="form-control" id="select_month" rel="6">
+										</select>
+									</div>
+									<div class="col-sm-3" style="padding-left:0">
+										<select class="form-control" id="select_day" rel="26">
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">资产编号</label>
+									<div class="col-sm-10" style="padding-left:0">
+										<input type="text" class="form-control" value="JSDX-JDL-X86-6F30090-DELLr730xd">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">责任人</label>
+									<div class="col-sm-10" style="padding-left:0">
+										<input type="text" class="form-control" value="王二小">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label">联系方式</label>
+									<div class="col-sm-5" style="padding-left:0">
+										<input type="text" class="form-control" value="18905180000">
+									</div>
+									<div class="col-sm-5" style="padding-left:0">
+										<input type="text" class="form-control" value="wangrx.tcrc@189.cn">
+									</div>
+								</div>
+							</form>
+						</div>
                   	</div>
                   	<div class="row mt-10">
-                  		<div class="col-sm-3">
-                  			<span class="f14 c-6ba">用户信息</span>
-                  		</div>
-                  		<div class="col-sm-6">
-												<ul class="infor-position">
-													<li>
-														<div class="ipt-name fl">资产编号</div>
-														<input class="w-265 h-22" type="text">
-													</li>
-													<li>
-														<div class="ipt-name fl">资产编号</div>
-														<input class="w-130 h-22" type="text">
-														<input class="w-130 h-22" type="text">
-													</li>											
-												</ul>
-                  		</div>
+						<div class="col-sm-2" style="padding:0;padding-top:40px;">
+						<img src="images/icon_business.png" alt="">
+						<span class="f14 c-6ba" style="vertical-align: middle;">&nbsp;业务信息</span>
+					</div>
+					<div class="col-sm-10">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">业务</label>
+								<div class="col-sm-5" style="padding-left:0">
+									<select class="form-control">
+										<option value="NOC">NOC</option>
+									</select>
+								</div>
+								<div class="col-sm-5" style="padding-left:0">
+									<select class="form-control">
+										<option value="SOC">SOC</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label"></label>
+								<div class="col-sm-5" style="padding-left:0">
+									<select class="form-control">
+										<option value="SOC安全门户">SOC安全门户</option>
+									</select>
+								</div>
+								<div class="col-sm-5" style="padding-left:0">
+									<select class="form-control">
+										<option value="WEB服务器">WEB服务器</option>
+									</select>
+								</div>
+							</div>
+						</form>
+					</div>
                   	</div>
                 </div>  
                 <div class="modal-footer">
@@ -561,7 +609,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">  
 								        ×  
 								  </button>  
-					        <h4 class="modal-title txt-left f16 c-666 fw" id="myModalLabel">  
+					        <h4 class="modal-title txt-left f16 c-666 fw">
 					        修改密码  
 					    		</h4>  
               </div>  

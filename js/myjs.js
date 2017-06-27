@@ -43,7 +43,7 @@ $(function(){
         }else if(idName=="Datacenter01"&&liHtml=="监控"){
             $("#Datacenter01_overview").hide();
             $("#Datacenter01_monitor").show();
-            initStorageChart();
+            initColonyChart();
         }else if(idName=="Datacenter01"&&liHtml=="概览"){
             $("#Datacenter01_overview").show();
             $("#Datacenter01_monitor").hide();
@@ -77,13 +77,6 @@ $(function(){
 	},function(){
 		$(this).next(".hoverTitle").hide();
 	});
-	//icheck复选框
-  $('input[type=checkbox]').iCheck({
-        checkboxClass: 'icheckbox_square-green'
-    });
-    $('input[type=radio]').iCheck({
-        radioClass: 'iradio_square-green'
-    });
   $(".delete").click(function(){      
     if(true ==$(".collapse-table input[name='box']").parent().hasClass('checked')){
           function check(){  
@@ -98,7 +91,7 @@ $(function(){
                 closeOnConfirm:false,  
                 closeOnCancel:false  
                 },  
-                function(isConfirm)  
+                function(isConfirm)
                 {  
                     if(isConfirm)  
                     {  
@@ -483,7 +476,7 @@ $(function(){
         if(selectVal=="存储器"){
             $("#storageChart").show();
             $("#colony").hide();
-            //initStorageChart();
+            initStorageChart();
         }else{
             $("#storageChart").hide();
             $("#colony").show();
