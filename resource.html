@@ -872,7 +872,7 @@
 		            		<li>告警</li>
 		            	</ul>
 		            </div>
-		            <div class="pb-34" id="gailan">
+		            <div class="pb-65" id="gailan">
                         <div class="row">
                            <div class="col-sm-8">
                                 <div class="notice1">
@@ -952,31 +952,31 @@
                             </div>
                         </div>
                         <div class="row mt-15">
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" style="padding-right:0">
                                 <div class="notice1">
                                     <div class="notice1-title">
                                         CPU(个)
                                     </div>
-                                    <div class="notice-content" style="position: relative">
-                                        <div style="position: absolute;">
+                                    <div class="notice-content"  style="position: relative">
+                                        <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:75px;border-bottom: 2px  solid #9cd1fd">
                                             <span>超配比：</span>
                                             <span>1.5:1</span>
                                         </div>
-                                        <div class="h-250" id="vcenter01_cpuNum"></div>
+                                        <div class="h-200" id="vcenter01_cpuNum"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" style="padding-right: 0">
                                 <div class="notice1">
                                     <div class="notice1-title">
                                         内存(GB)
                                     </div>
                                     <div class="notice-content" style="position: relative">
-                                        <div style="position: absolute;">
+                                        <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:75px;border-bottom: 2px  solid #9cd1fd">
                                             <span>超配比：</span>
                                             <span>1.5:1</span>
                                         </div>
-                                        <div class="h-250" id="vcenter01_memoryGB"></div>
+                                        <div class="h-200" id="vcenter01_memoryGB"></div>
                                     </div>
                                 </div>
                             </div>
@@ -986,11 +986,11 @@
                                         存储(GB)
                                     </div>
                                     <div class="notice-content" style="position: relative">
-                                        <div style="position: absolute;">
+                                        <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:75px;border-bottom: 2px  solid #9cd1fd">
                                             <span>超配比：</span>
                                             <span>1.5:1</span>
                                         </div>
-                                        <div class="h-250" id="vcenter01_storageGB"></div>
+                                        <div class="h-200" id="vcenter01_storageGB"></div>
                                     </div>
                                 </div>
                             </div>
@@ -5892,7 +5892,7 @@
             grid: {
                 left: '4%',
                 right: '4%',
-                bottom: '14%',
+                top: '4%',
                 containLabel: true
             },
             tooltip : {
@@ -5903,16 +5903,15 @@
             legend: {
                 itemWidth:8,
                 itemHeight:8,
-                padding:0,
+                padding:10,
                 data:[{name:'总量',icon:'bar'},{name:'已分配',icon:'bar'}],
-                bottom:'10',
+                bottom:'40',
                 textStyle: {color: '#333',fontSize:'12'},
                 selected: {
                     // 选中'系列1'
                     '总量': true,
                     // 不选中'系列2'
                     '已分配': true,
-                    '保留': true,
                 },
                 selected:'multiple'
             },
@@ -5983,7 +5982,7 @@
                 {
                     name:'总量',
                     type:'bar',
-                    barGap:'-50%',
+                    barGap:"-95%",
                     markLine:{
                         silent:'false'
                     },
