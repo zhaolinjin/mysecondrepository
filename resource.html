@@ -1208,6 +1208,135 @@
                             </div>
                         </div>
                     </div>
+                    <div class="notice" id="Region01" style="display: none">
+                        <div class="tabs-list">
+                            <ul>
+                                <li class="tabs-active">概览</li>
+                                <li>监控</li>
+                                <li>告警</li>
+                            </ul>
+                        </div>
+                        <div class="pb-65" id="Region01_overview">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="notice1">
+                                        <div class="notice1-title">
+                                            资源使用率
+                                        </div>
+                                        <div class="notice-content" style="padding-top:0">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <div class="h-200" id="Region01_cpupercent"></div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="h-200" id="Region01_memorypercent"></div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div  class="h-200" id="Region01_storagepercent"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4" style="padding-left:0">
+                                    <div class="notice1"  style="padding-bottom: 45px">
+                                        <div class="notice1-title">
+                                            资源
+                                        </div>
+                                        <div class="notice-content pl-15 pr-10 pt-20">
+                                            <table class="table border-bottom table-condensed">
+                                                <thead class="hdalert">
+                                                <tr>
+                                                    <td>统计</td>
+                                                    <td class="relative">
+                                                        <i class="iconfont icon-jinggao-copy"></i>
+                                                        <div class="hoverTitle">告警次数</div>
+                                                    </td>
+                                                    <td class="relative">
+                                                        <i class="iconfont icon-count"></i>
+                                                        <div class="hoverTitle">资源数量</div>
+                                                    </td>
+                                                </tr>
+                                                </thead>
+                                                <tbody class="cloud-cal">
+                                                <tr>
+                                                    <td class="c-118">主机</td>
+                                                    <td class="c-red">3</td>
+                                                    <td>2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="c-118">虚拟机</td>
+                                                    <td class="c-red">3</td>
+                                                    <td>2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="c-118">集群</td>
+                                                    <td class="c-red">3</td>
+                                                    <td>2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="c-118">数据存储</td>
+                                                    <td class="c-red">3</td>
+                                                    <td>2</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="c-118">网络</td>
+                                                    <td class="c-red">3</td>
+                                                    <td>2</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-15">
+                                <div class="col-sm-4" style="padding-right:0">
+                                    <div class="notice1">
+                                        <div class="notice1-title">
+                                            CPU(个)
+                                        </div>
+                                        <div class="notice-content"  style="position: relative">
+                                            <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:90px;border-bottom: 2px  solid #9cd1fd">
+                                                <span>超配比：</span>
+                                                <span>1.5:1</span>
+                                            </div>
+                                            <div class="h-200" id="Region01_cpuNum"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4" style="padding-right: 0">
+                                    <div class="notice1">
+                                        <div class="notice1-title">
+                                            内存(GB)
+                                        </div>
+                                        <div class="notice-content" style="position: relative">
+                                            <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:90px;border-bottom: 2px  solid #9cd1fd">
+                                                <span>超配比：</span>
+                                                <span>1.5:1</span>
+                                            </div>
+                                            <div class="h-200" id="Region01_memoryGB"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="notice1">
+                                        <div class="notice1-title">
+                                            存储(GB)
+                                        </div>
+                                        <div class="notice-content" style="position: relative">
+                                            <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:85px;border-bottom: 2px  solid #9cd1fd">
+                                                <span>超配比：</span>
+                                                <span>1.5:1</span>
+                                            </div>
+                                            <div class="h-200" id="Region01_storageGB"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                     <div class="notice" id="Datacenter01" style="display: none">
                         <div class="tabs-list">
                             <ul>
@@ -1604,6 +1733,152 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="notice" id="VM01" style="display: none">
+                        <div class="tabs-list">
+                            <ul>
+                                <li class="tabs-active">概览</li>
+                                <li>监控</li>
+                                <li>告警</li>
+                            </ul>
+                        </div>
+                        <div class="pb-140" id="VM01_overview">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="notice1">
+                                        <div class="notice1-title">
+                                            资源使用率
+                                        </div>
+                                        <div class="notice-content" style="padding-top:0">
+                                            <div style="height:190px;overflow:hidden">
+                                                <div class="row" style="margin-top:-20px">
+                                                    <div class="col-sm-4" style="position:relative;padding-bottom:10px;">
+                                                        <div class="h-200" id="VM01_cpupercent"></div>
+                                                        <div class="c-1c9 f12" style="position: absolute;bottom:0;left:37%;border-top:1px solid #1c9;">0.02Hz</div>
+                                                    </div>
+                                                    <div class="col-sm-4" style="position:relative;padding-bottom:10px">
+                                                        <div class="h-200" id="VM01_memorypercent"></div>
+                                                        <div class="c-1c9 f12" style="position: absolute;bottom:0;left:37%;border-top:1px solid #1c9;">1.00MB</div>
+                                                    </div>
+                                                    <div class="col-sm-4" style="position:relative;padding-bottom:10px">
+                                                        <div  class="h-200" id="VM01_storagepercent1"></div>
+                                                        <div class="c-1c9 f12" style="position: absolute;bottom:0;left:37%;border-top:1px solid #1c9;">20.70MB</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4" style="padding-left:0">
+                                    <div class="notice1 relative">
+                                        <div class="notice1-title">
+                                            虚机管理
+                                            <i class="iconfont icon-gengduo absolute r-10 absolute-top5" id="moreManaBtn"></i>
+                                        </div>
+                                        <div class="notice-content pl-20 pr-20 pt-20 relative pb-45">
+                                            <ul class="f12 manaBtn">
+                                                <li>
+                                                    <img src="overview/icon_boot.png">
+                                                    <img src="overview/icon_boot_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;开机</span>
+                                                </li>
+                                                <li>
+                                                    <img src="overview/icon_shut_down.png">
+                                                    <img src="overview/icon_shut_down_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;关机</span>
+                                                </li>
+                                                <li>
+                                                    <img src="overview/icon_refresh.png">
+                                                    <img src="overview/icon_refresh_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;重启</span>
+                                                </li>
+                                                <li>
+                                                    <img src="overview/icon_console.png">
+                                                    <img src="overview/icon_console_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;远程控制台</span>
+                                                </li>
+                                            </ul>
+                                            <ul id="testvm_manaBtn">
+                                                <li>
+                                                    <img src="overview/icon_package_migration.png">
+                                                    <img src="overview/icon_package_migration_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;迁移</span>
+                                                </li>
+                                                <li>
+                                                    <img src="overview/icon_hang_cloud_host.png">
+                                                    <img src="overview/icon_hang_cloud_host_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;挂起</span>
+                                                </li>
+                                                <li>
+                                                    <img src="overview/icon_edit.png">
+                                                    <img src="overview/icon_edit_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;编辑</span>
+                                                </li>
+                                                <li>
+                                                    <img src="overview/icon_shut_down_the_operating_system.png">
+                                                    <img src="overview/icon_shut_down_the_operating_system_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;操作系统内关机</span>
+                                                </li>
+                                                <li>
+                                                    <img src="overview/icon_restart_within_the_operating_system.png">
+                                                    <img src="overview/icon_restart_within_the_operating_system_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;操作系统内重启</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pl-15 pr-15 mt-15">
+                                <div class="notice1">
+                                    <div class="notice1-title">
+                                        资源详情
+                                    </div>
+                                    <div class="notice-content pl-15 pr-15 pt-15" style="padding-top:0">
+                                        <div class="ipTitle fw f14">rrrrr(lshfosdfo-sdkfjs-899-sdfsjlf)</div>
+                                        <table class="table table-condensed ipInfor f12">
+                                            <tbody>
+                                            <tr>
+                                                <td>客户机操作系统:</td>
+                                                <td>Other(32-bit)</td>
+                                                <td>状况:</td>
+                                                <td>已打开电源</td>
+                                            </tr>
+                                            <tr>
+                                                <td>兼容性:</td>
+                                                <td>ESXi 5.5及更高版本(虚拟机版本 10)</td>
+                                                <td>IP地址:</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>位置信息:</td>
+                                                <td>
+                                                    <a class="c-1c9" href="##">南京江东路DC-6F机房-03列05柜(12U-14U)</a>
+                                                </td>
+                                                <td>主机:</td>
+                                                <td class="c-1c9">192.168.100.52</td>
+                                            </tr>
+                                            <tr>
+                                                <td>业务信息:</td>
+                                                <td>
+                                                    <a class="c-1c9" href="##">NOC-SOC-SOC安全门户—WEB服务器</a>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>VMware Tools:</td>
+                                                <td>未运行，未安装</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -2256,7 +2531,7 @@
                     {name:"Region01"}]},
                 {name:"OpenStack",open:true,children:[
                     {name:"Region01",open:true,children:[{name:"cluster01",open:true,children:[
-                        {name:"192.168.0.2"},{name:"VM01"},{name:"VM01"}]}
+                        {name:"192.168.0.1"},{name:"VM01"},{name:"VM01"}]}
                     ]},{name:"Region02"}]},
                 {name:"vCenter01",open:false,children:[
                     {name:"Datacenter01",open:false,children:[{name:"cluster01",open:true,children:[
@@ -2352,6 +2627,8 @@
                 $("#IP_overview").siblings(".tabs-list").children().children("li").removeClass("tabs-active");
                 $("#IP_overview").siblings(".tabs-list").children().children("li:first-child").addClass("tabs-active");
                 $("#IP_monitor").hide();
+                $("#Region01").hide();
+                $("#VM01").hide();
             }else if(treeNode.name=="testvm"){
                 $("#resourceMana").hide();
                 $("#Openstack").hide();
@@ -2369,6 +2646,25 @@
                 $("#testvm_overview").siblings(".tabs-list").children().children("li").removeClass("tabs-active");
                 $("#testvm_overview").siblings(".tabs-list").children().children("li:first-child").addClass("tabs-active");
                 $("#testvm_monitor").hide();
+                $("#Region01").hide();
+                $("#VM01").hide();
+            }else if(treeNode.name=="VM01"){
+                $("#resourceMana").hide();
+                $("#Openstack").hide();
+                $("#infrastructure").hide();
+                $("#vcenter").hide();
+                $("#structure").show();
+                $("#Datacenter01").hide();
+                $("#cluster01").hide();
+                $("#controlChild").hide();
+                $("#testvm").hide();
+                $("#VM01").show();
+                initVM01OverviewChart()
+                $("#IP192").hide();
+                $("#quickset").addClass("pb-140");
+                $("#testvm_overview").show();
+                $("#testvm_monitor").hide();
+                $("#Region01").hide();
             }
         }else if(level==4){
             var parentNode1=treeNode.getParentNode();
@@ -2393,6 +2689,8 @@
                 $("#cluster01_overview").siblings(".tabs-list").children().children("li").removeClass("tabs-active");
                 $("#cluster01_overview").siblings(".tabs-list").children().children("li:first-child").addClass("tabs-active");
                 $("#cluster01_monitor").hide();
+                $("#Region01").hide();
+                $("#VM01").hide();
             }
         } else if(level==3){
             var parentNode1=treeNode.getParentNode();
@@ -2416,6 +2714,25 @@
                 $("#Datacenter01_overview").siblings(".tabs-list").children().children("li").removeClass("tabs-active");
                 $("#Datacenter01_overview").siblings(".tabs-list").children().children("li:first-child").addClass("tabs-active");
                 $("#Datacenter01_monitor").hide();
+                $("#VM01").hide();
+            };
+            if(treeNode.name=="Region01"){
+                $("#resourceMana").hide();
+                $("#Openstack").hide();
+                $("#infrastructure").hide();
+                $("#vcenter").hide();
+                $("#structure").hide();
+                $("#Datacenter01").hide();
+                $("#cluster01").hide();
+                $("#controlChild").hide();
+                $("#testvm").hide();
+                $("#IP192").hide();
+                $("#quickset").addClass("pb-140");
+                $("#Datacenter01_overview").hide();
+                $("#Region01").show();
+                initRegion01OverviewChart();
+                $("#Datacenter01_monitor").hide();
+                $("#VM01").hide();
             }
         }else if(level==2){
             var parentNode1=treeNode.getParentNode();
@@ -2438,6 +2755,8 @@
                 $("#gailan").siblings(".tabs-list").children().children("li").removeClass("tabs-active");
                 $("#gailan").siblings(".tabs-list").children().children("li:first-child").addClass("tabs-active");
                 $("#jiankong").hide();
+                $("#Region01").hide();
+                $("#VM01").hide();
             };
             if(treeNode.name=="OpenStack"){
                 $("#resourceMana").hide();
@@ -2452,6 +2771,8 @@
                 $("#IP192").hide();
                 $("#controlChild").hide();
                 $("#quickset").addClass("pb-140");
+                $("#Region01").hide();
+                $("#VM01").hide();
             };
         }else if(level==1){
             var parentNode1=treeNode.getParentNode();
@@ -2468,6 +2789,7 @@
                 $("#IP192").hide();
                 $("#controlChild").hide();
                 $("#quickset").removeClass("pb-140");
+                $("#Region01").hide();
             }
         }else{
             var parentname=treeNode.name;
@@ -2482,6 +2804,8 @@
             $("#IP192").hide();
             $("#controlChild").hide();
             $("#quickset").removeClass("pb-140");
+            $("#Region01").hide();
+            $("#VM01").hide();
         }
         $("#contentTitle").children("span:first-child").html(parentname);
     }
@@ -6784,6 +7108,228 @@
     };
     initOpenStackOverviewChart();
     //Region01
+    function initRegion01OverviewChart(){
+        var option1 = {
+            value:70,//百分比,必填
+            title:'cpu',
+            backgroundColor:null,
+            color:['#4f9ee2','#dcdcdc'],
+            fontSize:16,
+            domEle:document.getElementById("Region01_cpupercent")//必填
+        };
+        var option2 = {
+            value:70,//百分比,必填
+            title:'内存',
+            backgroundColor:null,
+            color:['#4f9ee2','#dcdcdc'],
+            fontSize:16,
+            domEle:document.getElementById("Region01_memorypercent")//必填
+        };
+        var option3 = {
+            value:70,//百分比,必填
+            title:'存储',
+            backgroundColor:null,
+            color:['#4f9ee2','#dcdcdc'],
+            fontSize:16,
+            domEle:document.getElementById("Region01_storagepercent")//必填
+        };
+        var percentPie1 = new PercentPie(option1);
+        var percentPie2 = new PercentPie(option2);
+        var percentPie3 = new PercentPie(option3);
+        percentPie1.init();
+        percentPie2.init();
+        percentPie3.init();
+        var Region01_cpuNum = echarts.init(document.getElementById('Region01_cpuNum'));
+        var Region01_memoryGB = echarts.init(document.getElementById('Region01_memoryGB'));
+        var Region01_storageGB = echarts.init(document.getElementById('Region01_storageGB'));
+        var option = {
+            title: {
+                left:'40%',
+                padding: 20,
+                textStyle: {
+                    fontSize: 14,
+                    color: '#333',
+                    fontWeight:'lighter'
+                }
+            },
+            grid: {
+                left: '4%',
+                right: '4%',
+                top: '4%',
+                containLabel: true
+            },
+            tooltip : {
+                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                    type : 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                itemWidth:8,
+                itemHeight:8,
+                padding:10,
+                data:[{name:'总量',icon:'bar'},{name:'已分配',icon:'bar'}],
+                bottom:'40',
+                textStyle: {color: '#333',fontSize:'12'},
+                selected: {
+                    // 选中'系列1'
+                    '总量': true,
+                    // 不选中'系列2'
+                    '已分配': true,
+                },
+                selected:'multiple'
+            },
+            barWidth:'50%',
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    // offset:'45',
+                    nameGap:'middle',
+                    data : ['1','2'],
+                    nameGap:'1',
+                    //设置轴线的属性
+                    axisLine:{
+                        lineStyle:{
+                            color:'#ccc',
+                            width:1,//这里是为了突出显示加上的
+                        }
+                    },
+                    axisTick:{
+                        show:false,
+                        lineStyle:{
+                            length:'50',
+
+                        }
+                    },
+                    axisLabel:{
+                        show:false,
+
+                    },
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    // offset:'-20',
+                    splitLine:{
+                        show:true  ,
+                        lineStyle:{
+                            color:'#f3f3f3',
+                            width: 1
+                        }
+                    },
+                    axisLine:{
+                        lineStyle:{
+                            color:'#ccc',
+                            width:1,//这里是为了突出显示加上的
+                        }
+                    },
+                    axisTick:{
+                        show:false,
+
+                    },
+                    min:0,
+                    max:140,
+                    interval: 20,
+                    axisLabel: {
+                        formatter: '{value}',
+                        textStyle:{
+                            color:'#333',
+                            fontSize:'12',
+
+                        }
+                    }
+                }
+            ],
+            series : [
+                {
+                    name:'总量',
+                    type:'bar',
+                    barGap:"-95%",
+                    markLine:{
+                        silent:'false'
+                    },
+                    barCategoryGap:'0',
+                    itemStyle: {
+                        normal: {
+                            color: function(params) {
+                                // build a color map as your need.
+                                var colorList = [
+                                    '#3db9db','#1bb899'
+                                ];
+                                return colorList[params.dataIndex]
+                            },
+                            label: {
+                                show: false,//显示柱子上数字显示隐藏
+                                position: 'inside',
+                                formatter:'{c}%',//设置百分比失效
+                                textStyle: {
+                                    color:'#333',
+                                    fontSize:'12'
+                                },
+                                formatter:function(params){
+                                    if(params.value==0){
+                                        return '';
+                                    }else
+                                    {
+                                        return params.value;
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    data:[80, 128],
+                },
+                {
+                    name:'已分配',
+                    type:'bar',
+                    itemStyle: {
+                        normal: {
+                            color:'#1bb899'
+                        }
+                    }
+                },
+            ]
+        };
+        Region01_cpuNum.setOption(option,true);
+        Region01_memoryGB.setOption(option,true);
+        Region01_storageGB.setOption(option,true);
+    };
+    initRegion01OverviewChart();
+    //VM01
+    function initVM01OverviewChart(){
+        var option1 = {
+            value:70,//百分比,必填
+            title:'cpu',
+            backgroundColor:null,
+            color:['#4f9ee2','#dcdcdc'],
+            fontSize:16,
+            domEle:document.getElementById("VM01_cpupercent")//必填
+        };
+        var option2 = {
+            value:70,//百分比,必填
+            title:'内存',
+            backgroundColor:null,
+            color:['#4f9ee2','#dcdcdc'],
+            fontSize:16,
+            domEle:document.getElementById("VM01_memorypercent")//必填
+        };
+        var option3 = {
+            value:70,//百分比,必填
+            title:'存储',
+            backgroundColor:null,
+            color:['#4f9ee2','#dcdcdc'],
+            fontSize:16,
+            domEle:document.getElementById("VM01_storagepercent1")//必填
+        };
+        var percentPie1 = new PercentPie(option1);
+        var percentPie2 = new PercentPie(option2);
+        var percentPie3 = new PercentPie(option3);
+        percentPie1.init();
+        percentPie2.init();
+        percentPie3.init();
+    };
+    initVM01OverviewChart();
 </script>
 <script src="js/myjs.js"></script>
 </body>
