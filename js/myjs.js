@@ -483,6 +483,14 @@ $(function(){
             initColonyChart();
         }
     });
+    //更多虚机管理
+    $("#moreManaBtn").on("click",function () {
+        $("#testvm_manaBtn").toggle();
+    })
+    //虚机管理点击
+    $("#testvm_manaBtn li,.manaBtn li").on("click",function () {
+        $(this).children("")
+    })
 })
 
 

@@ -27,6 +27,12 @@ PercentPie.prototype.init = function(){
                 fontSize: 14,
             }
         },
+        grid: {
+            left: '4%',
+            right: '4%',
+            bottom: '1%',
+            containLabel: true
+        },
         series: [{
             name: '来源',
             type: 'pie',
