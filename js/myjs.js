@@ -221,6 +221,7 @@ $(function(){
     });
     $("#rMenu li,#rMenu1 li,#rMenu2 li,#rMenu3 li,#rMenu4 li").click(function(event){
         if($(this).html()!="添加设备"){
+            event.stopPropagation();
             $(".treeRightMenu").hide();
         };
         var xdist=event.pageX;
@@ -230,21 +231,29 @@ $(function(){
           $('#rename').modal('toggle');
           $('#rename input').attr("value",nodeName);     
         }else if(html=="添加基础架构"){
+            event.stopPropagation();
           $('#addStack').modal('toggle');
         }else if(html=="添加设备"){
+            event.stopPropagation();
           $("#rMenu4").show();
           $("#rMenu4").css({"top":ydist-130,"left":xdist-20});
         }else if(html=="添加机房"){
+            event.stopPropagation();
           $("#addRoom").modal("toggle");
         }else if(html=="添加数据中心"){
+            event.stopPropagation();
           $("#addData").modal("toggle");
         }else if(html=="添加机柜"){
+            event.stopPropagation();
           $("#addCabinets").modal("toggle");
         }else if(html=="X86服务器"){
+            event.stopPropagation();
           $("#addServer").modal("toggle");
         }else if(html=="添加基础架构"){
+            event.stopPropagation();
           $("#addStack").modal("toggle");
         }else if(html=="创建虚拟机"){
+            event.stopPropagation();
             $("#createVirtual").modal("toggle");
         }
     });
@@ -486,10 +495,23 @@ $(function(){
     //更多虚机管理
     $("#moreManaBtn").on("click",function () {
         $("#testvm_manaBtn").toggle();
+    });
+    $("#moreManaBtn1").on("click",function () {
+        $("#testvm_manaBtn1").toggle();
     })
     //虚机管理点击
     $("#testvm_manaBtn li,.manaBtn li").on("click",function () {
         $(this).children("")
+    })
+    //模态框弹窗必须取消或者x掉才能消失
+    $(".modal").modal({
+      backdrop:'static',
+       keyboard: false,
+       show:false
+    })
+    //隐藏右键弹窗
+    $(document).on("click",function () {
+        $(".treeRightMenu").hide();
     })
 })
 

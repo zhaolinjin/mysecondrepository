@@ -89,9 +89,9 @@
                 </a>
             </li>
         </ul>
-        <div class="search-bar fr pr-20">
-            <div class="input-group mt-12">
-                <input type="text" class="form-control" placeholder="搜索">
+        <div class="search-bar fr pr-20 mt-5">
+            <div class="input-group">
+                <input type="text" style="height:30px;padding:5px 10px;" class="form-control" placeholder="搜索">
                 <span class="input-group-addon pointer"><i class="iconfont icon-fangdajing c-white"></i></span>
             </div>
         </div>
@@ -99,7 +99,7 @@
     <div class="contentwrap">
         <div class="g-bd6">
             <div class="g-sd61">
-                <div class="notice pl-10" style="height: 707px;overflow-x: auto">
+                <div class="notice pl-10" style="height:100%;overflow-x: auto">
                     <div id="treeDemo" class="ztree rightClick"></div>
                     <div id="rMenu" class="treeRightMenu">
                         <ul>
@@ -118,6 +118,99 @@
                     <div id="rMenu2" class="treeRightMenu">
                         <ul>
                             <li>创建虚拟机</li>
+                        </ul>
+                    </div>
+                    <div id="rMenuVirtualMana" class="treeRightMenu">
+                        <ul>
+                            <li>
+                                <img src="overview/icon_boot.png">
+                                <img src="overview/icon_boot_not_clickable.png" style="display:none">
+                                <span>&nbsp;开机</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_shut_down.png">
+                                <img src="overview/icon_shut_down_not_clickable.png" style="display:none">
+                                <span>&nbsp;关机</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_refresh.png">
+                                <img src="overview/icon_refresh_not_clickable.png" style="display:none">
+                                <span>&nbsp;重启</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_console.png">
+                                <img src="overview/icon_console_not_clickable.png" style="display:none">
+                                <span>&nbsp;远程控制台</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_package_migration.png">
+                                <img src="overview/icon_package_migration_not_clickable.png" style="display:none">
+                                <span>&nbsp;迁移</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_hang_cloud_host.png">
+                                <img src="overview/icon_hang_cloud_host_not_clickable.png" style="display:none">
+                                <span>&nbsp;挂起</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_edit.png">
+                                <img src="overview/icon_edit_not_clickable.png" style="display:none">
+                                <span>&nbsp;编辑</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_shut_down_the_operating_system.png">
+                                <img src="overview/icon_shut_down_the_operating_system_not_clickable.png" style="display:none">
+                                <span>&nbsp;操作系统内关机</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_restart_within_the_operating_system.png">
+                                <img src="overview/icon_restart_within_the_operating_system_not_clickable.png" style="display:none">
+                                <span>&nbsp;操作系统内重启</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="rMenuVirtualMana_testvm" class="treeRightMenu">
+                        <ul>
+                            <li>
+                                <img src="overview/icon_boot.png">
+                                <img src="overview/icon_boot_not_clickable.png" style="display:none">
+                                <span>&nbsp;开机</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_shut_down.png">
+                                <img src="overview/icon_shut_down_not_clickable.png" style="display:none">
+                                <span>&nbsp;关机</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_refresh.png">
+                                <img src="overview/icon_refresh_not_clickable.png" style="display:none">
+                                <span>&nbsp;重启</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_console.png">
+                                <img src="overview/icon_console_not_clickable.png" style="display:none">
+                                <span>&nbsp;远程控制台</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_forced_restart.png">
+                                <img src="overview/icon_forced_restart_not_clickable.png" style="display:none">
+                                <span>&nbsp;强制重启</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_hang_cloud_host.png">
+                                <img src="overview/icon_hang_cloud_host_not_clickable.png" style="display:none">
+                                <span>&nbsp;挂起</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_edit.png">
+                                <img src="overview/icon_edit_not_clickable.png" style="display:none">
+                                <span>&nbsp;编辑</span>
+                            </li>
+                            <li>
+                                <img src="overview/icon_stop.png">
+                                <img src="overview/icon_stop_not_clickable.png" style="display:none">
+                                <span>&nbsp;暂停</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -256,7 +349,7 @@
                                             <tr>
                                                 <td>业务信息:</td>
                                                 <td>
-                                                    <a class="c-1c9" href="##">NOC-SOC-SOC安全门户—WEB服务器</a>
+                                                    <a class="c-1c9" href="##">NOC-SOC-SOC安全门户-WEB服务器</a>
                                                 </td>
                                                 <td></td>
                                                 <td></td>
@@ -416,7 +509,7 @@
                                         <div class="notice1-title">
                                             资源
                                         </div>
-                                        <div class="notice-content pl-5 pr-5 pt-20">
+                                        <div class="notice-content pl-5 pt-20">
                                             <div class="ipTitle fw f14">192.168.100.52</div>
                                             <table class="table table-condensed ipInfor f12 c-666">
                                                 <tbody>
@@ -461,7 +554,7 @@
                                             CPU(个)
                                         </div>
                                         <div class="notice-content"  style="position: relative">
-                                            <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:90px;border-bottom: 2px  solid #9cd1fd">
+                                            <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:35%;border-bottom: 2px  solid #9cd1fd">
                                                 <span>超配比：</span>
                                                 <span>1.5:1</span>
                                             </div>
@@ -475,7 +568,7 @@
                                             内存(GB)
                                         </div>
                                         <div class="notice-content" style="position: relative">
-                                            <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:90px;border-bottom: 2px  solid #9cd1fd">
+                                            <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:35%;border-bottom: 2px  solid #9cd1fd">
                                                 <span>超配比：</span>
                                                 <span>1.5:1</span>
                                             </div>
@@ -489,7 +582,7 @@
                                             存储(GB)
                                         </div>
                                         <div class="notice-content" style="position: relative">
-                                            <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:85px;border-bottom: 2px  solid #9cd1fd">
+                                            <div class="f12" style="position: absolute;z-index:999;bottom:20px;left:35%;border-bottom: 2px  solid #9cd1fd">
                                                 <span>超配比：</span>
                                                 <span>1.5:1</span>
                                             </div>
@@ -643,7 +736,7 @@
                                 <li>告警</li>
                             </ul>
                         </div>
-                        <div class="pl-20 pr-20 pb-224">
+                        <div class="pl-20 pr-20">
                             <div class="row notice2 mt-20 pt-30">
                                 <div class="col-sm-4 pl-30 pt-60"><span class="fw">1.Stacks</span></div>
                                 <div class="col-sm-4 pr-100 pt-20">
@@ -1742,7 +1835,7 @@
                                 <li>告警</li>
                             </ul>
                         </div>
-                        <div class="pb-140" id="VM01_overview">
+                        <div class="pb-160" id="VM01_overview">
                             <div class="row">
                                 <div class="col-sm-8">
                                     <div class="notice1">
@@ -1773,7 +1866,7 @@
                                     <div class="notice1 relative">
                                         <div class="notice1-title">
                                             虚机管理
-                                            <i class="iconfont icon-gengduo absolute r-10 absolute-top5" id="moreManaBtn"></i>
+                                            <i class="iconfont icon-gengduo absolute r-10 absolute-top5" id="moreManaBtn1"></i>
                                         </div>
                                         <div class="notice-content pl-20 pr-20 pt-20 relative pb-45">
                                             <ul class="f12 manaBtn">
@@ -1798,11 +1891,11 @@
                                                     <span>&nbsp;远程控制台</span>
                                                 </li>
                                             </ul>
-                                            <ul id="testvm_manaBtn">
+                                            <ul id="testvm_manaBtn1">
                                                 <li>
-                                                    <img src="overview/icon_package_migration.png">
-                                                    <img src="overview/icon_package_migration_not_clickable.png" style="display:none">
-                                                    <span>&nbsp;迁移</span>
+                                                    <img src="overview/icon_forced_restart.png">
+                                                    <img src="overview/icon_forced_restart_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;强制重启</span>
                                                 </li>
                                                 <li>
                                                     <img src="overview/icon_hang_cloud_host.png">
@@ -1815,14 +1908,9 @@
                                                     <span>&nbsp;编辑</span>
                                                 </li>
                                                 <li>
-                                                    <img src="overview/icon_shut_down_the_operating_system.png">
-                                                    <img src="overview/icon_shut_down_the_operating_system_not_clickable.png" style="display:none">
-                                                    <span>&nbsp;操作系统内关机</span>
-                                                </li>
-                                                <li>
-                                                    <img src="overview/icon_restart_within_the_operating_system.png">
-                                                    <img src="overview/icon_restart_within_the_operating_system_not_clickable.png" style="display:none">
-                                                    <span>&nbsp;操作系统内重启</span>
+                                                    <img src="overview/icon_stop.png">
+                                                    <img src="overview/icon_stop_not_clickable.png" style="display:none">
+                                                    <span>&nbsp;暂停</span>
                                                 </li>
                                             </ul>
                                         </div>
@@ -1845,30 +1933,24 @@
                                                 <td>已打开电源</td>
                                             </tr>
                                             <tr>
-                                                <td>兼容性:</td>
-                                                <td>ESXi 5.5及更高版本(虚拟机版本 10)</td>
+                                                <td>位置信息:</td>
+                                                <td>
+                                                    <a class="c-1c9" href="##">南京江东路DC-6F机房-03列05柜(12U-14U)</a>
+                                                </td>
                                                 <td>IP地址:</td>
                                                 <td></td>
                                             </tr>
                                             <tr>
-                                                <td>位置信息:</td>
+                                                <td>业务信息:</td>
                                                 <td>
-                                                    <a class="c-1c9" href="##">南京江东路DC-6F机房-03列05柜(12U-14U)</a>
+                                                    <a class="c-1c9" href="##">NOC-SOC-SOC安全门户-WEB服务器</a>
                                                 </td>
                                                 <td>主机:</td>
                                                 <td class="c-1c9">192.168.100.52</td>
                                             </tr>
                                             <tr>
-                                                <td>业务信息:</td>
-                                                <td>
-                                                    <a class="c-1c9" href="##">NOC-SOC-SOC安全门户—WEB服务器</a>
-                                                </td>
+                                                <td>DNS名称:</td>
                                                 <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td>VMware Tools:</td>
-                                                <td>未运行，未安装</td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
@@ -1883,7 +1965,7 @@
                 </div>
             </div>
             <div class="g-sd62">
-                <div class="notice mt-30 relative pb-70" id="quickset">
+                <div class="notice mt-30 relative" id="quickset">
                     <div class="notice-title">
                         快速启动
                         <i class="iconfont icon-iconfontshezhi absolute r-10 absolute-top5"></i>
@@ -1917,11 +1999,11 @@
                         <i class="iconfont icon-gengduo absolute r-10 absolute-top5"></i>
                     </div>
                     <div class="notice-content pl-20 pr-20">
-                        <ul class="taskSystem">
+                        <ul class="taskSystem f12">
                             <li>
                                 <div class="progessInfor">
-                                    <span class="">crmtest01虚拟机迁移</span>
-                                    <div class="fr progressNumber c-009">100%</div>
+                                    <span class="f12">crmtest01虚拟机迁移</span>
+                                    <div class="fr progressNumber c-009 f12">100%</div>
                                 </div>
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
@@ -2523,9 +2605,10 @@
             onRightClick:zTreeOnRightClick
         }
     };
+
     // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
     var zNodes = [
-        {name:"资源管理",open:true, children:[
+        {name:"资源管理",checked:true,open:true, children:[
             {name:"基础架构",open:true,children:[
                 {name:"TrandyStack",open:true,children:[
                     {name:"Region01"}]},
@@ -2551,6 +2634,11 @@
     ];
     $(document).ready(function(){
         zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
+        var nodes = treeObj.getNodesByParam("name","资源管理");
+        if (nodes.length>0) {
+            treeObj.selectNode(nodes[0]);
+        }
     });
     var nodeName;
     function zTreeOnRightClick(event, treeId, treeNode) {
@@ -2562,19 +2650,39 @@
             $("#rMenu").css({"top":ydist-130,"left":xdist-20});
             $("#rMenu1").hide();
             $("#rMenu2").hide();
+            $("#rMenuVirtualMana").hide();
+            $("#rMenuVirtualMana_testvm").hide();
             nodeName=treeNode.name;
         }else if(treeNode&&treeNode.level==2){
             $("#rMenu1").show();
             $("#rMenu1").css({"top":ydist-130,"left":xdist-20});
             $("#rMenu").hide();
             $("#rMenu2").hide();
+            $("#rMenuVirtualMana").hide();
+            $("#rMenuVirtualMana_testvm").hide();
             nodeName=treeNode.name;
         }else if(treeNode&&treeNode.level==3){
             $("#rMenu2").show();
             $("#rMenu2").css({"top":ydist-130,"left":xdist-20});
             $("#rMenu").hide();
             $("#rMenu1").hide();
+            $("#rMenuVirtualMana").hide();
+            $("#rMenuVirtualMana_testvm").hide();
             nodeName=treeNode.name;
+        }else if(treeNode&&treeNode.level==5&&treeNode.name=="VM01"){
+            $("#rMenuVirtualMana").show();
+            $("#rMenuVirtualMana").css({"top":ydist-130,"left":xdist-20});
+            $("#rMenu").hide();
+            $("#rMenu1").hide();
+            $("#rMenu2").hide();
+            $("#rMenuVirtualMana_testvm").hide();
+        }else if(treeNode&&treeNode.level==5&&treeNode.name=="testvm"){
+            $("#rMenuVirtualMana_testvm").show();
+            $("#rMenuVirtualMana_testvm").css({"top":ydist-130,"left":xdist-20});
+            $("#rMenu").hide();
+            $("#rMenu1").hide();
+            $("#rMenu2").hide();
+            $("#rMenuVirtualMana").hide();
         }
     };
     $("#postname button").click(function(){
@@ -2661,7 +2769,7 @@
                 $("#VM01").show();
                 initVM01OverviewChart()
                 $("#IP192").hide();
-                $("#quickset").addClass("pb-140");
+                $("#quickset").removeClass("pb-140");
                 $("#testvm_overview").show();
                 $("#testvm_monitor").hide();
                 $("#Region01").hide();
@@ -6132,7 +6240,7 @@
     function initVcenterOverviewChart(){
         var option1 = {
             value:70,//百分比,必填
-            title:'cpu',
+            title:'CPU',
             backgroundColor:null,
             color:['#4f9ee2','#dcdcdc'],
             fontSize:16,
@@ -6281,8 +6389,8 @@
                                 return colorList[params.dataIndex]
                             },
                             label: {
-                                show: false,//显示柱子上数字显示隐藏
-                                position: 'inside',
+                                show: true,//显示柱子上数字显示隐藏
+                                position: 'top',
                                 formatter:'{c}%',//设置百分比失效
                                 textStyle: {
                                     color:'#333',
@@ -6321,7 +6429,7 @@
     function initDatacenterOverviewChart(){
         var option1 = {
             value:70,//百分比,必填
-            title:'cpu',
+            title:'CPU',
             backgroundColor:null,
             color:['#4f9ee2','#dcdcdc'],
             fontSize:16,
@@ -6470,8 +6578,8 @@
                                 return colorList[params.dataIndex]
                             },
                             label: {
-                                show: false,//显示柱子上数字显示隐藏
-                                position: 'inside',
+                                show: true,//显示柱子上数字显示隐藏
+                                position: 'top',
                                 formatter:'{c}%',//设置百分比失效
                                 textStyle: {
                                     color:'#333',
@@ -6510,7 +6618,7 @@
     function initclusterOverviewChart(){
         var option1 = {
             value:70,//百分比,必填
-            title:'cpu',
+            title:'CPU',
             backgroundColor:null,
             color:['#4f9ee2','#dcdcdc'],
             fontSize:16,
@@ -6659,8 +6767,8 @@
                                 return colorList[params.dataIndex]
                             },
                             label: {
-                                show: false,//显示柱子上数字显示隐藏
-                                position: 'inside',
+                                show: true,//显示柱子上数字显示隐藏
+                                position: 'top',
                                 formatter:'{c}%',//设置百分比失效
                                 textStyle: {
                                     color:'#333',
@@ -6699,7 +6807,7 @@
     function initIP192OverviewChart(){
         var option1 = {
             value:70,//百分比,必填
-            title:'cpu',
+            title:'CPU',
             backgroundColor:null,
             color:['#4f9ee2','#dcdcdc'],
             fontSize:16,
@@ -6848,8 +6956,8 @@
                                 return colorList[params.dataIndex]
                             },
                             label: {
-                                show: false,//显示柱子上数字显示隐藏
-                                position: 'inside',
+                                show: true,//显示柱子上数字显示隐藏
+                                position: 'top',
                                 formatter:'{c}%',//设置百分比失效
                                 textStyle: {
                                     color:'#333',
@@ -6888,7 +6996,7 @@
     function initTestvmOverviewChart(){
         var option1 = {
             value:70,//百分比,必填
-            title:'cpu',
+            title:'CPU',
             backgroundColor:null,
             color:['#4f9ee2','#dcdcdc'],
             fontSize:16,
@@ -6922,7 +7030,7 @@
     function initOpenStackOverviewChart(){
         var option1 = {
             value:70,//百分比,必填
-            title:'cpu',
+            title:'CPU',
             backgroundColor:null,
             color:['#4f9ee2','#dcdcdc'],
             fontSize:16,
@@ -7071,8 +7179,8 @@
                                 return colorList[params.dataIndex]
                             },
                             label: {
-                                show: false,//显示柱子上数字显示隐藏
-                                position: 'inside',
+                                show: true,//显示柱子上数字显示隐藏
+                                position: 'top',
                                 formatter:'{c}%',//设置百分比失效
                                 textStyle: {
                                     color:'#333',
@@ -7111,7 +7219,7 @@
     function initRegion01OverviewChart(){
         var option1 = {
             value:70,//百分比,必填
-            title:'cpu',
+            title:'CPU',
             backgroundColor:null,
             color:['#4f9ee2','#dcdcdc'],
             fontSize:16,
@@ -7260,8 +7368,8 @@
                                 return colorList[params.dataIndex]
                             },
                             label: {
-                                show: false,//显示柱子上数字显示隐藏
-                                position: 'inside',
+                                show: true,//显示柱子上数字显示隐藏
+                                position: 'top',
                                 formatter:'{c}%',//设置百分比失效
                                 textStyle: {
                                     color:'#333',
@@ -7300,7 +7408,7 @@
     function initVM01OverviewChart(){
         var option1 = {
             value:70,//百分比,必填
-            title:'cpu',
+            title:'CPU',
             backgroundColor:null,
             color:['#4f9ee2','#dcdcdc'],
             fontSize:16,

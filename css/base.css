@@ -118,7 +118,7 @@ a,a:hover{color:#333;}
 .ma-30{ margin:30px}
 .mb-0{margin-bottom:0!important;}
 
-.pl-0{padding-left:0;}
+.pl-0{padding-left:0!important;}
 .pl-5{padding-left:5px!important;}
 .pl-10{ padding-left:10px!important;}
 .pl-15{ padding-left:15px!important;}
@@ -130,6 +130,7 @@ a,a:hover{color:#333;}
 
 .pt-0{padding-top: 0!important}
 .pt-5{padding-top: 7px!important}
+.pt-8{padding-top: 8px!important}
 .pt-10{ padding-top:10px!important}
 .pt-15{ padding-top:12px!important}
 .pt-20{ padding-top:20px}
@@ -159,6 +160,7 @@ a,a:hover{color:#333;}
 .pb-28{ padding-bottom:28px!important}
 .pb-118{ padding-bottom:118px!important}
 .pb-140{ padding-bottom:140px!important}
+.pb-160{ padding-bottom:160px!important}
 .pb-177{ padding-bottom:177px!important}
 .pb-187{ padding-bottom:187px!important}
 .pb-210{ padding-bottom:212px!important}
