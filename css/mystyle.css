@@ -131,7 +131,7 @@ footer.bottom{
 }
 .contentwrap{
 	padding: 0 10px 0px;
-	height:calc(100% - 150px);
+	height:calc(100% - 140px);
 }
 .alert {
   padding: 0 0!important;
@@ -195,7 +195,7 @@ footer.bottom{
 	width: 100%;
 	border:1px solid #dcdcdc;
 	border-radius: 4px;
-	padding-bottom: 20px;
+	/*padding-bottom: 20px;*/
 	background-color: #fff;
 	/*box-shadow:0px 4px 10px #e6e6e6;*/
 }

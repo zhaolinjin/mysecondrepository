@@ -17,8 +17,8 @@ PercentPie.prototype.init = function(){
         color:_that.color,
         title: {
             text: _that.title,
-            bottom:'5%',
-            left:'35%',
+            bottom:'1%',
+            left:'40%',
             textStyle:{
                 color: '#333',
                 fontStyle: 'normal',
