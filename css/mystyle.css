@@ -621,3 +621,26 @@ input[type='checkbox']{
 #testvm_manaBtn li span,#testvm_manaBtn1 li span{
 	vertical-align: middle;
 }
+/*迁移页面样式*/
+.tranfer_radio{
+	font-size:12px;
+	color:#333;
+}
+.tranfer_text{
+	padding-left:25px;
+	color:#666;
+}
+.radioScale{
+	transform:scale(0.6);
+	display:inline-block;
+}
+.checkSelect li{
+	padding-bottom:10px;
+}
+.checkSelect li span{
+	 display:inline-block;
+}
+.checkSelect li span:first-child{
+	width:90px;
+	text-align:right;
+}

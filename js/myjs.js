@@ -278,193 +278,20 @@ $(function(){
           $("#address").hide();
       }
     });
-    //虚拟机创建步骤
-    $("#createVirtual .modal-footer .MN").each(function() {
-      var len=$("#createVirtual .step li").length;
-          $(this).click(function() {
-              if($("#number").val()<=0){
-                  alert("数量必须大于0")
-              }
-            if ($(this).hasClass("MN-next")&&$("#number").val()>0) {
-                  if($("#createVirtual .step li.active").index()==len-2&&$("#sum").html()==0){
-                      alert("不能全部删除，返回上一步重新操作！");
-                  }else{
-                      $("#createVirtual .carousel").carousel('next');
-                      $("#createVirtual .step li.active").next().addClass("active");
-                      $("#createVirtual .step li.active").prev().removeClass("active");
-                      var indexVal=$("#createVirtual .step li.active").index();
-                      if(indexVal==len-2&&$("#configChoice").is(":checked")){
-                          $("#privateMake").children("tr").remove();
-                          var lens=$("#number").val();
-                          create(lens);
-                      }else if(indexVal==len-2&&$("#configChoice").is(":checked")==false){
-                          $("#privateMake").children("tr").remove();
-                          var lens=$("#number").val();
-                          create_1(lens);
-                      };
-                      if(indexVal==len-1){
-                        $("#ensure").show();
-                        $(".MN-next").hide();
-                      }else{
-                          $(".MN-next").show();
-                        $(".MN-pre").show();
-                      }
-                  }
+    //迁移模态框
+    $("#transfer .modal-footer button").each(function() {
+        $(this).click(function() {
+            if ($(this).hasClass("MN-next")) {
+                $("#transfer .carousel").carousel('next');
+                $("#transfer .step li.active").next().addClass("active");
             } else {
-              $("#createVirtual .carousel").carousel('prev');
-                $("#createVirtual .step li.active").prev().addClass("active");
-                $($("#createVirtual .step li.active")[1]).removeClass("active");
-                var indexVal=$("#createVirtual .step li.active").index();
-                if(indexVal!=len-1){
-                    $(".MN-next").show();
-                    $("#ensure").hide();
+                $("#transfer .carousel").carousel('prev');
+                if ($("#transfer .step li").length > 1) {
+                    $($($("#transfer .step li.active"))[$("#transfer .step li.active").length - 1]).removeClass("active")
                 }
             }
-          })
-    });
-    $("#ensure").click(function () {
-        alert()
-    })
-    //创建虚拟机里的添加
-    var lensum=$("#number").val();
-    $("#addPrivate").on("click",function () {
-        if($("#configChoice").is(":checked")){
-            //对表单value重新赋值
-            $("#privateMake").append($("#privateMake tr:last-child").clone(true));
-            var firstTd=$("#privateMake tr:last-child ").find("td:first-child").clone(true);
-            var firstValue=$("#privateMake tr:last-child ").find("td:first-child input").val();
-            var num=parseInt(firstValue.replace(/[^0-9]/ig,""));
-            num++;
-            var string=firstValue.replace(/[0-9]/ig,"");
-            var newName=string+num;
-            $("#privateMake tr:last-child ").find("td:first-child input").val(newName);
-            var ipTd=$("#privateMake tr:last-child ").find("td:nth-child(7)");
-            var ipValue=$("#privateMake tr:last-child ").find("td:nth-child(7) input").val();
-            var ipArray=ipValue.split(".");
-            var last=++ipArray[3];
-            var newIp=ipArray[0]+"."+ipArray[1]+"."+ipArray[2]+"."+last;
-            $("#privateMake tr:last-child ").find("td:nth-child(7) input").val(newIp);
-            $("#sum").html($("#privateMake tr").length);
-        }else{
-            $("#privateMake").append($("#privateMake tr:last-child").clone(true));
-            $("#sum").html($("#privateMake tr").length);
-        }
-    })
-    //动态创建相同配置虚拟机
-    function create(lens) {
-        var name_1=$("#name_1").val();
-        var name_2=$("#name_2").val();
-        var ip_1=$("#ip_1").val();
-        var ip_2=$("#ip_2").val();
-        var location=$("#location").val();
-        var cpuVal=$("#cpuVal").val();
-        var memory=$("#memory").val();
-        var storage=$("#storage").val();
-        var volume=$("#volume").val();
-        var website=$("#website").val();
-        for(var i=0;i<lens;i++){
-          var codes='<tr>'+
-                    '<td>'+
-                        '<input type="text" value="'+name_1+name_2 +'" disabled="disabled">'+
-                    '</td>'+
-                    '<td class="inputNumber-relative">'+
-                        '<input class="input-style inputNumber" type="number" name="number" value="'+cpuVal+'" min="0" step="3" style="width: 60px" disabled="disabled">'+"&nbsp;&nbsp;"+"核"+
-                    '</td>'+
-                    '<td >'+
-                        '<input class="input-style inputNumber" type="number" name="number" value="'+memory+'" min="0" step="3" style="width: 60px" disabled="disabled">'+"&nbsp;&nbsp;"+"G"+
-                    '</td>'+
-                    '<td>'+
-                        '<select style="width: 100px;background:#ebebe3" disabled="disabled">'+
-                            '<option>'+storage+'</option>'+
-                        '</select>'+
-                    '</td>'+
-                    '<td >'+
-                        '<input class="input-style inputNumber" type="number" name="number" value="'+volume+'" min="0" step="3" style="width: 60px" disabled="disabled">'+"&nbsp;&nbsp;"+"G"+
-                    '</td>'+
-                    '<td>'+
-                        '<select style="width: 100px;background:#ebebe3" disabled="disabled">'+
-                            '<option>'+website+'</option>'+
-                        '</select>'+
-                    '</td>'+
-                    '<td>'+
-                        '<input type="text" value="'+ip_1+ip_2+'" disabled="disabled">'+
-                    '</td>'+
-                    '<td style="padding-left: 0">'+
-                        '<select style="width: 170px;padding-left: 0;background:#ebebe3" disabled="disabled">'+
-                            '<option>'+location+'</option>'+
-                        '</select>'+
-                    '</td>'+
-                    '<td>'+
-                        '<i class="glyphicon glyphicon-trash mt-8 pointer"></i>'+
-                    '</td>'
-                    '</tr>';
-                $("#privateMake").append(codes);
-                name_2++;
-                ip_2++;
-
-        }
-        //创建虚拟机里的删除
-        $("#privateMake td:last-child i").on("click",function () {
-            $(this).parents("tr").remove();
-            $("#sum").html($("#privateMake tr").length)
         })
-        //合计台数
-        $("#sum").html($("#privateMake tr").length);
-    }
-    //动态创建不同配置虚拟机
-    function create_1(lens) {
-        var location=$("#location").val();
-        var storage=$("#storage").val();
-        var website=$("#website").val();
-        for(var i=0;i<lens;i++){
-          var codes='<tr>'+
-                    '<td>'+
-                        '<input type="text" value="">'+
-                    '</td>'+
-                    '<td class="inputNumber-relative">'+
-                        '<input class="input-style inputNumber" type="number" name="number" value="" min="0" step="3" style="width: 60px">'+"&nbsp;&nbsp;"+"核"+
-                    '</td>'+
-                    '<td >'+
-                        '<input class="input-style inputNumber" type="number" name="number" value="" min="0" step="3" style="width: 60px">'+"&nbsp;&nbsp;"+"G"+
-                    '</td>'+
-                    '<td>'+
-                        '<select style="width: 100px;">'+
-                            '<option>'+storage+'</option>'+
-                        '</select>'+
-                    '</td>'+
-                    '<td >'+
-                        '<input class="input-style inputNumber" type="number" name="number" value="" min="0" step="3" style="width: 60px">'+"&nbsp;&nbsp;"+"G"+
-                    '</td>'+
-                    '<td>'+
-                        '<select style="width: 100px;">'+
-                            '<option>'+website+'</option>'+
-                        '</select>'+
-                    '</td>'+
-                    '<td>'+
-                        '<input type="text" value="">'+
-                    '</td>'+
-                    '<td style="padding-left: 0">'+
-                        '<select style="width: 170px;padding-left: 0;">'+
-                            '<option>'+location+'</option>'+
-                        '</select>'+
-                    '</td>'+
-                    '<td>'+
-                        '<i class="glyphicon glyphicon-trash mt-8 pointer"></i>'+
-                    '</td>'
-                    '</tr>';
-                $("#privateMake").append(codes);
-                name_2++;
-                ip_2++;
-
-        }
-        //创建虚拟机里的删除
-        $("#privateMake td:last-child i").on("click",function () {
-            $(this).parents("tr").remove();
-            $("#sum").html($("#privateMake tr").length)
-        })
-        //合计台数
-        $("#sum").html($("#privateMake tr").length);
-    }
+    })
     //  机柜
     $(".equipImage a").click(function () {
         $(this).parent("li").addClass("equipActive");
@@ -513,6 +340,7 @@ $(function(){
     $(document).on("click",function () {
         $(".treeRightMenu").hide();
     })
+
 })
 
 
