@@ -261,12 +261,12 @@ $(function(){
       $('#nameText').focus().select();
     })
 
-    $(".btn-sm").hover(function(){
-      $(this).css("background-color","#1591f5")
-      $(this).children("i").addClass("c-white");
-      $(this).parent().siblings().children("button").children("i").removeClass("c-white");
-      $(this).parent().siblings().children("button").css("background-color","#e5e5e5");
-    });
+    // $(".btn-sm").hover(function(){
+    //   $(this).css("background-color","#1591f5")
+    //   $(this).children("i").addClass("c-white");
+    //   $(this).parent().siblings().children("button").children("i").removeClass("c-white");
+    //   $(this).parent().siblings().children("button").css("background-color","#e5e5e5");
+    // });
     //创建虚拟机中的icheck
     $("#configChoice").on("ifChanged",function(){
       if($(this).is(":checked")){

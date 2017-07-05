@@ -18,7 +18,8 @@ PercentPie.prototype.init = function(){
         title: {
             text: _that.title,
             bottom:'1%',
-            left:'40%',
+            x:'center',
+            textAlign:'center',
             textStyle:{
                 color: '#333',
                 fontStyle: 'normal',
@@ -36,6 +37,7 @@ PercentPie.prototype.init = function(){
         series: [{
             name: '来源',
             type: 'pie',
+            center:['47%','50%'],
             radius: ['60%', '75%'],
             avoidLabelOverlap: false,
             hoverAnimation:false,
@@ -48,7 +50,7 @@ PercentPie.prototype.init = function(){
                         fontWeight: 'bold'
                     },
                     formatter:'{b}\n{c}%'
-                }
+                },
             },
             data: [{
                 value: _that.value,
