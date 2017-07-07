@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/iconfont.css">
     <link rel="stylesheet" href="css/jquery.marquee.min.css">
     <link rel="stylesheet" href="css/zTreeStyle.css">
+    <link rel="stylesheet" href="css/thirdZtreeStyle.css">
     <link rel="stylesheet" href="css/sweetalert.css">
     <link rel="stylesheet" type="text/css" href="css/bs-is-fun.css" />
     <link type="text/css" rel="stylesheet" href="css/shCore.css" />
@@ -142,10 +143,10 @@
                                 <img src="overview/icon_console_not_clickable.png" style="display:none">
                                 <span>&nbsp;远程控制台</span>
                             </li>
-                            <li>
+                            <li class="transfer">
                                 <img src="overview/icon_package_migration.png">
                                 <img src="overview/icon_package_migration_not_clickable.png" style="display:none">
-                                <span>&nbsp;迁移</span>
+                                <span >&nbsp;迁移</span>
                             </li>
                             <li>
                                 <img src="overview/icon_hang_cloud_host.png">
@@ -287,7 +288,7 @@
                                                 </li>
                                             </ul>
                                             <ul id="testvm_manaBtn">
-                                                <li>
+                                                <li class="transfer">
                                                     <img src="overview/icon_package_migration.png">
                                                     <img src="overview/icon_package_migration_not_clickable.png" style="display:none">
                                                     <span>&nbsp;迁移</span>
@@ -1984,7 +1985,7 @@
                             <li data-toggle="modal" data-target="#createVirtual">
                                 <a href="##">
                                     <div class="fl">
-                                        <img src="images/icon_virtual_machine1.png" alt="">
+                                        <img src="images/icon_virtual_machine.png" alt="">
                                     </div>
                                     <div class="pitname mt-5 c-80c">创建虚拟机</div>
                                     <div class="clearfloat"></div>
@@ -1994,7 +1995,7 @@
                     </div>
                 </div>
                 <div class="notice mt-10 pb-0" style="height:180px;box-sizing:border-box">
-                    <div class="notice-title relative" data-target="#transfer" data-toggle="modal">
+                    <div class="notice-title relative">
                         任务
                         <i class="iconfont icon-gengduo absolute r-10 absolute-top5"></i>
                     </div>
@@ -2275,283 +2276,7 @@
         <!-- /.modal -->
     </div>
     <!-- 模态框（Modal5） -->
-    <div class="modal fade" id="createVirtual">
-        <div class="modal-dialog" style="width:840px">
-            <div class="modal-content" >
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        ×
-                    </button>
-                    <h4 class="modal-title txt-left f16 c-666 fw" id="myModalLabel">
-                        创建虚拟机
-                    </h4>
-                </div>
-                <div class="modal-body" style="padding-top:0">
-                    <ul class="nav nav-pills nav-justified step step-arrow">
-                        <li class="active">
-                            <a>批量配置</a>
-                        </li>
-                        <li>
-                            <a>资源定制</a>
-                        </li>
-                        <li>
-                            <a>租期属性</a>
-                        </li>
-                    </ul>
-                    <div class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <form class="form-horizontal pl-10 pr-60">
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">数量</label>
-                                        <div class="col-sm-5">
-                                            <input type="number" min="1" class="form-control" value="5" id="number">
-                                        </div>
-                                        <div class="col-sm-1" style="padding:5px 0 0">台</div>
-                                        <div class="col-sm-3 txt-right" style="padding-top: 5px;">
-                                            <input type="checkbox" name="box" id="configChoice"> 相同配置
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">基础架构</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control">
-                                                <option>Vmware</option>
-                                                <option>OpenStack</option>
-                                                <option>Citrix Xen</option>
-                                                <option>Fusion Cloud</option>
-                                                <option>H3Cloud</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" id="address" style="display: none">
-                                        <label class="col-sm-3 control-label">位置</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" id="location">
-                                                <option>vCenter01\Datacenter01</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" id="tempalate">
-                                        <label class="col-sm-3 control-label">模板</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control">
-                                                <option>Datacenter01\win2k12-x64</option>
-                                                <option>OpenStack</option>
-                                                <option>Citrix Xen</option>
-                                                <option>Fusion Cloud</option>
-                                                <option>H3Cloud</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </form>
-                                <form class="form-horizontal pl-10 pr-60" id="sameConfig" style="display: none">
-                                    <div class="form-group" style="padding-left:70px;">
-                                        <div class="col-sm-2 txt-right pr-10 pt-5">命名</div>
-                                        <div class="col-sm-5">
-                                            <label class="col-sm-2 control-label" style="padding-left:0;padding-right:0">前缀</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" min="0" class="form-control" value="socweb" id="name_1">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-5" style="padding-left:17px;">
-                                            <label class="col-sm-2 control-label" style="padding-left:0;padding-right:0">起始</label>
-                                            <div class="col-sm-10" style="padding-right: 0">
-                                                <input type="text" min="0" class="form-control" value="1" id="name_2">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" style="padding-left:60px;">
-                                        <div class="col-sm-6 pl-30">
-                                            <label class="col-sm-4 control-label">CPU</label>
-                                            <div class="col-sm-7">
-                                                <input type="number" min="0" class="form-control" value="2" id="cpuVal">
-                                            </div>
-                                            <div class="col-sm-1" style="padding:5px 0 0">核</div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <label class="col-sm-4 control-label" style="padding-right: 0">内存</label>
-                                            <div class="col-sm-7">
-                                                <input type="number" min="0" class="form-control" value="16" id="memory">
-                                            </div>
-                                            <div class="col-sm-1" style="padding:5px 0 0">GB</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" style="padding-left:60px;">
-                                        <div class="col-sm-6 pl-30">
-                                            <label class="col-sm-4 control-label">存储</label>
-                                            <div class="col-sm-8">
-                                                <select class="form-control" id="storage">
-                                                    <option>socweb</option>
-                                                    <option>OpenStack</option>
-                                                    <option>Citrix Xen</option>
-                                                    <option>Fusion Cloud</option>
-                                                    <option>H3Cloud</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <label class="col-sm-4 control-label" style="padding-right: 0">磁盘大小</label>
-                                            <div class="col-sm-7">
-                                                <input type="number" min="0" class="form-control" value="50" id="volume">
-                                            </div>
-                                            <div class="col-sm-1" style="padding:5px 0 0">GB</div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">网络</label>
-                                        <div class="col-sm-9">
-                                            <select class="form-control" id="website">
-                                                <option>VMnet0</option>
-                                                <option>OpenStack</option>
-                                                <option>Citrix Xen</option>
-                                                <option>Fusion Cloud</option>
-                                                <option>H3Cloud</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group" style="padding-left:70px;">
-                                        <div class="col-sm-2 txt-right pr-10 pt-5">IP</div>
-                                        <div class="col-sm-5">
-                                            <label class="col-sm-2 control-label" style="padding-left:0;padding-right:0">前缀</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" min="0" class="form-control" value="192.168.0." id="ip_1">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <label class="col-sm-2 control-label" style="padding-left:0;padding-right:0">起始</label>
-                                            <div class="col-sm-10" style="padding-right: 0">
-                                                <input type="text" min="0" class="form-control" value="1" id="ip_2">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="item">
-                                <div style="height: 290px;overflow-y: auto;overflow-x: hidden">
-                                    <table class="table">
-                                        <thead>
-                                        <tr class="fw txt-center">
-                                            <td  style="width:75px;">虚机名称</td>
-                                            <td style="width:75px">CPU</td>
-                                            <td style="width: 65px;">内存</td>
-                                            <td style="width:75px">存储</td>
-                                            <td style="width: 75px">磁盘大小</td>
-                                            <td style="width: 70px">网络</td>
-                                            <td style="width: 90px">IP</td>
-                                            <td style="padding-left: 0">位置</td>
-                                            <td></td>
-                                        </tr>
-                                        </thead>
-                                        <tbody id="privateMake" style="border-bottom:1px solid #ccc">
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="fr">
-                                    <span>合计</span>
-                                    <span id="sum"></span>
-                                    <span>台&nbsp;</span>
-                                    <button type="button" class="btn btn-sm btn-primary" id="addPrivate"><i class="glyphicon glyphicon-plus"></i> 添加</button>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <form class="form-horizontal pl-10 pr-60">
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">责任人</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">手机号码</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">邮箱</label>
-                                        <div class="col-sm-9">
-                                            <input class="form-control" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="form-group" style="padding-left:74px;">
-                                        <label class="col-sm-2 control-label">租期</label>
-                                        <div class="col-sm-5" style="padding-left:18px" >
-                                            <select class="form-control">
-                                                <option>2</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-sm-5" style="padding-left:0">
-                                            <select class="form-control">
-                                                <option>年</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label" style="padding-top: 5px">到期提醒</label>
-                                        <div class="col-sm-3" style="padding-left:16px" >
-                                            <input type="checkbox" name="box"> &nbsp;&nbsp;<span style="vertical-align: middle">站内公告</span>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-left:48px" >
-                                            <input type="checkbox" name="box"> &nbsp;&nbsp;邮件
-                                        </div>
-                                        <div class="col-sm-3 txt-right" style="padding-left:18px" >
-                                            <input type="checkbox" name="box"> &nbsp;&nbsp;短信
-                                        </div>
-                                    </div>
-                                    <div class="form-group" style="padding-left:70px;">
-                                        <div class="row">
-                                            <label class="col-sm-2 control-label" style="padding-right:10px">业务</label>
-                                            <div class="col-sm-5" style="padding-left:20px" >
-                                                <select class="form-control">
-                                                    <option>NOC</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-5" style="padding-left:0">
-                                                <select class="form-control">
-                                                    <option>SDC安全中心</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-15">
-                                            <label class="col-sm-2 control-label"></label>
-                                            <div class="col-sm-5" style="padding-left:20px" >
-                                                <select class="form-control">
-                                                    <option>SDC安全门户</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-5" style="padding-left:0">
-                                                <select class="form-control">
-                                                    <option>WEB服务器</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <div class="f12 c-6ba fl mt-10">提示:在资源定制页面可以重新调整虚拟机数量</div>
-                    <button type="button" class="btn btn-default MN-pre MN" style="display: none">
-                        上一步
-                    </button>
-                    <button type="button" class="btn btn-primary MN-next MN">
-                        下一步
-                    </button>
-                    <button type="button" class="btn btn-primary" id="ensure" style="display: none">确定</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                        取消
-                    </button>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal -->
-    </div>
     <!-- 迁移模态框（Modal6） -->
     <div class="modal fade" id="transfer">
         <div class="modal-dialog" style="width:600px;">
@@ -2565,7 +2290,7 @@
                     </h4>
                 </div>
                 <div class="modal-body" style="padding-top:0;height:254px;overflow:auto">
-                    <ul class="nav nav-pills nav-justified step step-arrow">
+                    <ul class="nav nav-pills nav-justified step step-arrow" id="breedList">
                         <li class="active">
                             <a>选择迁移类型</a>
                         </li>
@@ -2608,9 +2333,16 @@
                                 </div>
                             </div>
                             <div class="item" style="padding:0 60px">
-
+                                <div style="border:1px solid #70bcfa;padding:0 10px 10px;">
+                                    <div id="ThirdTreeDemo" class="ThirdZtree"></div>
+                                </div>
+                                <div class="mt-10 validate">
+                                    <span class="f14">兼容性：</span>
+                                    <i class="glyphicon glyphicon-ok-circle c-green f14"></i>
+                                    <i class="glyphicon glyphicon-remove-circle c-red f14" style="display: none"></i>
+                                    <span class="f14">验证成功</span>
+                                </div>
                             </div>
-
                             <div class="item" style="padding:0 60px">
                                 <div style="border:1px solid #70bcfa;padding-top:10px">
                                     <ul class="checkSelect">
@@ -2637,14 +2369,15 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <div class="f12 c-6ba fl mt-10">提示:在资源定制页面可以重新调整虚拟机数量</div>
-                    <button type="button" class="btn btn-default MN-pre MN" style="display: show">
+                    <div class="f12 c-6ba fl mt-10 tipFirst" style="display: none">提示:选择主机用作此虚拟机的迁移目标</div>
+                    <div class="f12 c-6ba fl mt-10 tipSecond" style="display: none">提示:单击确定开始迁移</div>
+                    <button type="button" class="btn btn-default MN-pre MN" style="display: none">
                         上一步
                     </button>
                     <button type="button" class="btn btn-primary MN-next MN">
                         下一步
                     </button>
-                    <button type="button" class="btn btn-primary" id="ensure" style="display: none">确定</button>
+                    <button type="button" class="btn btn-primary" id="ensureBtn" style="display: none">确定</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">
                         取消
                     </button>
@@ -2707,7 +2440,43 @@
             onRightClick:zTreeOnRightClick
         }
     };
+    //thirdZtree迁移
+    var setting1 = {
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        callback:{
+            onClick:onObtain
+        }
+    };
+    var thirdzNodes = [
+        {name:"vcenter01",checked:true,open:true,iconOpen:"images/treeDiy/icon_vcenter.png", iconClose:"images/treeDiy/icon_vcenter.png", children:[
+            {name:"Datacenter01",open:true,iconOpen:"images/treeDiy/datacenter.png", iconClose:"images/treeDiy/datacenter.png",children:[
+                {name:"cluster01",iconOpen:"images/treeDiy/icon_cluster.png", iconClose:"images/treeDiy/icon_cluster.png",open:false,children:[
+                    {name:"192.168.0.1",icon:"images/treeDiy/icon_host1.png"},{name:"192.168.0.2",icon:"images/treeDiy/icon_host1.png"}]},
+                {name:"cluster02",iconOpen:"images/treeDiy/icon_cluster.png", iconClose:"images/treeDiy/icon_cluster.png",open:false,children:[
+                    {name:"192.168.0.1",icon:"images/treeDiy/icon_host1.png"},{name:"192.168.0.2",icon:"images/treeDiy/icon_host1.png"}]},
+                {name:"cluster02",iconOpen:"images/treeDiy/icon_cluster.png", iconClose:"images/treeDiy/icon_cluster.png",open:false,children:[
+                    {name:"192.168.0.1",icon:"images/treeDiy/icon_host1.png"},{name:"192.168.0.2",icon:"images/treeDiy/icon_host1.png"}]},
+            ]},
 
+        ]},
+    ];
+    $(document).ready(function(){
+        zTreeObj = $.fn.zTree.init($("#ThirdTreeDemo"), setting1, thirdzNodes);
+        var treeObj = $.fn.zTree.getZTreeObj("ThirdTreeDemo");
+        var nodes = treeObj.getNodesByParam("name","资源管理");
+    });
+    var thisLevel;
+    function onObtain(e,treeId,treeNode){
+        thisLevel=treeNode.level;
+        if($(".validate").children("span:last-child").html()=="验证成功"&&thisLevel==3){
+            $(".MN-next").removeAttr("disabled","disabled");
+            $(".MN-next").addClass("btn-primary");
+        }
+    }
     // zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
     var zNodes = [
         {name:"资源管理",checked:true,open:true, children:[
@@ -2772,19 +2541,19 @@
             $("#rMenuVirtualMana_testvm").hide();
             nodeName=treeNode.name;
         }else if(treeNode&&treeNode.level==5&&treeNode.name=="VM01"){
-            $("#rMenuVirtualMana").show();
-            $("#rMenuVirtualMana").css({"top":ydist-130,"left":xdist-20});
-            $("#rMenu").hide();
-            $("#rMenu1").hide();
-            $("#rMenu2").hide();
-            $("#rMenuVirtualMana_testvm").hide();
-        }else if(treeNode&&treeNode.level==5&&treeNode.name=="testvm"){
             $("#rMenuVirtualMana_testvm").show();
             $("#rMenuVirtualMana_testvm").css({"top":ydist-130,"left":xdist-20});
             $("#rMenu").hide();
             $("#rMenu1").hide();
             $("#rMenu2").hide();
             $("#rMenuVirtualMana").hide();
+        }else if(treeNode&&treeNode.level==5&&treeNode.name=="testvm"){
+            $("#rMenuVirtualMana").show();
+            $("#rMenuVirtualMana").css({"top":ydist-130,"left":xdist-20});
+            $("#rMenu").hide();
+            $("#rMenu1").hide();
+            $("#rMenu2").hide();
+            $("#rMenuVirtualMana_testvm").hide();
         }
     };
     $("#postname button").click(function(){
@@ -3019,6 +2788,7 @@
         }
         $("#contentTitle").children("span:first-child").html(parentname);
     }
+
 </script>
 <script type="text/javascript" src="json/cpu"></script>
 <script src="js/PercentPie.js"></script>

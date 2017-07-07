@@ -479,7 +479,7 @@ input[type='checkbox']{
 	background-color: #8bc5f5;
 }
 .tooltip-inner {
-  max-width: 200px;
+  /*max-width: 120px;*/
   padding: 3px 8px;
   color: #000;
   text-align: center;
@@ -621,6 +621,33 @@ input[type='checkbox']{
 #testvm_manaBtn li span,#testvm_manaBtn1 li span{
 	vertical-align: middle;
 }
+/*快速启动css*/
+.quickSelect{
+	width:220px;
+	font-size:12px;
+	color:#666;
+	padding:10px;
+	border:1px solid #ccc;
+	border-radius:2px;
+	box-shadow:0 0 10px #e6e6e6;
+	position:absolute;
+	background-color:#fff;
+	z-index:9999;
+	display: none;
+}
+.quickSelet li{
+	padding-top:10px;
+}
+.scaleIcheck{
+	transform: scale(0.6);
+	display:inline-block;
+}
+.quickSelect .btnBottom{
+	border-top:1px solid #ccc;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin-top:10px;
+}
 /*迁移页面样式*/
 .tranfer_radio{
 	font-size:12px;
@@ -644,3 +671,36 @@ input[type='checkbox']{
 	width:90px;
 	text-align:right;
 }
+/*报表页样式*/
+.report_title{
+	font-size:14px;
+	color:#333;
+	height:40px;
+	line-height:40px;
+	padding-left:20px;
+	border-bottom:1px solid #ccc;
+}
+.report_notice .col-sm-4{
+    line-height: 22px;
+    overflow:hidden;
+    padding-right:0;
+}
+.report_notice .col-sm-9{padding-right:0}
+.report_notice label{font-weight:lighter}
+.report_notice input,.report_notice select{border-radius:0}
+.report_notice input,.report_notice select{
+	height: 24px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.report_table{
+    border-top:1px solid #ccc;
+    padding-top:10px;
+    margin-top:10px;
+}
+.report_table table thead{
+    font-size:14px;
+    font-weight:bold;
+}
+.report_table table tbody{font-size:12px;}
+.report_table table tbody tr:last-child{border-bottom:1px solid #eee;}

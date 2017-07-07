@@ -278,20 +278,7 @@ $(function(){
           $("#address").hide();
       }
     });
-    //迁移模态框
-    $("#transfer .modal-footer button").each(function() {
-        $(this).click(function() {
-            if ($(this).hasClass("MN-next")) {
-                $("#transfer .carousel").carousel('next');
-                $("#transfer .step li.active").next().addClass("active");
-            } else {
-                $("#transfer .carousel").carousel('prev');
-                if ($("#transfer .step li").length > 1) {
-                    $($($("#transfer .step li.active"))[$("#transfer .step li.active").length - 1]).removeClass("active")
-                }
-            }
-        })
-    })
+
     //  机柜
     $(".equipImage a").click(function () {
         $(this).parent("li").addClass("equipActive");
@@ -336,11 +323,54 @@ $(function(){
        keyboard: false,
        show:false
     })
+    //迁移模态框
+    $("#transfer .modal-footer .MN").each(function() {
+        $(this).click(function() {
+            if ($(this).hasClass("MN-next")) {
+                $("#transfer .carousel").carousel('next');
+                $("#transfer .step li.active").next().addClass("active");
+            } else {
+                $("#transfer .carousel").carousel('prev');
+                if ($("#transfer .step li").length > 1) {
+                    $($($("#transfer .step li.active"))[$("#transfer .step li.active").length - 1]).removeClass("active")
+                }
+                var treeObj = $.fn.zTree.getZTreeObj("ThirdTreeDemo");
+                treeObj.cancelSelectedNode();
+            };
+            if($($("#breedList").children("li")[1]).hasClass("active")){
+                $(".MN-pre").show();
+                $(".tipFirst").show();
+                $(".MN-next").addClass("btn-default");
+                $(".MN-next").removeClass("btn-primary");
+                $(".MN-next").attr("disabled","disabled");
+            }else{
+                $(".MN-pre").hide();
+                $(".tipFirst").hide();
+                $(".MN-next").addClass("btn-primary");
+                $(".MN-next").removeClass("btn-default");
+                $(".MN-next").removeAttr("disabled");
+            };
+            if($($("#breedList").children("li")[2]).hasClass("active")){
+                $("#ensureBtn").show();
+                $(".MN-next").hide();
+                $(".tipFirst").hide();
+                $(".tipSecond").show();
+            }else{
+                $("#ensureBtn").hide();
+                $(".MN-next").show();
+                $(".tipSecond").hide();
+            };
+        })
+    });
+    $(".transfer").click(function (event) {
+        event.stopPropagation();
+        $("#rMenuVirtualMana").hide();
+        $("#transfer").modal("toggle");
+    })
     //隐藏右键弹窗
     $(document).on("click",function () {
         $(".treeRightMenu").hide();
-    })
-
+    });
 })
 
 
