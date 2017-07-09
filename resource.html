@@ -2275,8 +2275,74 @@
         </div>
         <!-- /.modal -->
     </div>
-    <!-- 模态框（Modal5） -->
+    <!-- 模态框（Modal5）创建虚拟机 -->
+    <div class="modal fade" id="createVirtual">
+        <div class="modal-dialog" style="width:700px;">
+            <div class="modal-content" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title txt-left f16 c-666 fw">
+                        创建虚拟机
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-pills nav-justified step step-arrow">
+                        <li class="active">
+                            <a>批量配置</a>
+                        </li>
+                        <li>
+                            <a>网络配置</a>
+                        </li>
+                        <li>
+                            <a>存储配置</a>
+                        </li>
+                        <li>
+                            <a>租期属性</a>
+                        </li>
+                        <li>
+                            <a>配置确认</a>
+                        </li>
+                    </ul>
+                    <div class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active" style="padding:0 60px">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">数量 <span class="c-red">*</span></label>
+                                        <div class="col-sm-10 pl-0">
+                                            <input class="form-control" type="number">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="item" style="padding:0 60px">
 
+                            </div>
+                            <div class="item" style="padding:0 60px">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="f12 c-6ba fl mt-10 tipFirst" style="display: none">提示:选择主机用作此虚拟机的迁移目标</div>
+                    <div class="f12 c-6ba fl mt-10 tipSecond" style="display: none">提示:单击确定开始迁移</div>
+                    <button type="button" class="btn btn-default MN-pre MN" style="display: none">
+                        上一步
+                    </button>
+                    <button type="button" class="btn btn-primary MN-next MN">
+                        下一步
+                    </button>
+                    <button type="button" class="btn btn-primary" id="ensureBtn" style="display: none">确定</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- 迁移模态框（Modal6） -->
     <div class="modal fade" id="transfer">
         <div class="modal-dialog" style="width:600px;">

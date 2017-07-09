@@ -482,7 +482,7 @@ input[type='checkbox']{
   /*max-width: 120px;*/
   padding: 3px 8px;
   color: #000;
-  text-align: center;
+  text-align: left;
   background-color: #fff;
   border-radius: 4px;
   border:1px solid #ccc;

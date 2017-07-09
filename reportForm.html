@@ -138,7 +138,7 @@
                                     <div class="form-group f12">
                                         <label class="col-sm-3 control-label pl-0 pr-0">维保到期</label>
                                         <div class="col-sm-9 pl-0">
-                                            <input class="form-control form_datetime" type="text" readonly style="background-color:#fff">
+                                            <input class="form-control form_datetime"  value="请选择日期" type="text" readonly style="background-color:#fff">
                                         </div>
                                     </div>
                                 </div>
@@ -331,7 +331,7 @@
 <script src="js/jquery.ztree.core.min.js"></script>
 <script src="js/icheck.min.js"></script>
 <script src="js/sweetalert.min.js"></script>
-<script src="js/bootstrap-datetimepicker.min.js"></script>
+<script src="js/bootstrap-datetimepicker.js"></script>
 <script src="js/myjs.js"></script>
 <script>
     //启动提示框
@@ -342,18 +342,21 @@
         days:       ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六","星期日"],
         daysShort:  ["日", "一", "二", "三", "四", "五", "六","日"],
         daysMin:    ["日", "一", "二", "三", "四", "五", "六","日"],
-        months:     ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月","十二月"],
-        monthsShort:  ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"],
+        months:     ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月","12月"],
+        monthsShort:  ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月","12月"],
         meridiem:    ["上午", "下午"],
         today:       "今天"
     };
     $(".form_datetime").datetimepicker({
         language:  'zh',
         format: "yyyy-mm",
-        setStartDate : "",
+        startDate:new Date(),
+        setStartDate:new Date(),
         startView:3,
         minView:3,
-        autoclose: true
+        autoclose: true,
+        todayBtn: "linked",
+        todayHighlight:true
     })
     //z-tree
     var setting = {
