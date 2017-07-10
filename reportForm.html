@@ -138,7 +138,8 @@
                                     <div class="form-group f12">
                                         <label class="col-sm-3 control-label pl-0 pr-0">维保到期</label>
                                         <div class="col-sm-9 pl-0">
-                                            <input class="form-control form_datetime"  value="请选择日期" type="text" readonly style="background-color:#fff">
+                                            <input class="form-control form_datetime relative" placeholder="请选择日期" type="text" readonly style="background-color:#fff">
+                                            <image src="images/icon_clear.png" style="position:absolute;right:5px;top:4px;cursor: pointer" id="data_remove"></image>
                                         </div>
                                     </div>
                                 </div>
@@ -180,27 +181,27 @@
                                         <td>X86服务器</td>
                                         <td>DELL R730xd-001</td>
                                         <td>DELL R730xd</td>
-                                        <td>2017.7.5</td>
+                                        <td>2017/7/5</td>
                                         <td>JSDX-JDL-X86-6F30 DELLR730xd</td>
-                                        <td><span  data-toggle="tooltip" data-placement="top" data-html="true" title="手机号码:1313133<br>邮箱:123@163.com" >王四</span></td>
+                                        <td><span  data-toggle="popover" data-placement="top" data-trigger="hover" data-html="true" data-content="手机号码:1313133<br>邮箱:123@163.com" >王四 <i class="glyphicon glyphicon-exclamation-sign c-118"></i></span></td>
                                     </tr>
                                     <tr>
                                         <td>1</td>
                                         <td>X86服务器</td>
                                         <td>DELL R730xd-001</td>
                                         <td>DELL R730xd</td>
-                                        <td>2017.7.5</td>
+                                        <td>2017/7/5</td>
                                         <td>JSDX-JDL-X86-6F30 DELLR730xd</td>
-                                        <td><span  data-toggle="tooltip" data-placement="top" data-html="true" title="手机号码:1313133<br>邮箱:123@163.com" >王四</span></td>
+                                        <td><span  data-toggle="popover" data-placement="top" data-trigger="hover" data-html="true" data-content="手机号码:1313133<br>邮箱:123@163.com" >王四 <i class="glyphicon glyphicon-exclamation-sign c-118"></i></span></td>
                                     </tr>
                                     <tr>
                                         <td>1</td>
                                         <td>X86服务器</td>
                                         <td>DELL R730xd-001</td>
                                         <td>DELL R730xd</td>
-                                        <td>2017.7.5</td>
+                                        <td>2017/7/5</td>
                                         <td>JSDX-JDL-X86-6F30 DELLR730xd</td>
-                                        <td><span  data-toggle="tooltip" data-placement="top" data-html="true" title="手机号码:1313133<br>邮箱:123@163.com" >王四</span></td>
+                                        <td><span  data-toggle="popover" data-placement="top" data-trigger="hover" data-html="true" data-content="手机号码:1313133<br>邮箱:123@163.com" >王四 <i class="glyphicon glyphicon-exclamation-sign c-118"></i></span></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -230,7 +231,7 @@
                     </div>
                     <div class="notice-content" style="height:calc(100% - 30px)">
                         <ul class="quickset">
-                            <li class="mt-10" data-toggle="modal" data-target="">
+                            <li class="" data-toggle="modal" data-target="" style="margin-bottom: 10px">
                                 <a href="##">
                                     <div class="fl">
                                         <img src="images/icon_report_expor.png" alt="">
@@ -317,7 +318,6 @@
                     </div>
                 </div>
             </div>
-            <div title="shdkd&#10;sdhdfk">josjdof</div>
         </div>
         <div class="clearfloat"></div>
     </div>
@@ -335,7 +335,8 @@
 <script src="js/myjs.js"></script>
 <script>
     //启动提示框
-    $(".report_table table span").tooltip();
+    $(".report_table table span").popover('toggle');
+    $(".report_table table span").popover('hide');
     //日期时间启动
 //    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
     $.fn.datetimepicker.dates['zh'] = {
@@ -350,13 +351,13 @@
     $(".form_datetime").datetimepicker({
         language:  'zh',
         format: "yyyy-mm",
-        startDate:new Date(),
+        startDate:new Date().getFullYear() -1 +"-"+ (new Date().getMonth()+1),
         setStartDate:new Date(),
+        endDate:new Date().getFullYear() +3+"-"+ new Date().getMonth(),
         startView:3,
         minView:3,
         autoclose: true,
-        todayBtn: "linked",
-        todayHighlight:true
+
     })
     //z-tree
     var setting = {

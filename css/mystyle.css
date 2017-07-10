@@ -485,9 +485,11 @@ input[type='checkbox']{
   text-align: left;
   background-color: #fff;
   border-radius: 4px;
+	font-size:12px;
   border:1px solid #ccc;
   box-shadow: 2px 2px 4px #ededed;
 }
+.popover-content{font-size:12px;}
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
@@ -704,3 +706,18 @@ input[type='checkbox']{
 }
 .report_table table tbody{font-size:12px;}
 .report_table table tbody tr:last-child{border-bottom:1px solid #eee;}
+.report_table table span:hover{color:#118ff5}
+/*创建虚拟机样式*/
+#createVirtual .form-group{margin-bottom:10px}
+#createVirtual .modal-body{border-bottom: none}
+.virtual_radio{
+	transform:scale(0.6);
+	display: inline-block;
+}
+.data_remind li{
+	display: inline-block;
+	padding-right:10px;
+	padding-top:5px;
+}
+.data_remind li .virtual_radio{transform:scale(0.8);}
+.data_remind li span{vertical-align:middle}

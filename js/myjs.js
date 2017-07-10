@@ -219,6 +219,7 @@ $(function(){
         break;
       }    
     });
+    //右键弹窗单击事件
     $("#rMenu li,#rMenu1 li,#rMenu2 li,#rMenu3 li,#rMenu4 li").click(function(event){
         if($(this).html()!="添加设备"){
             event.stopPropagation();
@@ -261,23 +262,6 @@ $(function(){
       $('#nameText').focus().select();
     })
 
-    // $(".btn-sm").hover(function(){
-    //   $(this).css("background-color","#1591f5")
-    //   $(this).children("i").addClass("c-white");
-    //   $(this).parent().siblings().children("button").children("i").removeClass("c-white");
-    //   $(this).parent().siblings().children("button").css("background-color","#e5e5e5");
-    // });
-    //创建虚拟机中的icheck
-    $("#configChoice").on("ifChanged",function(){
-      if($(this).is(":checked")){
-          //不可编辑
-          $("#address").show();
-          $("#sameConfig").show();        
-      }else{
-          $("#sameConfig").hide();
-          $("#address").hide();
-      }
-    });
 
     //  机柜
     $(".equipImage a").click(function () {
@@ -337,7 +321,7 @@ $(function(){
                 var treeObj = $.fn.zTree.getZTreeObj("ThirdTreeDemo");
                 treeObj.cancelSelectedNode();
             };
-            if($($("#breedList").children("li")[1]).hasClass("active")){
+            if($($(".breedList").children("li")[1]).hasClass("active")){
                 $(".MN-pre").show();
                 $(".tipFirst").show();
                 $(".MN-next").addClass("btn-default");
@@ -371,6 +355,27 @@ $(function(){
     $(document).on("click",function () {
         $(".treeRightMenu").hide();
     });
+    //维保日期清除
+    $("#data_remove").on("click",function () {
+       $(this).parent().children("input").val("");
+    })
+    //模态框关闭初始化
+    $('.modal').on('hidden.bs.modal', function (e) {
+        $(".breedList").children("li").removeClass("active");
+        $($(".breedList").children("li")[0]).addClass("active");
+        $(".item").removeClass("active");
+        $($(".item")[0]).addClass("active");
+        $(".MN-pre").hide();
+        $("#createEnsureBtn").hide();
+        $(".MN-next").show();
+        $(".tipFirst").hide();
+        $(".tipSecond").hide();
+        var len=document.getElementsByClassName("myForm");
+        for(var i=0;i<len.length;i++){
+            len[i].reset();
+        }
+    })
+
 })
 
 
