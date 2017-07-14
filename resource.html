@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/inputNumber.css">
     <script src="js/inputNumber.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css">
     <link rel="stylesheet" href="css/mystyle.css">
     <link href="css/iCheck/custom.css" rel="stylesheet">
 </head>
@@ -1973,7 +1974,7 @@
                     </div>
                     <div class="notice-content" style="height:calc(100% - 30px)">
                         <ul class="quickset">
-                            <li class="mt-10" data-toggle="modal" data-target="#addStack" id="structure">
+                            <li class="" data-toggle="modal" data-target="#addStack" id="structure" style="margin-bottom:10px">
                                 <a href="##">
                                     <div class="fl">
                                         <img src="images/icon_Infrastructure.png" alt="">
@@ -2310,85 +2311,91 @@
                     <div class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
+                                <input type="hidden" id="nodeId">
+                                <input type="hidden" id="ztreeNodeName">
+                                <input type="hidden" id="nodeType">
+                                <form class="form-horizontal myForm" id="firstStep">
                                 <div style="height:274px;overflow-y:auto;padding:10px 60px 0">
-                                    <form class="form-horizontal myForm" >
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">数量 <span class="c-red">*</span></label>
                                         <div class="col-sm-10 pl-0">
-                                            <input class="form-control" type="number" value="3" min="0">
+                                            <input class="form-control" type="number" min="1" name="virtualNumber">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">基础架构 <span class="c-red">*</span></label>
                                         <div class="col-sm-10 pl-0">
-                                            <select class="form-control">
+                                            <select class="form-control" id="base_structure">
                                                 <option value="Vmware">Vmware</option>
+                                                <option value="openStack">openStack</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">位置 <span class="c-red">*</span></label>
                                         <div class="col-sm-10 pl-0">
-                                            <select class="form-control">
-                                                <option value="vCenter01\win2k12-x64-ent">vCenter01\Datacenter01\Cluster01</option>
-                                            </select>
+                                            <input class="form-control relative" type="text" readonly style="background-color: transparent" id="addressIpt" name="addressIpt">
+                                            <div class="absolute white-bg" style="width:calc(100% - 15px);height:140px;overflow-y: auto;border:1px solid #ccc;border-top:none;box-sizing:border;z-index:999;display:none" id="myAddress">
+                                                <div id="FourTreeDemo" class="ThirdZtree"></div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">模板 <span class="c-red">*</span></label>
-                                        <div class="col-sm-10 pl-0">
-                                            <select class="form-control">
-                                                <option value="vCenter01\win2k12-x64-ent">Datacenter02\win2k12-x64-ent</option>
+                                        <div class="col-sm-10" style="padding-left:1px">
+                                            <select class="form-control" id="templet">
+                                                <option value="Datacenter02\win2k12-x64-ent">Datacenter02\win2k12-x64-ent</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-sm-6" style="padding:0 0 0 30px">
-                                            <label class="col-sm-3 control-label">命名 <span class="c-red">*</span></label>
-                                            <div class="col-sm-9 pl-0">
-                                                <input class="form-control" type="text" value="socweb">
+                                        <div class="col-sm-6" style="padding-left:6px">
+                                            <label class="col-sm-4 control-label">命名 <span class="c-red">*</span></label>
+                                            <div class="col-sm-8" style="padding-left:1px;padding-right: 0px;">
+                                                <input class="form-control" type="text" value="socweb" id="name_01" name="name_01">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6" style="padding:0 0 0 30px">
-                                            <label class="col-sm-3 control-label">起始</label>
-                                            <div class="col-sm-9 pl-0">
-                                                <input class="form-control" type="text" value="01">
+                                        <div class="col-sm-6" style="padding-left:6px">
+                                            <label class="col-sm-4 control-label">起始</label>
+                                            <div class="col-sm-8" style="padding-left:1px;padding-right: 0px;">
+                                                <input class="form-control" type="text" value="01" id="name_02" name="name_02">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-sm-6" style="padding:0 0 0 30px">
-                                            <label class="col-sm-3 control-label pl-0" style="padding-right:11px">CPU(核) <span class="c-red">*</span></label>
-                                            <div class="col-sm-9 pl-0">
-                                                <input class="form-control" type="number" value="2">
+                                        <div class="col-sm-6" style="padding-left:6px">
+                                            <label class="col-sm-4 control-label pl-0" style="padding-right:11px">CPU(核) <span class="c-red">*</span></label>
+                                            <div class="col-sm-8" style="padding-left:1px;padding-right: 0px;">
+                                                <input class="form-control" type="number" value="2" min="0" id="CPU_he" name="CPU_he">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6" style="padding:0 0 0 30px">
-                                            <label class="col-sm-3 control-label pl-0">内存(GB)</label>
-                                            <div class="col-sm-9 pl-0">
-                                                <input class="form-control" type="text" value="16">
+                                        <div class="col-sm-6" style="padding-left:6px">
+                                            <label class="col-sm-4 control-label pl-0">内存(GB)</label>
+                                            <div class="col-sm-8" style="padding-left:1px;padding-right: 0px;">
+                                                <input class="form-control" type="text" value="16" id="memory_GB" name="memory_GB">
                                             </div>
                                         </div>
                                     </div>
-                                </form>
+
                                 </div>
                                 <div class="btnArea" style="border-top:1px dashed #ccc;padding:15px 0;width:100%">
                                     <button type="button" class="btn btn-default fr" data-dismiss="modal">
                                         取消
                                     </button>
-                                    <button type="button" class="btn btn-primary MN-next MN fr mr-10">
+                                    <button class="btn btn-primary MN-next MN fr mr-10" id="batch_config">
                                         下一步
                                     </button>
                                     <div class="clearfloat"></div>
                                 </div>
+                                </form>
                             </div>
                             <div class="item">
-                                <div style="height:274px;overflow-y:auto;padding:10px 60px 0 60px">
-                                    <form class="form-horizontal myForm">
+                                <form class="form-horizontal myForm" id="secondStep">
+                                    <div style="height:274px;overflow-y:auto;padding:10px 60px 0 60px">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">网络 <span class="c-red">*</span></label>
                                         <div class="col-sm-10 pl-0">
-                                            <select class="form-control">
+                                            <select class="form-control" id="web_type">
                                                 <option value="VMnet0">VMnet0</option>
                                             </select>
                                         </div>
@@ -2398,41 +2405,41 @@
                                         <div class="col-sm-5 pl-0">
                                             <label class="col-sm-2 control-label" style="padding-left:0;padding-right:0">前缀</label>
                                             <div class="col-sm-10">
-                                                <input type="text" min="0" class="form-control" value="192.168.0.">
+                                                <input type="text" min="0" class="form-control" value="192.168.0." id="IP_pre" name="IP_pre">
                                             </div>
                                         </div>
                                         <div class="col-sm-5 pl-0">
                                             <label class="col-sm-2 control-label" style="padding-left:0;padding-right:0">起始</label>
                                             <div class="col-sm-10" style="padding-right: 0">
-                                                <input type="text" class="form-control" value="1">
+                                                <input type="text" class="form-control" value="1" id="IP_start" name="IP_start">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">子网掩码 <span class="c-red">*</span></label>
                                         <div class="col-sm-10 pl-0">
-                                            <input class="form-control" type="text" value="255.255.255.0">
+                                            <input class="form-control" type="text" value="255.255.255.0" id="web_child" name="web_child">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">网关</label>
                                         <div class="col-sm-10 pl-0">
-                                            <input class="form-control" type="text" value="192.168.0.">
+                                            <input class="form-control" type="text" value="192.168.0." id="gataway" name="gataway">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">DNS</label>
                                         <div class="col-sm-10 pl-0">
-                                            <input class="form-control" type="text" value="192.168.0.">
+                                            <input class="form-control" type="text" value="192.168.0." id="DNS_number" name="DNS_number">
                                         </div>
                                     </div>
-                                </form>
+
                                 </div>
                                 <div class="btnArea" style="border-top:1px dashed #ccc;padding:15px 0;width:100%">
                                     <button type="button" class="btn btn-default fr" data-dismiss="modal">
                                         取消
                                     </button>
-                                    <button type="button" class="btn btn-primary MN-next MN fr mr-10">
+                                    <button class="btn btn-primary MN-next MN fr mr-10" id="web_config">
                                         下一步
                                     </button>
                                     <button type="button" class="btn btn-primary MN-pre MN fr mr-10">
@@ -2440,19 +2447,20 @@
                                     </button>
                                     <div class="clearfloat"></div>
                                 </div>
+                                </form>
                             </div>
                             <div class="item">
-                                <div style="height:274px;overflow-y:auto;padding:10px 60px 0 60px">
-                                    <form class="form-horizontal myForm" >
+                                <form class="form-horizontal myForm" id="thirdStep">
+                                 <div style="height:274px;overflow-y:auto;padding:10px 60px 0 60px">
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">存储 <span class="c-red">*</span></label>
                                         <div class="col-sm-10 pl-0">
-                                            <input class="form-control" type="text" value="Datastore0">
+                                            <input class="form-control" type="text" value="Datastore0" id="storage_ipt" name="storage_ipt">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">磁盘类型 <span class="c-red">*</span></label>
-                                        <ul class="col-sm-10 pl-0">
+                                        <ul class="col-sm-10 pl-0" id="disk_type">
                                            <li>
                                                <div class="virtual_radio">
                                                    <input type="radio" name="box">
@@ -2473,13 +2481,13 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </form>
+
                                 </div>
                                 <div class="btnArea" style="border-top:1px dashed #ccc;padding:15px 0;width:100%">
                                     <button type="button" class="btn btn-default fr" data-dismiss="modal">
                                         取消
                                     </button>
-                                    <button type="button" class="btn btn-primary MN-next MN fr mr-10">
+                                    <button class="btn btn-primary MN-next MN fr mr-10" id="storage_config">
                                         下一步
                                     </button>
                                     <button type="button" class="btn btn-primary MN-pre MN fr mr-10">
@@ -2487,37 +2495,39 @@
                                     </button>
                                     <div class="clearfloat"></div>
                                 </div>
+                                </form>
                             </div>
                             <div class="item">
+                                <form class="form-horizontal myForm" id="fourthStep">
                                 <div style="height:274px;overflow-y:auto;padding:10px 60px 0 60px">
-                                    <form class="form-horizontal myForm" >
+
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">责任人</label>
                                         <div class="col-sm-10 pl-0">
-                                            <input class="form-control" type="text" value="王二小">
+                                            <input class="form-control" type="text" value="王二小" id="support_person" name="support_person">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">手机号码</label>
                                         <div class="col-sm-10 pl-0">
-                                            <input class="form-control" type="text" value="18915616123">
+                                            <input class="form-control" type="text" value="18915616123" id="tel_number" name="tel_number">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">邮箱</label>
                                         <div class="col-sm-10 pl-0">
-                                            <input class="form-control" type="e-mail" value="wang.tcrc@189.cn">
+                                            <input class="form-control" type="e-mail" value="wang.tcrc@189.cn" id="email_val" name="email_val">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">租期 <span class="c-red">*</span></label>
                                         <div class="col-sm-5 pl-0">
-                                            <select class="form-control">
+                                            <select class="form-control" id="tenacy_time">
                                                 <option value="2">2</option>
                                             </select>
                                         </div>
                                         <div class="col-sm-5 pl-0">
-                                            <select class="form-control">
+                                            <select class="form-control" id="data_time">
                                                 <option value="年">年</option>
                                                 <option value="月">月</option>
                                             </select>
@@ -2525,7 +2535,7 @@
                                     </div>
                                     <div class="form-group" style="margin-bottom:0">
                                         <label class="col-sm-2 control-label">到期提醒</label>
-                                        <ul class="col-sm-10 pl-0 data_remind">
+                                        <ul class="col-sm-10 pl-0 data_remind" id="data_remind">
                                             <li>
                                                 <div class="virtual_radio">
                                                     <input type="checkbox" name="box" checked>
@@ -2542,13 +2552,13 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">业务</label>
-                                        <div class="col-sm-5 pl-0">
-                                            <select class="form-control">
+                                        <div class="col-sm-5 pl-0" >
+                                            <select class="form-control" id="NOC">
                                                 <option value="NOC">NOC</option>
                                             </select>
                                         </div>
                                         <div class="col-sm-5 pl-0">
-                                            <select class="form-control">
+                                            <select class="form-control" id="security_center">
                                                 <option value="SDC安全中心">SDC安全中心</option>
                                             </select>
                                         </div>
@@ -2556,19 +2566,19 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label"></label>
                                         <div class="col-sm-5 pl-0">
-                                            <select class="form-control">
+                                            <select class="form-control" id="security_door">
                                                 <option value="SDC安全门户">SDC安全门户</option>
                                             </select>
                                         </div>
                                     </div>
-                                </form>
+
                                 </div>
                                 <div class="btnArea" style="border-top:1px dashed #ccc;padding:15px 0;width:100%">
-                                    <div class="f12 c-6ba fl mt-10 tipFirst" style="display: none">提示:添加业务属性，可以方便的从业务视图查看资源状况。</div>
+                                    <!--<div class="f12 c-6ba fl mt-10 tipFirst">提示:添加业务属性，可以方便的从业务视图查看资源状况。</div>-->
                                     <button type="button" class="btn btn-default fr" data-dismiss="modal">
                                         取消
                                     </button>
-                                    <button type="button" class="btn btn-primary MN-next MN fr mr-10">
+                                    <button class="btn btn-primary MN-next MN fr mr-10" id="tenacy_property">
                                         下一步
                                     </button>
                                     <button type="button" class="btn btn-primary MN-pre MN fr mr-10">
@@ -2576,86 +2586,87 @@
                                     </button>
                                     <div class="clearfloat"></div>
                                 </div>
+                                </form>
                             </div>
                             <div class="item">
                                 <div style="height:274px;overflow-y:auto;padding:10px 60px 0 60px">
                                      <div style="border:1px solid #70bcfa;padding-top:10px;margin-bottom:10px">
-                                    <ul class="checkSelect">
+                                    <ul class="checkSelect" id="configEnsure">
                                         <li>
                                             <span>数量：</span>
-                                            <span>3</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>基础架构：</span>
-                                            <span>VMware</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>位置：</span>
-                                            <span>vcenter01\Datacenter01\Cluster01</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>模板：</span>
-                                            <span>DataCenter01\win2k12-x64-ent</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>虚拟机名称：</span>
-                                            <span>socweb01、socweb02、socweb03</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>CPU、内存：</span>
-                                            <span>2核16GB</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>网络：</span>
-                                            <span>VMnet0</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>IP：</span>
-                                            <span>192.168.01、192.168.02、192.168.03</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>子网掩码：</span>
-                                            <span>255.255.255.0</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>网关：</span>
-                                            <span>192.168.0.</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>DNS：</span>
-                                            <span>192.168.0.</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>存储：</span>
-                                            <span>Datastore0</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>磁盘类型：</span>
-                                            <span>后置备置零</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>责任人：</span>
-                                            <span>王二小</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>手机号码：</span>
-                                            <span>18916516156</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>邮箱：</span>
-                                            <span>wangextcrc@189.cn</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>租期：</span>
-                                            <span>2年</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>到期提醒：</span>
-                                            <span>邮件、短信</span>
+                                            <span></span>
                                         </li>
                                         <li>
                                             <span>业务：</span>
-                                            <span>NOC-SOC安全中心-SOC安全门户</span>
+                                            <span></span>
                                         </li>
                                     </ul>
                                 </div>
@@ -2665,7 +2676,7 @@
                                     <button type="button" class="btn btn-default fr" data-dismiss="modal">
                                         取消
                                     </button>
-                                    <button type="button" class="btn btn-primary fr mr-10">
+                                    <button type="button" class="btn btn-primary fr mr-10" id="config_ensure">
                                         确定
                                     </button>
                                     <button type="button" class="btn btn-primary MN-pre MN fr mr-10">
@@ -2677,20 +2688,6 @@
                         </div>
                     </div>
                 </div>
-                <!--<div class="modal-footer">-->
-                    <!--<div class="f12 c-6ba fl mt-10 tipFirst" style="display: none">提示:添加业务属性，可以方便的从业务视图查看资源状况。</div>-->
-                    <!--<div class="f12 c-6ba fl mt-10 tipSecond" style="display: none">提示:批量创建虚拟机时，可以打开任务控制台查看进度。</div>-->
-                    <!--<button type="button" class="btn btn-default MN-pre MN" style="display: none">-->
-                        <!--上一步-->
-                    <!--</button>-->
-                    <!--<button type="button" class="btn btn-primary MN-next MN">-->
-                        <!--下一步-->
-                    <!--</button>-->
-                    <!--<button type="button" class="btn btn-primary" id="createEnsureBtn" style="display: none">确定</button>-->
-                    <!--<button type="button" class="btn btn-default" data-dismiss="modal">-->
-                        <!--取消-->
-                    <!--</button>-->
-                <!--</div>-->
             </div>
         </div>
     </div>
@@ -2806,7 +2803,7 @@
     </div>
 </div>
 <script src="js/jquery-2.1.1.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
 <script src="js/echarts.min.js"></script>
 <script src="js/jquery.ztree.core.min.js"></script>
 <script src="js/icheck.min.js"></script>
@@ -7728,6 +7725,7 @@
     };
     initVM01OverviewChart();
 </script>
+<script src="js/bootstrapValidator.min.js"></script>
 <script src="js/createVirtual.js"></script>
 <script src="js/myjs.js"></script>
 </body>

@@ -145,14 +145,14 @@ footer.bottom{
 #marquee li{padding-top:10px;}
 /*三列中间自适应布局*/
 .g-bd5{
-	margin:10px 0 10px;
+	padding:10px 0 10px;
 	height: 100%;
 }
 .g-sd51,.g-sd52{
 	position:relative;
 	float:left;
-	width:200px;
-	margin:0 -200px 0 0;
+	width:220px;
+	margin:0 -220px 0 0;
 	height: 100%;
 }
 .g-sd52{
@@ -167,7 +167,7 @@ footer.bottom{
 	height: 100%;
 }
 .g-mn5c{
-	margin:0 210px 0 210px;
+	margin:0 210px 0 230px;
 	height: 100%;
 }
 /*三列中间自适应布局*/

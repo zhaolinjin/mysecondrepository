@@ -351,9 +351,10 @@ $(function(){
         $("#rMenuVirtualMana").hide();
         $("#transfer").modal("toggle");
     })
-    //隐藏右键弹窗
+    //点击全局消失弹窗
     $(document).on("click",function () {
         $(".treeRightMenu").hide();
+        //$("#myAddress").hide();
     });
     //维保日期清除
     $("#data_remove").on("click",function () {
@@ -365,11 +366,6 @@ $(function(){
         $($(".breedList").children("li")[0]).addClass("active");
         $(".item").removeClass("active");
         $($(".item")[0]).addClass("active");
-        $(".MN-pre").hide();
-        $("#createEnsureBtn").hide();
-        $(".MN-next").show();
-        $(".tipFirst").hide();
-        $(".tipSecond").hide();
         var len=document.getElementsByClassName("myForm");
         for(var i=0;i<len.length;i++){
             len[i].reset();

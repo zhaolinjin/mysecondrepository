@@ -52,13 +52,13 @@
 				</a>
 			</li>
 			<li>
-				<a class="border-leftnone active" href="resource.html">
+				<a class="border-leftnone" href="resource.html">
 					<i class="iconfont icon-ziyuan"></i>
 					<span class="f16">&nbsp;资源</span>
 				</a>
 			</li>
 			<li>
-				<a class="border-leftnone" href="equip.html">
+				<a class="border-leftnone active" href="equip.html">
 					<i class="iconfont icon-ziyuanguanli"></i>
 					<span class="f16">&nbsp;设备</span>
 				</a>
@@ -140,11 +140,7 @@
 	    </div>
 	    <div class="g-mn6">
 	        <div class="g-mn6c">
-	            <p class="f14" id="contentTitle">	
-	            	<span>设备管理</span>
-	            	<span>&gt;概览</span>
-	            </p>
-	            <div class="notice" id="equipLevel" style="height:calc(100% - 30px);">
+	            <div class="notice" id="equipLevel" style="height:calc(100%);">
 		            <div class="tabs-list">
 		            	<ul>
 		            		<li class="tabs-active">概览</li>
@@ -153,8 +149,63 @@
 		            	</ul>
 		            </div>
 		            <div class="pl-20 pr-20" style="height:calc(100% - 60px);overflow-y:auto;">
+			            <div class="row notice2 mt-10 pt-30">
+				            	<div class="col-sm-5 pt-30" style="padding-right:0;padding-left:10px">
+									<div class="fw" style="border-left:4px solid #47a7f5;padding-left:10px">南京江东路DC南京江东路DC南京江东路DC南京江东</div>
+									<div class="f12 pl-15 mt-10">数据中心位置：南京江东路XX号电信机南京江东路XX号电信机</div>
+									<div class="f12 pl-15 mt-5">备注：南京江东路XX号电信机南京江东南京江东路XX号电信机</div>
+								</div>
+				            	<div class="col-sm-3 pt-20">
+				            		<div class="img-wrap">
+					            		<img src="images/pic_datacenter.png" alt="">
+					            	</div>
+				            	</div>
+				            	<div class="col-sm-4 pr-30">
+				            		<table class="table border-bottom table-condensed">
+													<thead class="hdalert">
+														<tr>
+															<td>统计</td>					
+															<td class="relative">
+																<i class="iconfont icon-jinggao-copy"></i>
+																<div class="hoverTitle">告警次数</div>
+															</td>
+															<td class="relative">
+																<i class="iconfont icon-count"></i>
+																<div class="hoverTitle">资源数量</div>
+															</td>
+														</tr>
+													</thead>
+													<tbody class="cloud-cal">
+														<tr>
+															<td class="c-118">机房</td>
+															<td class="c-red">10</td>
+															<td>2</td>
+														</tr>
+														<tr>
+															<td class="c-118">机架</td>
+															<td class="c-red">3</td>
+															<td>2</td>
+														</tr>
+														<tr>
+															<td class="c-118">服务器</td>
+															<td class="c-red">2</td>
+															<td>32</td>
+														</tr>
+														<tr>
+															<td class="c-118">磁盘阵列</td>
+															<td class="c-red">2</td>
+															<td>32</td>
+														</tr>
+													</tbody>
+												</table>
+				            	</div>
+			            </div>
 			            <div class="row notice2 mt-20 pt-30">
-				            	<div class="col-sm-4 pl-30 pt-60"><span class="fw">1、南京江东路DC</span>&nbsp;<i class="glyphicon glyphicon-info-sign c-118" data-toggle="tooltip" data-placement="bottom" title="1233"></i></div>
+							<div class="col-sm-4 pl-30 pt-30">
+								<div class="fw" style="border-left:4px solid #47a7f5;padding-left:10px">南京江东路DC</div>
+								<div class="f12 pl-15 mt-10">数据中心位置：南京江东路XX号电信机房</div>
+								<div class="f12 pl-15 mt-5">备注：无</div>
+							</div>
 				            	<div class="col-sm-4 pr-100 pt-20">
 				            		<div class="img-wrap">
 					            		<img src="images/pic_datacenter.png" alt="">
@@ -201,54 +252,11 @@
 				            	</div>
 			            </div>
 			            <div class="row notice2 mt-20 pt-30">
-				            	<div class="col-sm-4 pl-30 pt-60"><span class="fw">2、南京长乐路DC</span>&nbsp;<i class="glyphicon glyphicon-info-sign c-118" data-toggle="tooltip" data-placement="bottom" title="1233"></i></div>
-				            	<div class="col-sm-4 pr-100 pt-20">
-				            		<div class="img-wrap">
-					            		<img src="images/pic_datacenter.png" alt="">
-					            	</div>
-				            	</div>
-				            	<div class="col-sm-4 pr-30">
-				            		<table class="table border-bottom table-condensed">
-													<thead class="hdalert">
-														<tr>
-															<td>统计</td>					
-															<td class="relative">
-																<i class="iconfont icon-jinggao-copy"></i>
-																<div class="hoverTitle">告警次数</div>
-															</td>
-															<td class="relative">
-																<i class="iconfont icon-count"></i>
-																<div class="hoverTitle">资源数量</div>
-															</td>
-														</tr>
-													</thead>
-													<tbody class="cloud-cal">
-														<tr>
-															<td class="c-118">机房</td>
-															<td class="c-red">10</td>
-															<td>2</td>
-														</tr>
-														<tr>
-															<td class="c-118">机架</td>
-															<td class="c-red">3</td>
-															<td>2</td>
-														</tr>
-														<tr>
-															<td class="c-118">服务器</td>
-															<td class="c-red">2</td>
-															<td>32</td>
-														</tr>
-														<tr>
-															<td class="c-118">磁盘阵列</td>
-															<td class="c-red">2</td>
-															<td>32</td>
-														</tr>
-													</tbody>
-												</table>
-				            	</div>
-			            </div>
-			            <div class="row notice2 mt-20 pt-30">
-				            	<div class="col-sm-4 pl-30 pt-60"><span class="fw">3、无锡高新DC</span>&nbsp;<i class="glyphicon glyphicon-info-sign c-118"  data-toggle="tooltip" data-placement="bottom" title="1233"></i></div>
+							<div class="col-sm-4 pl-30 pt-30">
+								<div class="fw" style="border-left:4px solid #47a7f5;padding-left:10px">南京江东路DC</div>
+								<div class="f12 pl-15 mt-10">数据中心位置：南京江东路XX号电信机房</div>
+								<div class="f12 pl-15 mt-5">备注：无</div>
+							</div>
 				            	<div class="col-sm-4 pr-100 pt-20">
 				            		<div class="img-wrap">
 					            		<img src="images/pic_datacenter.png" alt="">
@@ -656,10 +664,166 @@
 						</div>
 					</div>
 				</div>
-	        </div>
+				<div class="notice" id="fourLevel" style="height:calc(100% - 30px);display: none">
+					<div class="tabs-list">
+						<ul>
+							<li class="tabs-active">概览</li>
+							<li>监控</li>
+							<li>告警</li>
+						</ul>
+					</div>
+					<div class="pl-20 pr-20" style="height:calc(100% - 60px);overflow-y:auto;">
+						<div class="row">
+							<div class="col-sm-8">
+								<div class="notice1">
+									<div class="notice1-title">
+										资源使用率
+									</div>
+									<div class="notice-content" style="padding-top:0">
+										<div class="row">
+											<div class="col-sm-4">
+												<div class="h-200" id="serverRU_cpuChart"></div>
+											</div>
+											<div class="col-sm-4">
+												<div class="h-200" id="serverRU_memoryChart"></div>
+											</div>
+											<div class="col-sm-4">
+												<div  class="h-200" id="serverRU_storageChart"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4" style="padding-left:0">
+								<div class="notice1" style="padding-bottom: 0px">
+									<div class="notice1-title">
+										资源
+									</div>
+									<div class="notice-content pl-5 pt-20">
+										<div class="ipTitle fw f14">192.168.100.52</div>
+										<table class="table table-condensed ipInfor f12 c-666">
+											<tbody>
+											<tr>
+												<td>品牌型号:</td>
+												<td>DELL R730XD</td>
+											</tr>
+											<tr>
+												<td>处理器类型:</td>
+												<td>Intel(R)CPUE5620@2.40GHz</td>
+											</tr>
+											<tr>
+												<td>逻辑处理器:</td>
+												<td>4</td>
+											</tr>
+											<tr>
+												<td>网卡:</td>
+												<td>2</td>
+											</tr>
+											<tr>
+												<td>虚拟机:</td>
+												<td>7</td>
+											</tr>
+											<tr>
+												<td>状况:</td>
+												<td>已连接</td>
+											</tr>
+											<tr>
+												<td>正常运行时间:</td>
+												<td>15天</td>
+											</tr>
+											<tr>
+												<td>位置信息:</td>
+												<td class="c-00b">南京江东路DC-6F机房-03列05柜(12U-14U)</td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-15">
+							<div class="col-sm-4" style="padding-right:0">
+								<div class="notice1">
+									<div class="notice1-title">
+										VCPU(个)
+									</div>
+									<div class="notice-content"  style="position: relative">
+										<div class="f12" style="position: absolute;z-index:999;bottom:20px;left:50%;margin-left:-44px;border-bottom: 2px  solid #9cd1fd">
+											<span>超配比：</span>
+											<span>150%</span>
+										</div>
+										<div class="h-200" id="serverRS_cpuChart"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4" style="padding-right: 0">
+								<div class="notice1">
+									<div class="notice1-title">
+										内存(GB)
+									</div>
+									<div class="notice-content" style="position: relative">
+										<div class="f12" style="position: absolute;z-index:999;bottom:20px;left:50%;margin-left:-44px;border-bottom: 2px  solid #9cd1fd">
+											<span>超配比：</span>
+											<span>200%</span>
+										</div>
+										<div class="h-200" id="serverRS_memoryChart"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="notice1">
+									<div class="notice1-title">
+										存储(GB)
+									</div>
+									<div class="notice-content" style="position: relative">
+										<div class="f12" style="position: absolute;z-index:999;bottom:20px;left:50%;margin-left:-44px;border-bottom: 2px  solid #9cd1fd">
+											<span>超配比：</span>
+											<span>50%</span>
+										</div>
+										<div class="h-200" id="serverRS_storageChart"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row mt-15 pl-15 pr-15">
+							<div class="notice1">
+								<div class="notice1-title">
+									主机管理
+								</div>
+								<div class="notice-content f12">
+									<div class="col-sm-4 txt-center hostM_startingUp" style="border-right:1px solid #ccc;">
+										<div>
+											<img src="overview/icon_boot.png">
+											<span style="vertical-align:middle;">开机</span>
+										</div>
+									</div>
+									<div class="col-sm-4 txt-center" style="border-right:1px solid #ccc;">
+										<div>
+											<img src="overview/icon_shut_down.png">
+											<span style="vertical-align:middle">关机</span>
+										</div>
+									</div>
+									<div class="col-sm-4 txt-center hostM_restart" style="border-right:1px solid #ccc;">
+										<div>
+											<img src="overview/icon_refresh.png">
+											<span style="vertical-align:middle">重启</span>
+										</div>
+									</div>
+									<div class="col-sm-4 txt-center hostM_enterMaintenanceMode">
+										<div>
+											<img src="overview/icon_maintain.png">
+											<span style="vertical-align:middle">进入维护模式</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 	    </div>
 		<div class="g-sd62">
-			<div class="notice mt-30 relative" id="quickset" style="height:calc(100% - 375px)">
+			<div class="notice relative" id="quickset" style="height:calc(100% - 345px)">
 				<div class="notice-title">
 					快速启动
 					<i class="iconfont icon-iconfontshezhi absolute r-10 absolute-top5"></i>
@@ -1225,13 +1389,16 @@
       <!-- /.modal --> 
   </div>
 </div>
-<script src="js/jquery-2.1.1.js"></script>
+<script src="js/jquery-3.2.1.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.ztree.core.min.js"></script>
 <script src="js/icheck.min.js"></script>
 <script src="js/sweetalert.min.js"></script>
 <script src="js/jquery.ztree.excheck.min.js"></script>
+<script src="js/echarts.min.js"></script>
 <script src="js/myjs.js"></script>
+<script src="js/PercentPie.js"></script>
+<script src="js/facility.js"></script>
 <script type="text/javascript">
 //提示框
 $(function(){
@@ -1271,7 +1438,7 @@ $('[data-toggle="tooltip"]').tooltip({html:true});
    {name:"设备管理",open:true, children:[
       {name:"南京江东路DC",open:true,children:[
       	{name:"12F机房",open:true,children:[
-	      	{name:"A列12柜",open:true,children:[{name:"服务器"},{name:"交换机"}]}]},
+	      	{name:"A列12柜",open:true,children:[{name:"服务器1"},{name:"服务器2"},{name:"交换机"}]}]},
       	{name:"3F机房",open:true,children:[
 	      	{name:"B列2柜"},{name:"A列32柜"}]}]}, 
       {name:"南京长乐路DC",open:true,children:[
@@ -1336,7 +1503,6 @@ $('[data-toggle="tooltip"]').tooltip({html:true});
       var treeObj = $.fn.zTree.getZTreeObj("treeDemo");
       //获取节点
       var nodes = treeObj.getNodesByParam("name",value,null);
-      console.log(nodes)
       if (nodes.length>0)
       {
         for(var i=0;i<nodes.length;i++)
@@ -1347,56 +1513,106 @@ $('[data-toggle="tooltip"]').tooltip({html:true});
         }
       }
     }
-   function onCheck(e,treeId,treeNode){
-   	var level=treeNode.level;
-   	if(level==3){
-			var parentNode1=treeNode.getParentNode();
-			var parentNode2=parentNode1.getParentNode();
-			var parentNode3=parentNode2.getParentNode();
-			var parentname=parentNode3.name+"&gt"+parentNode2.name+"&gt"+parentNode1.name+"&gt"+treeNode.name;
-			$("#thirdLevel").show();
-        	$("#firstLevel").hide();
-			$("#secondLevel").hide();
-			$("#equipLevel").hide();
-			$("#addEquip").show();
-        	$("#addCabinet").hide();
-      		$("#dataCenter").hide();
-   	}else if(level==2){
- 			var parentNode1=treeNode.getParentNode();
-			var parentNode2=parentNode1.getParentNode();
-			var parentname=parentNode2.name+"&gt"+parentNode1.name+"&gt"+treeNode.name;
-        	$("#firstLevel").hide();
-        	$("#secondLevel").show();
-        	$("#equipLevel").hide();
-        	$("#addCabinet").show();
-        	$("#dataCenter").hide();
-        	$("#showHide").hide();
-        	$("#thirdLevel").hide();
-        	$("#addEquip").hide();
-   	}else if(level==1){
-   		var parentNode1=treeNode.getParentNode();
-			var parentname=parentNode1.name+"&gt"+treeNode.name;
-			$("#equipLevel").hide();
-   		$("#firstLevel").show();
-   		$("#dataCenter").hide();
-   		$("#showHide").show();
+function onCheck(e,treeId,treeNode){
+    var level=treeNode.level;
+    if(level == 4){
+        var parentNode1=treeNode.getParentNode();
+        var parentNode2=parentNode1.getParentNode();
+        var parentNode3=parentNode2.getParentNode();
+        var parentNode4=parentNode3.getParentNode();
+        var parentname=parentNode4.name+"&gt"+parentNode3.name+"&gt"+parentNode2.name+"&gt"+parentNode1.name+"&gt"+treeNode.name;
+        $("#fourLevel").show();
+        $("#thirdLevel").hide();
+        $("#firstLevel").hide();
+        $("#secondLevel").hide();
+        $("#equipLevel").hide();
+        $("#addEquip").show();
+        $("#addCabinet").hide();
+        $("#dataCenter").hide();
+        if(treeNode.name == "服务器1"){
+            document.getElementById("serverRU_memoryChart").style.background = "#fff";
+            document.getElementById("serverRS_cpuChart").style.background = "#fff";
+            document.getElementById("serverRS_memoryChart").style.background = "#fff";
+            document.getElementById("serverRS_storageChart").style.background = "#fff";
+            $(document.getElementById("serverRS_cpuChart")).prev().show();
+            $(document.getElementById("serverRS_memoryChart")).prev().show();
+            $(document.getElementById("serverRS_storageChart")).prev().show();
+            initServerOverviewChart();
+            $(".hostM_startingUp").hide();
+            $(".hostM_enterMaintenanceMode").show();
+            $(".hostM_restart").css("borderRight","1px solid #ccc");
+
+        }else if(treeNode.name == "服务器2"){
+            document.getElementById("serverRU_cpuChart").innerHTML = "";
+            document.getElementById("serverRU_memoryChart").innerHTML = "";
+            document.getElementById("serverRU_storageChart").innerHTML = "";
+            document.getElementById("serverRS_cpuChart").innerHTML = "";
+            document.getElementById("serverRS_memoryChart").innerHTML = "";
+            document.getElementById("serverRS_storageChart").innerHTML = "";
+            document.getElementById("serverRU_memoryChart").style.background = "url(./images/icon_no_data.png) no-repeat center center";
+            document.getElementById("serverRS_cpuChart").style.background = "url(./images/icon_no_data.png) no-repeat center center";
+            document.getElementById("serverRS_memoryChart").style.background = "url(./images/icon_no_data.png) no-repeat center center";
+            document.getElementById("serverRS_storageChart").style.background = "url(./images/icon_no_data.png) no-repeat center center";
+            $(document.getElementById("serverRS_cpuChart")).prev().hide();
+            $(document.getElementById("serverRS_memoryChart")).prev().hide();
+            $(document.getElementById("serverRS_storageChart")).prev().hide();
+            $(".hostM_startingUp").show();
+            $(".hostM_enterMaintenanceMode").hide();
+            $(".hostM_restart").css("borderRight","0");
+        }
+
+    }else if(level==3){
+        var parentNode1=treeNode.getParentNode();
+        var parentNode2=parentNode1.getParentNode();
+        var parentNode3=parentNode2.getParentNode();
+        var parentname=parentNode3.name+"&gt"+parentNode2.name+"&gt"+parentNode1.name+"&gt"+treeNode.name;
+        $("#fourLevel").hide();
+        $("#thirdLevel").show();
+        $("#firstLevel").hide();
+        $("#secondLevel").hide();
+        $("#equipLevel").hide();
+        $("#addEquip").show();
+        $("#addCabinet").hide();
+        $("#dataCenter").hide();
+    }else if(level==2){
+        var parentNode1=treeNode.getParentNode();
+        var parentNode2=parentNode1.getParentNode();
+        var parentname=parentNode2.name+"&gt"+parentNode1.name+"&gt"+treeNode.name;
+        $("#fourLevel").hide();
+        $("#firstLevel").hide();
+        $("#secondLevel").show();
+        $("#equipLevel").hide();
+        $("#addCabinet").show();
+        $("#dataCenter").hide();
+        $("#showHide").hide();
+        $("#thirdLevel").hide();
+        $("#addEquip").hide();
+    }else if(level==1){
+        var parentNode1=treeNode.getParentNode();
+        var parentname=parentNode1.name+"&gt"+treeNode.name;
+        $("#fourLevel").hide();
+        $("#equipLevel").hide();
+        $("#firstLevel").show();
+        $("#dataCenter").hide();
+        $("#showHide").show();
         $("#secondLevel").hide();
         $("#addCabinet").hide();
         $("#thirdLevel").hide();
         $("#addEquip").hide();
-   	}else{
-   		var parentname=treeNode.name;
-   		$("#equipLevel").show();
-   		$("#dataCenter").show();
-   		$("#showHide").hide();
-   		$("#firstLevel").hide();
+    }else{
+        var parentname=treeNode.name;
+        $("#fourLevel").hide();
+        $("#equipLevel").show();
+        $("#dataCenter").show();
+        $("#showHide").hide();
+        $("#firstLevel").hide();
         $("#secondLevel").hide();
         $("#addCabinet").hide();
         $("#thirdLevel").hide();
         $("#addEquip").hide();
-   	}
-   	$("#contentTitle").children("span:first-child").html(parentname);
-	}
+    }
+    $("#contentTitle").children("span:first-child").html(parentname);
+}
 </script>
 </body>
 </html>
