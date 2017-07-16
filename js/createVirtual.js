@@ -4,10 +4,11 @@
 $(document).ready(function () {
     $("#createVirtual .MN").each(function() {
         $(this).click(function() {
-            if ($(this).hasClass("MN-next")) {
-                $("#createVirtual .carousel").carousel('next');
-                $("#createVirtual .step li.active").next().addClass("active");
-            } else {
+            // if ($(this).hasClass("MN-next")) {
+            //     $("#createVirtual .carousel").carousel('next');
+            //     $("#createVirtual .step li.active").next().addClass("active");
+            // }
+            if($(this).hasClass("MN-pre")) {
                 $("#createVirtual .carousel").carousel('prev');
                 if ($("#createVirtual .step li").length > 1) {
                     $($($("#createVirtual .step li.active"))[$("#createVirtual .step li.active").length - 1]).removeClass("active")
@@ -15,6 +16,7 @@ $(document).ready(function () {
             }
         })
     });
+
     //配置确认动态添加前面的值
     $("#batch_config").on("click",function () {
         var number=$("#number").val();
@@ -33,13 +35,11 @@ $(document).ready(function () {
         $($($("#configEnsure").children("li")[3]).children("span")[1]).html(templet);
         $($($("#configEnsure").children("li")[4]).children("span")[1]).html(virtualName);
         $($($("#configEnsure").children("li")[5]).children("span")[1]).html(cpu_memory);
-        if(!$('#firstStep').data('bootstrapValidator').isValid()){
+        if($('#firstStep').data('bootstrapValidator').isValid()){
+            //通过校验
 
-            //没有通过校验
-
-        } else {
-
-            //通过校验，可进行提交等操作
+            $("#createVirtual .carousel").carousel('next');
+            $("#createVirtual .step li.active").next().addClass("active");
 
         }
     });
@@ -56,6 +56,13 @@ $(document).ready(function () {
         $($($("#configEnsure").children("li")[8]).children("span")[1]).html(web_child);
         $($($("#configEnsure").children("li")[9]).children("span")[1]).html(gataway);
         $($($("#configEnsure").children("li")[10]).children("span")[1]).html(DNS_number);
+        if($('#secondStep').data('bootstrapValidator').isValid()){
+            //通过校验
+
+            $("#createVirtual .carousel").carousel('next');
+            $("#createVirtual .step li.active").next().addClass("active");
+
+        }
     });
     $("#storage_config").on("click",function () {
         var storage_ipt=$("#storage_ipt").val();
@@ -63,6 +70,13 @@ $(document).ready(function () {
         var disk_type=checked.parents("li").children("span").html();
         $($($("#configEnsure").children("li")[11]).children("span")[1]).html(storage_ipt);
         $($($("#configEnsure").children("li")[12]).children("span")[1]).html(disk_type);
+        if($('#thirdStep').data('bootstrapValidator').isValid()){
+            //通过校验
+
+            $("#createVirtual .carousel").carousel('next');
+            $("#createVirtual .step li.active").next().addClass("active");
+
+        }
     });
     $("#tenacy_property").on("click",function () {
         var support_person=$("#support_person").val();
@@ -89,7 +103,15 @@ $(document).ready(function () {
         $($($("#configEnsure").children("li")[17]).children("span")[1]).html(arr[0]+"、"+arr[1]);
         $($($("#configEnsure").children("li")[18]).children("span")[1]).html(tenacy_date);
         $($($("#configEnsure").children("li")[18]).children("span")[1]).html(business);
+        if($('#fourthStep').data('bootstrapValidator').isValid()){
+            //通过校验
+
+            $("#createVirtual .carousel").carousel('next');
+            $("#createVirtual .step li.active").next().addClass("active");
+
+        }
     });
+    //树配置
     var createVirtual = {
         data: {
             simpleData: {
@@ -117,7 +139,6 @@ $(document).ready(function () {
         }
 
     };
-
     var FourzNodes = [
         {name:"vcenter01",open:true,iconOpen:"images/treeDiy/icon_vcenter.png", iconClose:"images/treeDiy/icon_vcenter.png", children:[
             {name:"Datacenter01", id: "01", type: "datacenter", open:true,iconOpen:"images/treeDiy/datacenter.png", iconClose:"images/treeDiy/datacenter.png",children:[
@@ -162,7 +183,6 @@ $(document).ready(function () {
             ];
         }
     })
-
     var treeObj = $.fn.zTree.getZTreeObj("FourTreeDemo");
     // var nodes = treeObj.getNodesByParam("name","资源管理");
     //位置绑定树
@@ -172,258 +192,260 @@ $(document).ready(function () {
         $("#myAddress").toggle();
     });
 });
-//bootstrapValidator 验证
-// 批量配置验证
-function initFirstStepForm(){
-    $('#firstStep').bootstrapValidator({
-        message: 'this is null',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            virtualNumber: {
-                message: '请输入数字',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    },
-                    stringLength: {
-                        min: 1,
-                        max: 2,
-                        message: '请填写1到99之间的数字'
-                    }
-                }
+    //bootstrapValidator 验证
+    // 批量配置验证
+    function initFirstStepForm(){
+        $('#firstStep').bootstrapValidator({
+            message: 'this is null',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
             },
-            addressIpt: {
-                message: '',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
+            fields: {
+                virtualNumber: {
+                    message: '请输入数字',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 2,
+                            message: '请填写1到99之间的数字'
+                        }
                     }
-                }
-            },
-            name_01: {
-                message: '',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    },
-                    stringLength: {
-                        min: 1,
-                        max: 10,
-                        message: '请填写10位字符'
+                },
+                addressIpt: {
+                    message: '',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        }
                     }
-                }
-            },
-            name_02: {
-                message: '请输入数字',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    },
-                    stringLength: {
-                        min: 1,
-                        max: 2,
-                        message: '请填写1到99之间的数字'
-                    },
-                    regexp: {
-                        regexp: /^[0-9]*$/,
-                        message: '请输入正确的格式'
+                },
+                name_01: {
+                    message: '',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 10,
+                            message: '请填写10位字符'
+                        }
                     }
-                }
-            },
-            CPU_he: {
-                message: '请输入数字',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    },
-                    stringLength: {
-                        min: 1,
-                        max: 2,
-                        message: '请填写1到99之间的数字'
-                    },
-                    regexp: {
-                        regexp: /^[0-9]*$/,
-                        message: '请输入正确的格式'
+                },
+                name_02: {
+                    message: '请输入数字',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 2,
+                            message: '请填写1到99之间的数字'
+                        },
+                        regexp: {
+                            regexp: /^[0-9]*$/,
+                            message: '请输入正确的格式'
+                        }
                     }
-                }
-            },
-            memory_GB: {
-                message: '请输入数字',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    },
-                    stringLength: {
-                        min: 1,
-                        max: 2,
-                        message: '请填写1到99之间的数字'
-                    },
-                    regexp: {
-                        regexp: /^[0-9]*$/,
-                        message: '请输入正确的格式'
+                },
+                CPU_he: {
+                    message: '请输入数字',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 2,
+                            message: '请填写1到99之间的数字'
+                        },
+                        regexp: {
+                            regexp: /^[0-9]*$/,
+                            message: '请输入正确的格式'
+                        }
                     }
-                }
-            },
-
-        }
-    })
-};
-initFirstStepForm();
-// 网络配置验证
-function initSecondStepForm(){
-    $('#secondStep').bootstrapValidator({
-        message: 'this is null',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            IP_pre: {
-                message: '请输入数字',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    },
-                    regexp: {
-                        regexp: /(1[0-9][0-9]\.)|(2[0-4][0-9]\.)|(25[0-5]\.)|([1-9][0-9]\.)|([0-9]\.)/,
-                        message: '请输入正确的格式'
+                },
+                memory_GB: {
+                    message: '请输入数字',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 2,
+                            message: '请填写1到99之间的数字'
+                        },
+                        regexp: {
+                            regexp: /^[0-9]*$/,
+                            message: '请输入正确的格式'
+                        }
                     }
-                }
-            },
-            IP_start: {
-                message: '请输入数字',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    },
-                    stringLength: {
-                        min: 1,
-                        max: 2,
-                        message: '请填写1到99之间的数字'
-                    },
-                    regexp: {
-                        regexp: /^[0-9]*$/,
-                        message: '请输入正确的格式'
-                    }
-                }
-            },
-            web_child: {
-                message: '请输入数字',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    },
-                    regexp: {
-                        regexp: /((1[0-9][0-9]\.)|(2[0-4][0-9]\.)|(25[0-5]\.)|([1-9][0-9]\.)|([0-9]\.)){4}/,
-                        message: '请输入正确的格式'
-                    }
-                }
-            },
-            gataway: {
-                message: '请输入数字',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    },
-                    regexp: {
-                        regexp: /(1[0-9][0-9]\.)|(2[0-4][0-9]\.)|(25[0-5]\.)|([1-9][0-9]\.)|([0-9]\.)/,
-                        message: '请输入正确的格式'
-                    }
-                }
-            },
-            DNS_number: {
-                message: '请输入数字',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    },
-
-                    regexp: {
-                        regexp: /(1[0-9][0-9]\.)|(2[0-4][0-9]\.)|(25[0-5]\.)|([1-9][0-9]\.)|([0-9]\.)/,
-                        message: '请输入正确的格式'
-                    }
-                }
-            },
-
-        }
-    })
-};
-initSecondStepForm();
-//存储配置
-function initThirdStepForm(){
-    $('#thirdStep').bootstrapValidator({
-        message: 'this is null',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            storage_ipt: {
-                message: '请输入数字',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
-                    }
-                }
+                },
 
             }
-        }
-    })
-};
-initThirdStepForm();
-//租期配置
-function initFourthStepForm(){
-    $('#fourthStep').bootstrapValidator({
-        message: 'this is null',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            support_person: {
-                message: '',
-                validators: {
-                    notEmpty: {
-                        message: '必填项不能为空'
+        })
+    };
+    initFirstStepForm();
+    // 网络配置验证
+    function initSecondStepForm(){
+        $('#secondStep').bootstrapValidator({
+            message: 'this is null',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                IP_pre: {
+                    message: '请输入数字',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        },
+                        regexp: {
+                            regexp: /(1[0-9][0-9]\.)|(2[0-4][0-9]\.)|(25[0-5]\.)|([1-9][0-9]\.)|([0-9]\.)/,
+                            message: '请输入正确的格式'
+                        }
                     }
-                }
+                },
+                IP_start: {
+                    message: '请输入数字',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        },
+                        stringLength: {
+                            min: 1,
+                            max: 2,
+                            message: '请填写1到99之间的数字'
+                        },
+                        regexp: {
+                            regexp: /^[0-9]*$/,
+                            message: '请输入正确的格式'
+                        }
+                    }
+                },
+                web_child: {
+                    message: '请输入数字',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        },
+                        regexp: {
+                            regexp: /^[0-9]*$/,
+                            message: '请输入正确的格式'
+                        }
+                    }
+                },
+                gataway: {
+                    message: '请输入数字',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        },
+                        regexp: {
+                            regexp: /(1[0-9][0-9]\.)|(2[0-4][0-9]\.)|(25[0-5]\.)|([1-9][0-9]\.)|([0-9]\.)/,
+                            message: '请输入正确的格式'
+                        }
+                    }
+                },
+                DNS_number: {
+                    message: '请输入数字',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        },
 
-            },
-            email_val: {
-                validators: {
-                    notEmpty: {
-                        message: '邮件不能为空'
-                    },
-                    emailAddress: {
-                        message: '请输入正确的邮件地址如：123@qq.com'
+                        regexp: {
+                            regexp: /(1[0-9][0-9]\.)|(2[0-4][0-9]\.)|(25[0-5]\.)|([1-9][0-9]\.)|([0-9]\.)/,
+                            message: '请输入正确的格式'
+                        }
                     }
-                }
+                },
+
+            }
+        })
+    };
+    initSecondStepForm();
+    //存储配置
+    function initThirdStepForm(){
+        $('#thirdStep').bootstrapValidator({
+            message: 'this is null',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
             },
-            tel_number: {
-                message: 'The phone is not valid',
-                validators: {
-                    notEmpty: {
-                        message: '手机号码不能为空'
-                    },
-                    stringLength: {
-                        min: 11,
-                        max: 11,
-                        message: '请输入11位手机号码'
-                    },
-                    regexp: {
-                        regexp: /^1[3|5|8]{1}[0-9]{9}$/,
-                        message: '请输入正确的手机号码'
+            fields: {
+                storage_ipt: {
+                    message: '请输入数字',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        }
                     }
+
                 }
+            }
+        })
+    };
+    initThirdStepForm();
+    //租期配置
+    function initFourthStepForm(){
+        $('#fourthStep').bootstrapValidator({
+            message: 'this is null',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
             },
-        }
-    })
-};
-initFourthStepForm();
+            fields: {
+                support_person: {
+                    message: '',
+                    validators: {
+                        notEmpty: {
+                            message: '必填项不能为空'
+                        }
+                    }
+
+                },
+                email_val: {
+                    validators: {
+                        notEmpty: {
+                            message: '邮件不能为空'
+                        },
+                        emailAddress: {
+                            message: '请输入正确的邮件地址如：123@qq.com'
+                        }
+                    }
+                },
+                tel_number: {
+                    message: 'The phone is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: '手机号码不能为空'
+                        },
+                        stringLength: {
+                            min: 11,
+                            max: 11,
+                            message: '请输入11位手机号码'
+                        },
+                        regexp: {
+                            regexp: /^1[3|5|8]{1}[0-9]{9}$/,
+                            message: '请输入正确的手机号码'
+                        }
+                    }
+                },
+            }
+        })
+    };
+    initFourthStepForm();
+
+
